@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import ScrollProgressBar from "@/components/ScrollProgressBar";
 import MouseGlow from "@/components/MouseGlow";
 import Footer from "@/components/Footer";
+import BannerForm from "@/components/BannerForm";
 import { ChevronDown, Plus, Minus } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -74,16 +75,23 @@ export default function UnrealEnginePage() {
         <section className="relative min-h-[60vh] flex items-center justify-center py-24 bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200&auto=format&fit=crop')" }}>
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/70" />
           
-          <div className="max-w-5xl mx-auto px-6 text-center relative z-10 drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]">
-            <span className="text-xs uppercase tracking-[0.25em] text-white/50 font-semibold mb-4 block">
-              COURSE DETAILS
-            </span>
-            <h1 className="font-display font-bold text-4xl sm:text-6xl tracking-tight leading-tight mb-8">
-              Unreal <span className="text-[#BE1E2E]">Engine</span>
-            </h1>
-            <p className="text-zinc-300 text-sm sm:text-lg max-w-3xl mx-auto leading-relaxed font-light italic">
-              &ldquo;Master Unreal Engine to Create Stunning 3D Environments, Real-Time Interactive Experiences, and Immersive Games with Industry-Leading Tools and Techniques.&rdquo;
-            </p>
+          <div className="max-w-7xl mx-auto px-6 relative z-10 w-full py-8">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+              <div className="lg:col-span-7 text-left drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]">
+                <span className="text-xs uppercase tracking-[0.25em] text-white/50 font-semibold mb-4 block">
+                  COURSE DETAILS
+                </span>
+                <h1 className="font-display font-bold text-4xl sm:text-6xl tracking-tight leading-tight mb-8">
+                  Unreal <span className="text-[#BE1E2E]">Engine</span>
+                </h1>
+                <p className="text-zinc-300 text-sm sm:text-lg leading-relaxed font-light italic">
+                  &ldquo;Master Unreal Engine to Create Stunning 3D Environments, Real-Time Interactive Experiences, and Immersive Games with Industry-Leading Tools and Techniques.&rdquo;
+                </p>
+              </div>
+              <div className="lg:col-span-5 flex justify-center lg:justify-end w-full">
+                <BannerForm title="COURSE ENQUIRY" buttonText="SUBMIT ENQUIRY" defaultCourse="Unreal Engine" />
+              </div>
+            </div>
           </div>
         </section>
 
@@ -268,78 +276,7 @@ export default function UnrealEnginePage() {
 
               {/* Right Column: Sticky Enquiry Form */}
               <div className="col-span-1 lg:col-span-5 flex justify-center lg:sticky lg:top-28">
-                <div className="bg-white text-black p-8 rounded-2xl shadow-2xl w-full max-w-md border border-zinc-100">
-                  <h3 className="font-display font-bold text-2xl text-center text-[#BE1E2E] mb-6">
-                    Enquiry Form
-                  </h3>
-                  <form onSubmit={handleFormSubmit} className="flex flex-col space-y-4">
-                    <div>
-                      <input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        placeholder="Name"
-                        required
-                        className="w-full bg-white text-black placeholder-zinc-500 rounded-md py-3 px-4 border border-zinc-300 focus:outline-none focus:ring-2 focus:ring-[#BE1E2E] transition-all"
-                      />
-                    </div>
-                    <div>
-                      <input
-                        type="tel"
-                        name="mobile"
-                        value={formData.mobile}
-                        onChange={handleInputChange}
-                        placeholder="Mobile No."
-                        required
-                        className="w-full bg-white text-black placeholder-zinc-500 rounded-md py-3 px-4 border border-zinc-300 focus:outline-none focus:ring-2 focus:ring-[#BE1E2E] transition-all"
-                      />
-                    </div>
-                    <div>
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        placeholder="Email ID"
-                        required
-                        className="w-full bg-white text-black placeholder-zinc-500 rounded-md py-3 px-4 border border-zinc-300 focus:outline-none focus:ring-2 focus:ring-[#BE1E2E] transition-all"
-                      />
-                    </div>
-                    <div className="relative">
-                      <select
-                        name="course"
-                        value={formData.course}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full bg-white text-black rounded-md py-3 pl-4 pr-10 border border-zinc-300 focus:outline-none focus:ring-2 focus:ring-[#BE1E2E] appearance-none cursor-pointer transition-all"
-                      >
-                        <option value="Unreal Engine">Unreal Engine</option>
-                        <option value="Digital Marketing">Digital Marketing</option>
-                        <option value="Visual Effects (VFX)">Visual Effects (VFX)</option>
-                        <option value="3D Animations">3D Animations</option>
-                        <option value="2D ANIMATION">2D ANIMATION</option>
-                        <option value="B.Voc Degree">B.Voc Degree</option>
-                        <option value="Game Arts & Design">Game Arts & Design</option>
-                        <option value="Interior Design">Interior Design</option>
-                        <option value="Web Design">Web Design</option>
-                        <option value="Fashion Design">Fashion Design</option>
-                        <option value="Animation & Graphics">Animation & Graphics</option>
-                      </select>
-                      <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none text-zinc-500">
-                        <ChevronDown className="h-5 w-5" />
-                      </div>
-                    </div>
-                    <div className="pt-2">
-                      <button
-                        type="submit"
-                        className="px-6 py-2.5 bg-[#BE1E2E] hover:bg-red-700 text-white font-semibold rounded-md transition-all duration-300 hover:shadow-[0_4px_12px_rgba(190,30,46,0.3)] transform hover:scale-[1.01]"
-                      >
-                        Submit
-                      </button>
-                    </div>
-                  </form>
-                </div>
+                <BannerForm title="ENQUIRY FORM" buttonText="SUBMIT" defaultCourse="Unreal Engine" />
               </div>
 
             </div>
@@ -519,75 +456,7 @@ export default function UnrealEnginePage() {
 
               {/* Right Column: Enquiry Form Box */}
               <div className="flex justify-center">
-                <div className="bg-white text-black p-8 rounded-2xl shadow-2xl w-full max-w-md border border-zinc-100">
-                  <form onSubmit={handleFormSubmit} className="flex flex-col space-y-4">
-                    <div>
-                      <input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        placeholder="Name"
-                        required
-                        className="w-full bg-white text-black placeholder-zinc-500 rounded-md py-3 px-4 border border-zinc-300 focus:outline-none focus:ring-2 focus:ring-[#BE1E2E] transition-all"
-                      />
-                    </div>
-                    <div>
-                      <input
-                        type="tel"
-                        name="mobile"
-                        value={formData.mobile}
-                        onChange={handleInputChange}
-                        placeholder="Mobile No."
-                        required
-                        className="w-full bg-white text-black placeholder-zinc-500 rounded-md py-3 px-4 border border-zinc-300 focus:outline-none focus:ring-2 focus:ring-[#BE1E2E] transition-all"
-                      />
-                    </div>
-                    <div>
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        placeholder="Email ID"
-                        required
-                        className="w-full bg-white text-black placeholder-zinc-500 rounded-md py-3 px-4 border border-zinc-300 focus:outline-none focus:ring-2 focus:ring-[#BE1E2E] transition-all"
-                      />
-                    </div>
-                    <div className="relative">
-                      <select
-                        name="course"
-                        value={formData.course}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full bg-white text-black rounded-md py-3 pl-4 pr-10 border border-zinc-300 focus:outline-none focus:ring-2 focus:ring-[#BE1E2E] appearance-none cursor-pointer transition-all"
-                      >
-                        <option value="Unreal Engine">Unreal Engine</option>
-                        <option value="Digital Marketing">Digital Marketing</option>
-                        <option value="Visual Effects (VFX)">Visual Effects (VFX)</option>
-                        <option value="3D Animations">3D Animations</option>
-                        <option value="2D ANIMATION">2D ANIMATION</option>
-                        <option value="B.Voc Degree">B.Voc Degree</option>
-                        <option value="Game Arts & Design">Game Arts & Design</option>
-                        <option value="Interior Design">Interior Design</option>
-                        <option value="Web Design">Web Design</option>
-                        <option value="Fashion Design">Fashion Design</option>
-                        <option value="Animation & Graphics">Animation & Graphics</option>
-                      </select>
-                      <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none text-zinc-500">
-                        <ChevronDown className="h-5 w-5" />
-                      </div>
-                    </div>
-                    <div className="pt-2">
-                      <button
-                        type="submit"
-                        className="w-full py-3 bg-[#BE1E2E] hover:bg-red-700 text-white font-semibold rounded-md transition-all duration-300 shadow-[0_4px_15px_rgba(190,30,46,0.3)]"
-                      >
-                        Submit
-                      </button>
-                    </div>
-                  </form>
-                </div>
+                <BannerForm title="ENQUIRY FORM" buttonText="SUBMIT" defaultCourse="Unreal Engine" />
               </div>
 
             </div>

@@ -101,13 +101,13 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="flex items-center text-zinc-300 hover:text-white transition-colors text-sm font-light">
+                <a href="/terms-conditions" className="flex items-center text-zinc-300 hover:text-white transition-colors text-sm font-light">
                   <span className="mr-2 text-white">➔</span> Terms & Condition
                 </a>
               </li>
               <li>
-                <a href="#" className="flex items-center text-zinc-300 hover:text-white transition-colors text-sm font-light">
-                  <span className="mr-2 text-white">➔</span> Privacy Police
+                <a href="/privacy-policy" className="flex items-center text-zinc-300 hover:text-white transition-colors text-sm font-light">
+                  <span className="mr-2 text-white">➔</span> Privacy Policy
                 </a>
               </li>
             </ul>
@@ -172,8 +172,8 @@ export default function Footer() {
         <div className="pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/30 font-light">
           <p>© {new Date().getFullYear()} ZICA Pitampura. All Rights Reserved.</p>
           <div className="flex space-x-6">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Use</a>
+            <a href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="/terms-conditions" className="hover:text-white transition-colors">Terms of Use</a>
           </div>
         </div>
 

@@ -1,34 +1,17 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import BannerForm from "@/components/BannerForm";
 
 export default function TrustedBy() {
-  const [formData, setFormData] = useState({
-    name: "",
-    mobile: "",
-    email: "",
-    course: "",
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert(`Enquiry submitted successfully!\n\nName: ${formData.name}\nMobile: ${formData.mobile}\nEmail: ${formData.email}\nCourse: ${formData.course}`);
-  };
-
   return (
     <section id="trusted-by" className="relative py-24 bg-[#050505] overflow-hidden border-b border-white/5">
       {/* Glow Effects */}
       <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[400px] h-[400px] bg-red-950/10 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           
           {/* Left Column: Recruiters Who Trust Us */}
           <motion.div
@@ -86,95 +69,10 @@ export default function TrustedBy() {
             </button>
           </motion.div>
 
-          {/* Right Column: Enquiry Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 45 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="flex flex-col text-white"
-          >
-            {/* Title */}
-            <h2 className="font-display font-bold text-4xl sm:text-5xl mb-8 tracking-tight leading-tight">
-              Enquiry <span className="text-[#BE1E2E]">Form</span>
-            </h2>
-
-            {/* Form */}
-            <form onSubmit={handleSubmit} className="flex flex-col space-y-5 max-w-md w-full">
-              {/* Name Field */}
-              <div>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="Name"
-                  required
-                  className="w-full bg-white text-black placeholder-zinc-500 rounded-md py-3.5 px-4 border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-[#BE1E2E] transition-all"
-                />
-              </div>
-
-              {/* Mobile Field */}
-              <div>
-                <input
-                  type="tel"
-                  name="mobile"
-                  value={formData.mobile}
-                  onChange={handleChange}
-                  placeholder="Mobile No."
-                  required
-                  className="w-full bg-white text-black placeholder-zinc-500 rounded-md py-3.5 px-4 border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-[#BE1E2E] transition-all"
-                />
-              </div>
-
-              {/* Email Field */}
-              <div>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="Email ID"
-                  required
-                  className="w-full bg-white text-black placeholder-zinc-500 rounded-md py-3.5 px-4 border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-[#BE1E2E] transition-all"
-                />
-              </div>
-
-              {/* Course Selection Dropdown */}
-              <div className="relative">
-                <select
-                  name="course"
-                  value={formData.course}
-                  onChange={handleChange}
-                  required
-                  className="w-full bg-white text-black rounded-md py-3.5 pl-4 pr-10 border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-[#BE1E2E] appearance-none cursor-pointer transition-all"
-                >
-                  <option value="" disabled>Select Course</option>
-                  <option value="Visual Effects (VFX)">Visual Effects (VFX)</option>
-                  <option value="Game Arts & Design">Game Arts & Design</option>
-                  <option value="Digital Photography">Digital Photography</option>
-                  <option value="Interior Design">Interior Design</option>
-                  <option value="Digital Marketing">Digital Marketing</option>
-                  <option value="Web Design">Web Design</option>
-                  <option value="Fashion Design">Fashion Design</option>
-                  <option value="Animation & Graphics">Animation & Graphics</option>
-                </select>
-                <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none text-zinc-600">
-                  <ChevronDown className="h-5 w-5" />
-                </div>
-              </div>
-
-              {/* Submit Button */}
-              <div className="pt-2">
-                <button
-                  type="submit"
-                  className="w-fit bg-[#BE1E2E] hover:bg-red-700 text-white font-bold px-8 py-3.5 rounded-md uppercase tracking-wider transition-all duration-300 hover:shadow-[0_4px_15px_rgba(190,30,46,0.3)] transform hover:scale-[1.02]"
-                >
-                  Submit
-                </button>
-              </div>
-            </form>
-          </motion.div>
+          {/* Right Column: Enquiry Form (using BannerForm with Cloudflare Turnstile) */}
+          <div className="flex justify-center lg:justify-end">
+            <BannerForm title="ENQUIRY FORM" buttonText="SUBMIT" />
+          </div>
 
         </div>
       </div>

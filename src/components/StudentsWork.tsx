@@ -1,9 +1,30 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
+const STUDENT_IMAGES = [
+  "/images/student-work/student_work_1.jpg",
+  "/images/student-work/student_work_2.png",
+  "/images/student-work/student_work_3.jpg",
+  "/images/student-work/student_work_4.jpg",
+  "/images/student-work/student_work_5.jpg",
+  "/images/student-work/student_work_6.jpg",
+  "/images/student-work/student_work_7.png",
+  "/images/student-work/student_work_8.png",
+];
 
 export default function StudentsWork() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % STUDENT_IMAGES.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
   return (
     <section id="students-work" className="relative py-24 bg-[#050505] overflow-hidden border-b border-white/5">
       {/* Background grids & subtle glow */}
@@ -14,22 +35,55 @@ export default function StudentsWork() {
         {/* Content Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Left Column: Blender Donuts Image with White Frame */}
-          <div className="col-span-1 lg:col-span-5 flex justify-center">
+          {/* Left Column: Auto-playing Student Work Carousel with White Frame */}
+          <div className="col-span-1 lg:col-span-5 flex flex-col items-center justify-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative p-2.5 border-2 border-white bg-transparent max-w-[380px] w-full aspect-[3/4] shadow-[0_15px_40px_rgba(0,0,0,0.6)]"
+              className="relative p-2.5 border-2 border-white bg-transparent max-w-[380px] w-full aspect-[3/4] shadow-[0_15px_40px_rgba(0,0,0,0.6)] overflow-hidden"
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/blender_donuts.png"
-                alt="Student 3D Blender Donuts Render"
-                className="w-full h-full object-cover"
-              />
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={activeIndex}
+                  src={STUDENT_IMAGES[activeIndex]}
+                  alt={`ZICA Student Work Render ${activeIndex + 1}`}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 1.05 }}
+                  transition={{ duration: 0.6 }}
+                  className="w-full h-full object-contain"
+                />
+              </AnimatePresence>
+
+              {/* Navigation Arrows */}
+              <button
+                onClick={() => setActiveIndex((prev) => (prev - 1 + STUDENT_IMAGES.length) % STUDENT_IMAGES.length)}
+                className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/60 border border-white/10 text-white hover:bg-[#BE1E2E] transition-colors cursor-pointer z-10"
+              >
+                <ChevronLeft className="h-4 w-4" />
+              </button>
+              <button
+                onClick={() => setActiveIndex((prev) => (prev + 1) % STUDENT_IMAGES.length)}
+                className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/60 border border-white/10 text-white hover:bg-[#BE1E2E] transition-colors cursor-pointer z-10"
+              >
+                <ChevronRight className="h-4 w-4" />
+              </button>
             </motion.div>
+
+            {/* Dots Indicator */}
+            <div className="flex space-x-2 mt-4">
+              {STUDENT_IMAGES.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setActiveIndex(idx)}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    activeIndex === idx ? "w-6 bg-[#BE1E2E]" : "w-2 bg-white/30"
+                  }`}
+                />
+              ))}
+            </div>
           </div>
 
           {/* Right Column: Descriptions & Highlights */}
@@ -97,10 +151,10 @@ export default function StudentsWork() {
                 </div>
               </div>
 
-              {/* View Button */}
-              <button className="px-8 py-3.5 rounded-full font-semibold text-white bg-[#BE1E2E] hover:bg-red-700 transition-all duration-300 shadow-[0_4px_15px_rgba(190,30,46,0.3)] hover:shadow-[0_6px_25px_rgba(190,30,46,0.45)] w-fit transform hover:scale-[1.02]">
+              {/* View Button Link */}
+              <Link href="/student-work" className="inline-block px-8 py-3.5 rounded-full font-semibold text-white bg-[#BE1E2E] hover:bg-red-700 transition-all duration-300 shadow-[0_4px_15px_rgba(190,30,46,0.3)] hover:shadow-[0_6px_25px_rgba(190,30,46,0.45)] w-fit transform hover:scale-[1.02] text-center select-none cursor-pointer">
                 View Student&apos;s Work
-              </button>
+              </Link>
             </motion.div>
           </div>
 

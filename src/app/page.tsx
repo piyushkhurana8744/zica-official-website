@@ -8,7 +8,6 @@ import TrustedBy from "@/components/TrustedBy";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Services from "@/components/Services";
 import StudentsWork from "@/components/StudentsWork";
-import FeaturedWork from "@/components/FeaturedWork";
 import Statistics from "@/components/Statistics";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
@@ -31,7 +30,6 @@ export default function Home() {
         <StudentsWork />
         <TrustedBy />
         <WhyChooseUs />
-        <FeaturedWork />
         <Statistics />
         <Testimonials />
         <FAQ />

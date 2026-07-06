@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import BannerForm from "@/components/BannerForm";
 
 const FAQS = [
   {
@@ -25,25 +26,9 @@ const FAQS = [
 
 export default function FAQ() {
   const [openIdx, setOpenIdx] = useState<number | null>(0); // Open the first FAQ by default
-  const [formData, setFormData] = useState({
-    name: "",
-    mobile: "",
-    email: "",
-    course: "",
-  });
 
   const toggleFAQ = (idx: number) => {
     setOpenIdx(openIdx === idx ? null : idx);
-  };
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleFormSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert(`Enquiry submitted successfully!\n\nName: ${formData.name}\nMobile: ${formData.mobile}\nEmail: ${formData.email}\nCourse: ${formData.course}`);
   };
 
   return (
@@ -120,98 +105,9 @@ export default function FAQ() {
             </div>
           </div>
 
-          {/* Right Column: Enquiry Form Card */}
-          <div className="col-span-1 lg:col-span-5 flex justify-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="bg-white text-black p-8 rounded-2xl shadow-2xl w-full max-w-md border border-zinc-100"
-            >
-              {/* Form Title */}
-              <h3 className="font-display font-bold text-2xl text-center text-[#BE1E2E] mb-6">
-                Enquiry Form
-              </h3>
-
-              {/* Form fields */}
-              <form onSubmit={handleFormSubmit} className="flex flex-col space-y-4">
-                
-                {/* Name */}
-                <div>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    placeholder="Name"
-                    required
-                    className="w-full bg-white text-black placeholder-zinc-500 rounded-md py-3 px-4 border border-zinc-300 focus:outline-none focus:ring-2 focus:ring-[#BE1E2E] transition-all"
-                  />
-                </div>
-
-                {/* Mobile No. */}
-                <div>
-                  <input
-                    type="tel"
-                    name="mobile"
-                    value={formData.mobile}
-                    onChange={handleInputChange}
-                    placeholder="Mobile No."
-                    required
-                    className="w-full bg-white text-black placeholder-zinc-500 rounded-md py-3 px-4 border border-zinc-300 focus:outline-none focus:ring-2 focus:ring-[#BE1E2E] transition-all"
-                  />
-                </div>
-
-                {/* Email ID */}
-                <div>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    placeholder="Email ID"
-                    required
-                    className="w-full bg-white text-black placeholder-zinc-500 rounded-md py-3 px-4 border border-zinc-300 focus:outline-none focus:ring-2 focus:ring-[#BE1E2E] transition-all"
-                  />
-                </div>
-
-                {/* Course Selection */}
-                <div className="relative">
-                  <select
-                    name="course"
-                    value={formData.course}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full bg-white text-black rounded-md py-3 pl-4 pr-10 border border-zinc-300 focus:outline-none focus:ring-2 focus:ring-[#BE1E2E] appearance-none cursor-pointer transition-all"
-                  >
-                    <option value="" disabled>Select Course</option>
-                    <option value="Visual Effects (VFX)">Visual Effects (VFX)</option>
-                    <option value="Game Arts & Design">Game Arts & Design</option>
-                    <option value="Digital Photography">Digital Photography</option>
-                    <option value="Interior Design">Interior Design</option>
-                    <option value="Digital Marketing">Digital Marketing</option>
-                    <option value="Web Design">Web Design</option>
-                    <option value="Fashion Design">Fashion Design</option>
-                    <option value="Animation & Graphics">Animation & Graphics</option>
-                  </select>
-                  <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none text-zinc-500">
-                    <ChevronDown className="h-5 w-5" />
-                  </div>
-                </div>
-
-                {/* Submit button */}
-                <div className="pt-2">
-                  <button
-                    type="submit"
-                    className="px-6 py-2.5 bg-[#BE1E2E] hover:bg-red-700 text-white font-semibold rounded-md transition-all duration-300 hover:shadow-[0_4px_12px_rgba(190,30,46,0.3)] transform hover:scale-[1.01]"
-                  >
-                    Submit
-                  </button>
-                </div>
-
-              </form>
-            </motion.div>
+          {/* Right Column: Enquiry Form Card (using BannerForm with Cloudflare Turnstile) */}
+          <div className="col-span-1 lg:col-span-5 flex justify-center lg:sticky lg:top-28">
+            <BannerForm title="ENQUIRY FORM" buttonText="SUBMIT" />
           </div>
 
         </div>

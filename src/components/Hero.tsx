@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
+import BannerForm from "@/components/BannerForm";
 
 const HERO_SLIDES = [
   {
@@ -87,76 +88,83 @@ export default function Hero() {
       <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-[400px] h-[400px] rounded-full bg-red-800/10 blur-[120px] pointer-events-none z-10 animate-pulse-slow" />
 
       {/* Hero Content Wrapper */}
-      <div className="relative z-20 max-w-7xl mx-auto px-6 text-center flex flex-col items-center justify-between h-full w-full mt-auto mb-auto">
+      <div className="relative z-20 max-w-7xl mx-auto px-6 flex flex-col justify-between h-full w-full mt-auto mb-auto">
         
-        {/* Middle Main Header area */}
-        <div className="flex flex-col items-center max-w-5xl mx-auto">
-          {/* Decorative Admissions Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 px-4 py-1.5 rounded-full mb-6 backdrop-blur-md"
-          >
-            <span className="h-2 w-2 rounded-full bg-[#BE1E2E] animate-ping" />
-            <span className="text-xs uppercase font-medium tracking-[0.25em] text-white/90">
-              Admissions Open 2026 - 2027
-            </span>
-          </motion.div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full py-8">
+          {/* Left Column: Dynamic Header Titles */}
+          <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
+            {/* Decorative Admissions Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 px-4 py-1.5 rounded-full mb-6 backdrop-blur-md"
+            >
+              <span className="h-2 w-2 rounded-full bg-[#FF1F3D] animate-ping" />
+              <span className="text-xs uppercase font-medium tracking-[0.25em] text-white/90">
+                Admissions Open 2026 - 2027
+              </span>
+            </motion.div>
 
-          {/* Dynamic Header Titles */}
-          <div className="h-[140px] sm:h-[180px] md:h-[220px] flex items-center justify-center overflow-hidden">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentSlide}
-                initial={{ y: 50, opacity: 0, filter: "blur(8px)" }}
-                animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-                exit={{ y: -50, opacity: 0, filter: "blur(8px)" }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                className="flex flex-col"
+            {/* Dynamic Header Titles */}
+            <div className="min-h-[140px] sm:min-h-[160px] flex items-center justify-center lg:justify-start overflow-hidden w-full">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentSlide}
+                  initial={{ y: 30, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -30, opacity: 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  className="flex flex-col"
+                >
+                  <h1 className="font-display font-light text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white tracking-tight leading-tight">
+                    {HERO_SLIDES[currentSlide].title}
+                  </h1>
+                  <h2 className="font-display font-extrabold text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-[#FF1F3D] via-red-500 to-[#ffffff] leading-none mt-1 select-none">
+                    {HERO_SLIDES[currentSlide].highlight}
+                  </h2>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* Subtitle */}
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.4 }}
+              className="text-white/70 text-base sm:text-lg max-w-2xl mt-4 leading-relaxed font-light"
+            >
+              {HERO_SLIDES[currentSlide].subtitle}
+            </motion.p>
+
+            {/* CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="flex flex-col sm:flex-row items-center gap-4 mt-8 w-full sm:w-auto"
+            >
+              <a
+                href="#services"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full font-bold text-xs uppercase tracking-wider text-white bg-[#FF1F3D] hover:bg-red-600 transition-all duration-300 shadow-[0_4px_25px_rgba(255,31,61,0.4)] group cursor-pointer"
               >
-                <h1 className="font-display font-light text-2xl sm:text-4xl md:text-6xl text-white tracking-tight leading-tight">
-                  {HERO_SLIDES[currentSlide].title}
-                </h1>
-                <h2 className="font-display font-extrabold text-3xl sm:text-5xl md:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-[#BE1E2E] via-red-500 to-[#ffffff] leading-none mt-1 select-none">
-                  {HERO_SLIDES[currentSlide].highlight}
-                </h2>
-              </motion.div>
-            </AnimatePresence>
+                <span>Explore Programs</span>
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </a>
+              <a
+                href="#contact"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full font-bold text-xs uppercase tracking-wider text-white border border-white/15 hover:border-white/30 bg-white/5 hover:bg-white/10 backdrop-blur-md transition-all duration-300 group cursor-pointer"
+              >
+                <Play className="mr-2 h-4 w-4 fill-white text-white group-hover:scale-110 transition-transform" />
+                <span>Book Free Demo</span>
+              </a>
+            </motion.div>
           </div>
 
-          {/* Subtitle */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.6 }}
-            className="text-white/60 text-base sm:text-lg md:text-xl max-w-3xl mt-4 leading-relaxed font-light"
-          >
-            {HERO_SLIDES[currentSlide].subtitle}
-          </motion.p>
-
-          {/* CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 w-full sm:w-auto"
-          >
-            <a
-              href="#services"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full font-medium text-white bg-[#BE1E2E] hover:bg-red-700 transition-all duration-300 shadow-[0_4px_30px_rgba(190,30,46,0.4)] group"
-            >
-              <span>Explore Programs</span>
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </a>
-            <a
-              href="#contact"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full font-medium text-white border border-white/10 hover:border-white/30 bg-white/5 hover:bg-white/10 backdrop-blur-md transition-all duration-300 group"
-            >
-              <Play className="mr-2 h-4 w-4 fill-white text-white group-hover:scale-110 transition-transform" />
-              <span>Book Free Demo</span>
-            </a>
-          </motion.div>
+          {/* Right Column: Hero Banner Form */}
+          <div className="lg:col-span-5 flex justify-center lg:justify-end">
+            <BannerForm title="DOWNLOAD BROCHURE" buttonText="DOWNLOAD" />
+          </div>
         </div>
 
         {/* Bottom Statistics & Trust Badges Row */}

@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, CheckCircle2, Send } from "lucide-react";
+import Turnstile, { TurnstileRef } from "./Turnstile";
 
 const COURSES = [
   "Select a Course...",
@@ -23,19 +24,39 @@ export default function FinalCTA() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const turnstileRef = useRef<TurnstileRef>(null);
+  const [agreeTerms, setAgreeTerms] = useState(true);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!turnstileToken) {
+      alert("Please complete the Cloudflare security verification.");
+      return;
+    }
     if (!formData.name || !formData.mobile || !formData.email || !formData.course) {
       alert("Please fill in all the details.");
       return;
     }
     setIsSubmitting(true);
-    setTimeout(() => {
+    try {
+      const { submitEnquiry } = await import("@/utils/formSubmit");
+      await submitEnquiry({
+        name: formData.name,
+        mobile: formData.mobile,
+        email: formData.email,
+        course: formData.course,
+        token: turnstileToken,
+      });
       setIsSubmitting(false);
       setSubmitted(true);
       setFormData({ name: "", mobile: "", email: "", course: "" });
-    }, 1800);
+      setTurnstileToken("");
+    } catch (err) {
+      setIsSubmitting(false);
+      turnstileRef.current?.reset();
+      setTurnstileToken("");
+    }
   };
 
   return (
@@ -138,6 +159,23 @@ export default function FinalCTA() {
                           </option>
                         ))}
                       </select>
+                    </div>
+
+                    {/* CLOUDFLARE TURNSTILE INTEGRATION BOX */}
+                    <div className="my-5">
+                      <Turnstile
+                        ref={turnstileRef}
+                        onVerify={(token) => {
+                          setTurnstileToken(token);
+                        }}
+                        onExpire={() => {
+                          setTurnstileToken("");
+                        }}
+                        onError={() => {
+                          setTurnstileToken("");
+                        }}
+                        theme="dark"
+                      />
                     </div>
 
                     <button

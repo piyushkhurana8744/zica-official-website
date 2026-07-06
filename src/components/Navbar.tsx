@@ -215,18 +215,15 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           
-          {/* Logo & Company Name */}
-          <a href="/" className="flex items-center space-x-3 select-none group cursor-pointer">
-            <div className="bg-white px-2.5 py-1 flex items-center justify-center rounded-sm shadow-md transition-transform duration-300 group-hover:scale-95">
+          {/* Logo Only - Enlarged */}
+          <a href="/" className="flex items-center select-none group cursor-pointer">
+            <div className="flex items-center justify-center transition-transform duration-300 group-hover:scale-95">
               <img
                 src="/ZICA-LOGO.png"
                 alt="ZICA Logo"
-                className="h-8 w-auto object-contain"
+                className="h-14 sm:h-16 md:h-20 w-auto object-contain transition-all duration-300"
               />
             </div>
-            <span className="text-zinc-300 group-hover:text-white text-xs tracking-[0.2em] font-light uppercase hidden sm:inline-block border-l border-white/10 pl-3">
-              Pitampura
-            </span>
           </a>
 
           {/* Desktop Nav Links */}
@@ -317,28 +314,20 @@ export default function Navbar() {
               </AnimatePresence>
             </div>
 
-            <a href="/#why-choose-us" className="text-sm font-sans font-medium text-white/80 hover:text-white transition-colors py-2 relative group">
-              About
+            <a href="/about-us" className="text-sm font-sans font-medium text-white/80 hover:text-white transition-colors py-2 relative group">
+              About Us
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#BE1E2E] transition-all group-hover:w-full" />
             </a>
-            <a href="/#students-work" className="text-sm font-sans font-medium text-white/80 hover:text-white transition-colors py-2 relative group">
+            <a href="/student-work" className="text-sm font-sans font-medium text-white/80 hover:text-white transition-colors py-2 relative group">
               Student Works
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#BE1E2E] transition-all group-hover:w-full" />
             </a>
-            <a href="/#trusted-by" className="text-sm font-sans font-medium text-white/80 hover:text-white transition-colors py-2 relative group">
+            <a href="/awards-and-recognition" className="text-sm font-sans font-medium text-white/80 hover:text-white transition-colors py-2 relative group">
+              Awards
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#BE1E2E] transition-all group-hover:w-full" />
+            </a>
+            <a href="/placements" className="text-sm font-sans font-medium text-white/80 hover:text-white transition-colors py-2 relative group">
               Placements
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#BE1E2E] transition-all group-hover:w-full" />
-            </a>
-            <a href="/#portfolio" className="text-sm font-sans font-medium text-white/80 hover:text-white transition-colors py-2 relative group">
-              Gallery
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#BE1E2E] transition-all group-hover:w-full" />
-            </a>
-            <a href="/#faq" className="text-sm font-sans font-medium text-white/80 hover:text-white transition-colors py-2 relative group">
-              FAQ
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#BE1E2E] transition-all group-hover:w-full" />
-            </a>
-            <a href="/#contact" className="text-sm font-sans font-medium text-white/80 hover:text-white transition-colors py-2 relative group">
-              Contact
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#BE1E2E] transition-all group-hover:w-full" />
             </a>
           </div>
@@ -357,14 +346,20 @@ export default function Navbar() {
               </span>
             </button>
 
-            {/* Enroll Now CTA */}
-            <a
-              href="#contact"
-              className="bg-gradient-to-r from-[#BE1E2E] to-red-500 hover:shadow-[0_4px_20px_rgba(190,30,46,0.5)] text-white font-semibold px-6 py-2 rounded-full text-xs transition-all duration-300 transform hover:scale-[1.03] select-none text-center inline-flex items-center space-x-2 relative group"
-            >
-              <span>Enroll Now</span>
-              <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
-            </a>
+            {/* Enroll Now CTA & Phone Number */}
+            <div className="flex flex-col items-end">
+              <a
+                href="#contact"
+                className="bg-gradient-to-r from-[#FF1F3D] to-red-600 hover:from-red-600 hover:to-red-700 text-white font-extrabold px-5 py-2 rounded-full text-xs uppercase tracking-wider shadow-[0_4px_15px_rgba(255,31,61,0.4)] hover:shadow-[0_6px_20px_rgba(255,31,61,0.6)] transition-all duration-300 transform hover:scale-105 flex items-center space-x-2 cursor-pointer select-none"
+              >
+                <span className="h-2 w-2 rounded-full bg-white animate-pulse" />
+                <span>ENROLL NOW</span>
+              </a>
+              <a href="tel:+917900400300" className="text-[11px] font-bold text-zinc-300 hover:text-white mt-1 hidden sm:flex items-center gap-1 tracking-wider cursor-pointer">
+                <span className="text-[#FF1F3D]">📞</span>
+                <span>+91 79004 00300</span>
+              </a>
+            </div>
 
             {/* Mobile Menu trigger */}
             <button
@@ -390,13 +385,13 @@ export default function Navbar() {
             <div>
               {/* Header */}
               <div className="flex items-center justify-between mb-8">
-                {/* Mini Logo */}
+                {/* Mini Logo - Enlarged & Text Removed */}
                 <a href="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center">
-                  <div className="bg-white px-2 py-1 flex items-center justify-center rounded-sm">
+                  <div className="flex items-center justify-center">
                     <img
                       src="/ZICA-LOGO.png"
                       alt="ZICA Logo"
-                      className="h-6 w-auto object-contain"
+                      className="h-12 sm:h-14 w-auto object-contain transition-all duration-300"
                     />
                   </div>
                 </a>
@@ -453,15 +448,15 @@ export default function Navbar() {
                 </div>
 
                 <a
-                  href="/#why-choose-us"
+                  href="/about-us"
                   onClick={() => setMobileMenuOpen(false)}
                   className="text-lg font-medium text-white/85 hover:text-white py-1 block font-sans"
                 >
-                  About
+                  About Us
                 </a>
 
                 <a
-                  href="/#students-work"
+                  href="/student-work"
                   onClick={() => setMobileMenuOpen(false)}
                   className="text-lg font-medium text-white/85 hover:text-white py-1 block font-sans"
                 >
@@ -469,35 +464,19 @@ export default function Navbar() {
                 </a>
 
                 <a
-                  href="/#trusted-by"
+                  href="/awards-and-recognition"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-lg font-medium text-white/85 hover:text-white py-1 block font-sans"
+                >
+                  Awards
+                </a>
+
+                <a
+                  href="/placements"
                   onClick={() => setMobileMenuOpen(false)}
                   className="text-lg font-medium text-white/85 hover:text-white py-1 block font-sans"
                 >
                   Placements
-                </a>
-
-                <a
-                  href="/#portfolio"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-lg font-medium text-white/85 hover:text-white py-1 block font-sans"
-                >
-                  Gallery
-                </a>
-
-                <a
-                  href="/#faq"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-lg font-medium text-white/85 hover:text-white py-1 block font-sans"
-                >
-                  FAQ
-                </a>
-
-                <a
-                  href="/#contact"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-lg font-medium text-white/85 hover:text-white py-1 block font-sans"
-                >
-                  Contact
                 </a>
               </div>
             </div>
