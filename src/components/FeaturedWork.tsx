@@ -45,7 +45,7 @@ export default function FeaturedWork() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="text-xs uppercase tracking-[0.35em] text-[#BE1E2E] font-bold">
+          <span className="text-xs uppercase tracking-[0.35em] text-[#E76B24] font-bold">
             Student Showcase
           </span>
           <h2 className="font-display font-bold text-3xl sm:text-5xl mt-3 tracking-tight">
@@ -71,7 +71,7 @@ export default function FeaturedWork() {
               {activeTab === tab && (
                 <motion.div
                   layoutId="activePortfolioTab"
-                  className="absolute inset-0 bg-[#BE1E2E] rounded-full z-0"
+                  className="absolute inset-0 bg-[#E76B24] rounded-full z-0"
                   transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 />
               )}
@@ -104,16 +104,16 @@ export default function FeaturedWork() {
 
                 {/* Animated Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300" />
-                <div className="absolute inset-0 bg-[#BE1E2E]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-[#E76B24]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 {/* Focus Button */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-[#BE1E2E] flex items-center justify-center text-white scale-0 group-hover:scale-100 transition-transform duration-300 ease-out shadow-[0_0_20px_rgba(190,30,46,0.6)]">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-[#E76B24] flex items-center justify-center text-white scale-0 group-hover:scale-100 transition-transform duration-300 ease-out shadow-[0_0_20px_rgba(231, 107, 36,0.6)]">
                   <Eye className="h-5 w-5" />
                 </div>
 
                 {/* Details */}
                 <div className="absolute inset-x-0 bottom-0 p-6 flex flex-col justify-end">
-                  <span className="text-xs uppercase tracking-widest text-[#BE1E2E] font-bold mb-1">
+                  <span className="text-xs uppercase tracking-widest text-[#E76B24] font-bold mb-1">
                     {project.category}
                   </span>
                   <h3 className="font-display font-bold text-lg text-white mb-0.5">

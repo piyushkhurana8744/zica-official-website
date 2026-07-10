@@ -111,13 +111,13 @@ export default function BannerForm({
       style={{ transformStyle: "preserve-3d", perspective: 1000 }}
       className={`w-full max-w-[365px] relative overflow-hidden rounded-[24px] border p-5 sm:p-6 backdrop-blur-2xl transition-all duration-300 ${
         isLight
-          ? "bg-white border-[rgba(190,30,46,0.12)] shadow-[0_15px_40px_rgba(0,0,0,0.05)] text-[#111111]"
-          : "bg-[#181818] border-[rgba(190,30,46,0.12)] shadow-[0_20px_50px_rgba(0,0,0,0.8)] text-white"
+          ? "bg-white border-[rgba(231, 107, 36,0.12)] shadow-[0_15px_40px_rgba(0,0,0,0.05)] text-[#111111]"
+          : "bg-[#181818] border-[rgba(231, 107, 36,0.12)] shadow-[0_20px_50px_rgba(0,0,0,0.8)] text-white"
       } ${className}`}
     >
       {/* Subtle Ambient Glow */}
-      <div className={`absolute top-0 right-0 w-32 h-32 rounded-full blur-[45px] pointer-events-none ${isLight ? "bg-[#BE1E2E]/5" : "bg-[#BE1E2E]/10"}`} />
-      <div className={`absolute bottom-0 left-0 w-32 h-32 rounded-full blur-[45px] pointer-events-none ${isLight ? "bg-[#BE1E2E]/5" : "bg-[#BE1E2E]/10"}`} />
+      <div className={`absolute top-0 right-0 w-32 h-32 rounded-full blur-[45px] pointer-events-none ${isLight ? "bg-[#E76B24]/5" : "bg-[#E76B24]/10"}`} />
+      <div className={`absolute bottom-0 left-0 w-32 h-32 rounded-full blur-[45px] pointer-events-none ${isLight ? "bg-[#E76B24]/5" : "bg-[#E76B24]/10"}`} />
 
       <AnimatePresence mode="wait">
         {submitted ? (
@@ -139,7 +139,7 @@ export default function BannerForm({
               onClick={() => setSubmitted(false)}
               className={`mt-6 px-5 py-2 rounded-full text-[10px] font-bold uppercase tracking-wider transition-all cursor-pointer border ${
                 isLight
-                  ? "bg-[#F5F5F5] hover:bg-[#EDEDED] border-[rgba(190,30,46,0.12)] text-[#111111]"
+                  ? "bg-[#F5F5F5] hover:bg-[#EDEDED] border-[rgba(231, 107, 36,0.12)] text-[#111111]"
                   : "bg-white/10 hover:bg-white/20 border-white/10 text-white"
               }`}
             >
@@ -167,8 +167,8 @@ export default function BannerForm({
               </label>
               <div className={`rounded-xl px-3.5 py-2.5 flex items-center gap-3 transition-all duration-200 border ${
                 isLight
-                  ? "bg-[#F5F5F5] hover:bg-[#EDEDED] focus-within:bg-[#EDEDED] border-[rgba(190,30,46,0.12)] focus-within:border-[#BE1E2E]"
-                  : "bg-[#0A0A0A] hover:bg-[#121212] focus-within:bg-[#121212] border-[rgba(190,30,46,0.12)] focus-within:border-[#BE1E2E]"
+                  ? "bg-[#F5F5F5] hover:bg-[#EDEDED] focus-within:bg-[#EDEDED] border-[rgba(231, 107, 36,0.12)] focus-within:border-[#E76B24]"
+                  : "bg-[#0A0A0A] hover:bg-[#121212] focus-within:bg-[#121212] border-[rgba(231, 107, 36,0.12)] focus-within:border-[#E76B24]"
               }`}>
                 <User className="h-3.5 w-3.5 text-zinc-500 flex-shrink-0" />
                 <input
@@ -191,8 +191,8 @@ export default function BannerForm({
               </label>
               <div className={`rounded-xl px-3.5 py-2.5 flex items-center gap-3 transition-all duration-200 border ${
                 isLight
-                  ? "bg-[#F5F5F5] hover:bg-[#EDEDED] focus-within:bg-[#EDEDED] border-[rgba(190,30,46,0.12)] focus-within:border-[#BE1E2E]"
-                  : "bg-[#0A0A0A] hover:bg-[#121212] focus-within:bg-[#121212] border-[rgba(190,30,46,0.12)] focus-within:border-[#BE1E2E]"
+                  ? "bg-[#F5F5F5] hover:bg-[#EDEDED] focus-within:bg-[#EDEDED] border-[rgba(231, 107, 36,0.12)] focus-within:border-[#E76B24]"
+                  : "bg-[#0A0A0A] hover:bg-[#121212] focus-within:bg-[#121212] border-[rgba(231, 107, 36,0.12)] focus-within:border-[#E76B24]"
               }`}>
                 <Phone className="h-3.5 w-3.5 text-zinc-500 flex-shrink-0" />
                 <input
@@ -215,8 +215,8 @@ export default function BannerForm({
               </label>
               <div className={`rounded-xl px-3.5 py-2.5 flex items-center gap-3 transition-all duration-200 border ${
                 isLight
-                  ? "bg-[#F5F5F5] hover:bg-[#EDEDED] focus-within:bg-[#EDEDED] border-[rgba(190,30,46,0.12)] focus-within:border-[#BE1E2E]"
-                  : "bg-[#0A0A0A] hover:bg-[#121212] focus-within:bg-[#121212] border-[rgba(190,30,46,0.12)] focus-within:border-[#BE1E2E]"
+                  ? "bg-[#F5F5F5] hover:bg-[#EDEDED] focus-within:bg-[#EDEDED] border-[rgba(231, 107, 36,0.12)] focus-within:border-[#E76B24]"
+                  : "bg-[#0A0A0A] hover:bg-[#121212] focus-within:bg-[#121212] border-[rgba(231, 107, 36,0.12)] focus-within:border-[#E76B24]"
               }`}>
                 <Mail className="h-3.5 w-3.5 text-zinc-500 flex-shrink-0" />
                 <input
@@ -239,8 +239,8 @@ export default function BannerForm({
               </label>
               <div className={`relative rounded-xl px-3.5 py-2.5 flex items-center gap-3 transition-all duration-200 border ${
                 isLight
-                  ? "bg-[#F5F5F5] hover:bg-[#EDEDED] focus-within:bg-[#EDEDED] border-[rgba(190,30,46,0.12)] focus-within:border-[#BE1E2E]"
-                  : "bg-[#0A0A0A] hover:bg-[#121212] focus-within:bg-[#121212] border-[rgba(190,30,46,0.12)] focus-within:border-[#BE1E2E]"
+                  ? "bg-[#F5F5F5] hover:bg-[#EDEDED] focus-within:bg-[#EDEDED] border-[rgba(231, 107, 36,0.12)] focus-within:border-[#E76B24]"
+                  : "bg-[#0A0A0A] hover:bg-[#121212] focus-within:bg-[#121212] border-[rgba(231, 107, 36,0.12)] focus-within:border-[#E76B24]"
               }`}>
                 <BookOpen className="h-3.5 w-3.5 text-zinc-500 flex-shrink-0" />
                 <select
@@ -288,10 +288,10 @@ export default function BannerForm({
                 type="checkbox"
                 checked={agreeTerms}
                 onChange={(e) => setAgreeTerms(e.target.checked)}
-                className="mt-0.5 rounded border-zinc-350 bg-white text-[#BE1E2E] focus:ring-[#BE1E2E] focus:ring-offset-0 focus:ring-1 h-3.5 w-3.5 cursor-pointer flex-shrink-0"
+                className="mt-0.5 rounded border-zinc-350 bg-white text-[#E76B24] focus:ring-[#E76B24] focus:ring-offset-0 focus:ring-1 h-3.5 w-3.5 cursor-pointer flex-shrink-0"
               />
               <span className={`text-[10px] font-medium leading-tight font-sans ${isLight ? "text-[#666666]" : "text-zinc-400"}`}>
-                I agree to the Zica <a href="/terms-conditions" className="text-[#BE1E2E] hover:underline font-bold">Terms & Conditions</a> and <a href="/privacy-policy" className="text-[#BE1E2E] hover:underline font-bold">Privacy Policy</a>
+                I agree to the Zica <a href="/terms-conditions" className="text-[#E76B24] hover:underline font-bold">Terms & Conditions</a> and <a href="/privacy-policy" className="text-[#E76B24] hover:underline font-bold">Privacy Policy</a>
               </span>
             </label>
 
@@ -299,7 +299,7 @@ export default function BannerForm({
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full py-3 bg-[#BE1E2E] hover:bg-[#A31827] text-white font-black text-sm uppercase tracking-widest rounded-xl transition-all duration-300 shadow-[0_4px_12px_rgba(190,30,46,0.25)] hover:shadow-[0_6px_15px_rgba(190,30,46,0.45)] transform hover:scale-[1.02] cursor-pointer mt-4"
+              className="w-full py-3 bg-[#E76B24] hover:bg-[#C65516] text-white font-black text-sm uppercase tracking-widest rounded-xl transition-all duration-300 shadow-[0_4px_12px_rgba(231, 107, 36,0.25)] hover:shadow-[0_6px_15px_rgba(231, 107, 36,0.45)] transform hover:scale-[1.02] cursor-pointer mt-4"
             >
               {isSubmitting ? (
                 <div className="h-5 w-5 border-2 border-white/30 border-t-white rounded-full animate-spin mx-auto" />

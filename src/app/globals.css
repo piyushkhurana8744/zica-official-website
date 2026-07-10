@@ -12,8 +12,8 @@
   --color-card: #FFFFFF;
   --color-alt-section: #F5F5F5;
   --color-light-bg: #F5F5F5;
-  --color-brand-tint: rgba(190, 30, 46, 0.05);
-  --color-brand-soft: rgba(190, 30, 46, 0.1);
+  --color-brand-tint: rgba(231, 107, 36, 0.05);
+  --color-brand-soft: rgba(231, 107, 36, 0.1);
 
   /* Text */
   --color-heading: #111111;
@@ -21,16 +21,16 @@
   --color-muted-text: #B5B5B5;
 
   /* Border */
-  --color-border: rgba(190, 30, 46, 0.12);
+  --color-border: rgba(231, 107, 36, 0.12);
 
   /* Always-dark sections */
   --color-dark-section: #0A0A0A;
   --color-footer: #000000;
 
   /* Brand */
-  --color-primary: #BE1E2E;
-  --color-brand: #BE1E2E;
-  --color-brand-hover: #A31827;
+  --color-primary: #E76B24;
+  --color-brand: #E76B24;
+  --color-brand-hover: #C65516;
 
   /* Feedback */
   --color-success: #22C55E;
@@ -48,7 +48,7 @@
 
   /* Primary Brand Accent */
   --color-primary: var(--color-primary);
-  --color-primary-hover: #A31827;
+  --color-primary-hover: #C65516;
   --color-brand: var(--color-brand);
   --color-brand-hover: var(--color-brand-hover);
   --color-brand-tint: var(--color-brand-tint);
@@ -63,7 +63,7 @@
   --color-card-white: #FFFFFF;
   --color-card-black: #1A1A1A;
   
-  --color-border-accent: rgba(190, 30, 46, 0.12);
+  --color-border-accent: rgba(231, 107, 36, 0.12);
 
   --color-text-white: #FFFFFF;
   --color-text-black: #111111;
@@ -171,9 +171,9 @@ body {
    Scrollbar theming
 ═══════════════════════════════════════════════════ */
 :root {
-  scrollbar-color: #BE1E2E #E4E4E7;
+  scrollbar-color: #E76B24 #E4E4E7;
   scrollbar-width: thin;
 }
 [data-theme="dark"] {
-  scrollbar-color: #BE1E2E #27272A;
+  scrollbar-color: #E76B24 #27272A;
 }

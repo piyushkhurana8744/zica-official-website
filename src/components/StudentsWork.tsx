@@ -26,10 +26,10 @@ export default function StudentsWork() {
     return () => clearInterval(timer);
   }, []);
   return (
-    <section id="students-work" data-section-theme="light" className="relative py-24 bg-[#FFFFFF] overflow-hidden border-b border-[rgba(190,30,46,0.12)]">
+    <section id="students-work" data-section-theme="light" className="relative py-24 bg-[#FFFFFF] overflow-hidden border-b border-[rgba(231, 107, 36,0.12)]">
       {/* Background grids & subtle glow */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(190,30,46,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(190,30,46,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
-      <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#BE1E2E]/2 rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(231, 107, 36,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(231, 107, 36,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
+      <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#E76B24]/2 rounded-full blur-[130px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Content Layout */}
@@ -42,7 +42,7 @@ export default function StudentsWork() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative p-2 border border-[rgba(190,30,46,0.12)] bg-[#0A0A0A] rounded-2xl max-w-[460px] w-full aspect-[4/3] shadow-lg overflow-hidden"
+              className="relative p-2 border border-[rgba(231, 107, 36,0.12)] bg-[#0A0A0A] rounded-2xl max-w-[460px] w-full aspect-[4/3] shadow-lg overflow-hidden"
             >
               <AnimatePresence mode="wait">
                 <motion.img
@@ -61,13 +61,13 @@ export default function StudentsWork() {
               {/* Navigation Arrows */}
               <button
                 onClick={() => setActiveIndex((prev) => (prev - 1 + STUDENT_IMAGES.length) % STUDENT_IMAGES.length)}
-                className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/95 border border-[rgba(190,30,46,0.12)] text-[#111111] hover:bg-[#BE1E2E] hover:text-white transition-colors cursor-pointer z-10 shadow-sm"
+                className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/95 border border-[rgba(231, 107, 36,0.12)] text-[#111111] hover:bg-[#E76B24] hover:text-white transition-colors cursor-pointer z-10 shadow-sm"
               >
                 <ChevronLeft className="h-4 w-4" />
               </button>
               <button
                 onClick={() => setActiveIndex((prev) => (prev + 1) % STUDENT_IMAGES.length)}
-                className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/95 border border-[rgba(190,30,46,0.12)] text-[#111111] hover:bg-[#BE1E2E] hover:text-white transition-colors cursor-pointer z-10 shadow-sm"
+                className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/95 border border-[rgba(231, 107, 36,0.12)] text-[#111111] hover:bg-[#E76B24] hover:text-white transition-colors cursor-pointer z-10 shadow-sm"
               >
                 <ChevronRight className="h-4 w-4" />
               </button>
@@ -80,7 +80,7 @@ export default function StudentsWork() {
                   key={idx}
                   onClick={() => setActiveIndex(idx)}
                   className={`h-2 rounded-full transition-all duration-300 ${
-                    activeIndex === idx ? "w-6 bg-[#BE1E2E]" : "w-2 bg-[#EDEDED]"
+                    activeIndex === idx ? "w-6 bg-[#E76B24]" : "w-2 bg-[#EDEDED]"
                   }`}
                 />
               ))}
@@ -100,7 +100,7 @@ export default function StudentsWork() {
                 Entertainment, the ZICA way—through the eyes of our students.
               </span>
               <h2 className="font-display font-bold text-4xl sm:text-6xl mb-8 tracking-tight text-[#111111] uppercase">
-                Student&apos;s <span className="text-[#BE1E2E]">Work</span>
+                Student&apos;s <span className="text-[#E76B24]">Work</span>
               </h2>
 
               {/* Main descriptive paragraphs */}
@@ -122,7 +122,7 @@ export default function StudentsWork() {
                 <div className="flex flex-col">
                   <h4 className="font-display font-bold text-lg mb-2 uppercase">
                     <span className="text-[#111111]">Creative </span>
-                    <span className="text-[#BE1E2E]">Brilliance</span>
+                    <span className="text-[#E76B24]">Brilliance</span>
                   </h4>
                   <p className="text-[#666666] text-xs leading-relaxed font-light">
                     Celebrating the exceptional quality and imagination of student projects across all departments.
@@ -133,7 +133,7 @@ export default function StudentsWork() {
                 <div className="flex flex-col">
                   <h4 className="font-display font-bold text-lg mb-2 uppercase">
                     <span className="text-[#111111]">Made By </span>
-                    <span className="text-[#BE1E2E]">ZICA</span>
+                    <span className="text-[#E76B24]">ZICA</span>
                   </h4>
                   <p className="text-[#666666] text-xs leading-relaxed font-light">
                     Celebrating the exceptional quality and imagination of student projects across all departments. Tone: Elegant and inspiring.
@@ -144,7 +144,7 @@ export default function StudentsWork() {
                 <div className="flex flex-col">
                   <h4 className="font-display font-bold text-lg mb-2 uppercase">
                     <span className="text-[#111111]">Future In </span>
-                    <span className="text-[#BE1E2E]">Frame</span>
+                    <span className="text-[#E76B24]">Frame</span>
                   </h4>
                   <p className="text-[#666666] text-xs leading-relaxed font-light">
                     Emphasizes that students&apos; work reflects their future careers and creative potential. Visionary and modern.
@@ -153,7 +153,7 @@ export default function StudentsWork() {
               </div>
 
               {/* View Button Link */}
-              <Link href="/student-work" className="inline-block px-8 py-3.5 rounded-full font-semibold text-white bg-[#BE1E2E] hover:bg-[#A31827] hover:scale-[1.02] hover:shadow-[0_4px_15px_rgba(190,30,46,0.2)] transition-all duration-300 w-fit text-center select-none cursor-pointer text-xs uppercase tracking-wider font-sans">
+              <Link href="/student-work" className="inline-block px-8 py-3.5 rounded-full font-semibold text-white bg-[#E76B24] hover:bg-[#C65516] hover:scale-[1.02] hover:shadow-[0_4px_15px_rgba(231, 107, 36,0.2)] transition-all duration-300 w-fit text-center select-none cursor-pointer text-xs uppercase tracking-wider font-sans">
                 View Student&apos;s Work
               </Link>
             </motion.div>

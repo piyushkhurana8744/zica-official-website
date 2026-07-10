@@ -90,20 +90,20 @@ export default function Tools() {
     <section 
       id="tools" 
       data-section-theme="light" 
-      className="relative py-28 bg-[#FFFFFF] overflow-hidden border-b border-[rgba(190,30,46,0.12)] text-text-black"
+      className="relative py-28 bg-[#FFFFFF] overflow-hidden border-b border-[rgba(231, 107, 36,0.12)] text-text-black"
     >
       {/* Subtle light background mesh */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(190,30,46,0.01)_1px,transparent_1px),linear-gradient(to_bottom,rgba(190,30,46,0.01)_1px,transparent_1px)] bg-[size:3rem_3rem] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(231, 107, 36,0.01)_1px,transparent_1px),linear-gradient(to_bottom,rgba(231, 107, 36,0.01)_1px,transparent_1px)] bg-[size:3rem_3rem] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <span className="inline-block text-[10px] sm:text-xs uppercase tracking-[0.3em] text-[#BE1E2E] font-semibold mb-4 border border-[rgba(190,30,46,0.2)] rounded-full px-4 py-1.5 bg-brand-tint font-sans">
+          <span className="inline-block text-[10px] sm:text-xs uppercase tracking-[0.3em] text-[#E76B24] font-semibold mb-4 border border-[rgba(231, 107, 36,0.2)] rounded-full px-4 py-1.5 bg-brand-tint font-sans">
             Industry Tooling
           </span>
           <h2 className="font-display font-bold text-4xl sm:text-5xl text-[#111111] tracking-tight mb-6 leading-tight uppercase">
-            Master the <span className="text-[#BE1E2E]">CGI Software Suite</span>
+            Master the <span className="text-[#E76B24]">CGI Software Suite</span>
           </h2>
           <p className="text-[#444444] text-sm sm:text-base leading-relaxed font-light">
             We focus on production-ready software. Step straight into production studios with deep expertise in industry-standard creation suites.
@@ -121,10 +121,10 @@ export default function Tools() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.05 }}
-                className="group relative bg-[#FFFFFF] border border-[rgba(190,30,46,0.12)] rounded-2xl p-6 shadow-sm hover:border-[#BE1E2E] hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 flex flex-col items-start"
+                className="group relative bg-[#FFFFFF] border border-[rgba(231, 107, 36,0.12)] rounded-2xl p-6 shadow-sm hover:border-[#E76B24] hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 flex flex-col items-start"
               >
                 {/* Icon Container */}
-                <div className="h-10 w-10 rounded-xl bg-brand-tint border border-[rgba(190,30,46,0.15)] flex items-center justify-center text-[#BE1E2E] group-hover:bg-[#BE1E2E] group-hover:text-white transition-all duration-300 mb-5 shadow-sm">
+                <div className="h-10 w-10 rounded-xl bg-brand-tint border border-[rgba(231, 107, 36,0.15)] flex items-center justify-center text-[#E76B24] group-hover:bg-[#E76B24] group-hover:text-white transition-all duration-300 mb-5 shadow-sm">
                   <IconComponent className="h-5 w-5" />
                 </div>
 
@@ -132,7 +132,7 @@ export default function Tools() {
                 <h3 className="font-display font-bold text-base text-[#111111] mb-1 uppercase">
                   {tool.name}
                 </h3>
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-[#BE1E2E] mb-4 font-sans block">
+                <span className="text-[10px] font-semibold uppercase tracking-wider text-[#E76B24] mb-4 font-sans block">
                   {tool.role}
                 </span>
 

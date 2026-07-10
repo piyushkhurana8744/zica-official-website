@@ -44,7 +44,7 @@ const TESTIMONIALS = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" data-section-theme="dark" className="relative py-24 bg-[#0A0A0A] overflow-hidden border-b border-[rgba(190,30,46,0.12)]">
+    <section id="testimonials" data-section-theme="dark" className="relative py-24 bg-[#0A0A0A] overflow-hidden border-b border-[rgba(231, 107, 36,0.12)]">
       {/* Background Gradients */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
 
@@ -55,11 +55,11 @@ export default function Testimonials() {
           <div className="flex flex-col text-left">
             <h2 className="font-display font-bold text-4xl sm:text-5xl text-white tracking-tight leading-tight mb-2 uppercase">
               Let&apos;s Hear It From <br />
-              <span className="text-[#BE1E2E]">Our Students</span>
+              <span className="text-[#E76B24]">Our Students</span>
             </h2>
           </div>
           {/* Big Quote Mark */}
-          <div className="text-8xl sm:text-[10rem] font-serif font-extrabold select-none leading-none h-16 sm:h-24 text-[#BE1E2E]">
+          <div className="text-8xl sm:text-[10rem] font-serif font-extrabold select-none leading-none h-16 sm:h-24 text-[#E76B24]">
             &rdquo;
           </div>
         </div>
@@ -78,10 +78,10 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: idx * 0.08 }}
-              className="flex flex-col items-center text-center p-8 rounded-[2rem] bg-[#181818] border border-[rgba(190,30,46,0.12)] shadow-sm hover:border-[#BE1E2E] hover:shadow-lg hover:-translate-y-1.5 hover:scale-[1.02] transition-all duration-300 group"
+              className="flex flex-col items-center text-center p-8 rounded-[2rem] bg-[#181818] border border-[rgba(231, 107, 36,0.12)] shadow-sm hover:border-[#E76B24] hover:shadow-lg hover:-translate-y-1.5 hover:scale-[1.02] transition-all duration-300 group"
             >
               {/* Avatar Container with Primary Border */}
-              <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-[#BE1E2E] mb-5 shadow-sm group-hover:scale-105 transition-transform duration-300">
+              <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-[#E76B24] mb-5 shadow-sm group-hover:scale-105 transition-transform duration-300">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={t.image}
@@ -98,7 +98,7 @@ export default function Testimonials() {
 
               {/* Role / Subtext */}
               {t.role && (
-                <p className="text-[#BE1E2E] font-bold text-xs sm:text-sm tracking-wider mb-4 uppercase">
+                <p className="text-[#E76B24] font-bold text-xs sm:text-sm tracking-wider mb-4 uppercase">
                   {t.role}
                 </p>
               )}

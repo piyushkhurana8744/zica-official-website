@@ -94,7 +94,7 @@ export default function CoursePageTemplate({
                 <h1 className="font-display font-light text-4xl sm:text-5xl md:text-6xl text-white tracking-tight leading-tight mb-8">
                   {heroTitle}
                 </h1>
-                <p className="text-white/65 text-sm sm:text-base leading-relaxed font-light italic max-w-2xl border-l-2 pl-4 border-[#BE1E2E]">
+                <p className="text-white/65 text-sm sm:text-base leading-relaxed font-light italic max-w-2xl border-l-2 pl-4 border-[#E76B24]">
                   &ldquo;{heroSubtitle}&rdquo;
                 </p>
               </div>
@@ -110,19 +110,19 @@ export default function CoursePageTemplate({
           </div>
         </section>
 
-        <section data-section-theme="light" className="py-24 bg-[#FFFFFF] border-b border-[rgba(190,30,46,0.12)] relative">
+        <section data-section-theme="light" className="py-24 bg-[#FFFFFF] border-b border-[rgba(231, 107, 36,0.12)] relative">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               
               {/* Left Column: Bullet points */}
               <div className="text-left text-[#111111]">
                 <h2 className="font-display font-bold text-3xl sm:text-4xl mb-8 tracking-tight leading-tight text-[#111111] uppercase">
-                  Course <span className="text-[#BE1E2E]">Highlights:</span>
+                  Course <span className="text-[#E76B24]">Highlights:</span>
                 </h2>
                 <ul className="space-y-4 text-[#444444] text-sm sm:text-base font-light">
                   {highlights.map((highlight, index) => (
                     <li key={index} className="flex items-start">
-                      <span className="text-[#BE1E2E] mr-3 font-extrabold">•</span>
+                      <span className="text-[#E76B24] mr-3 font-extrabold">•</span>
                       {highlight}
                     </li>
                   ))}
@@ -135,7 +135,7 @@ export default function CoursePageTemplate({
                 <motion.div
                   whileHover={{ scale: 1.04, zIndex: 30, rotate: -2 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className="absolute top-0 left-0 w-[55%] h-[230px] rounded-2xl overflow-hidden shadow-md border border-[rgba(190,30,46,0.12)] bg-[#FFFFFF] cursor-pointer"
+                  className="absolute top-0 left-0 w-[55%] h-[230px] rounded-2xl overflow-hidden shadow-md border border-[rgba(231, 107, 36,0.12)] bg-[#FFFFFF] cursor-pointer"
                 >
                   <img
                     src={highlightImages[0] || "https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=400"}
@@ -149,7 +149,7 @@ export default function CoursePageTemplate({
                 <motion.div
                   whileHover={{ scale: 1.04, zIndex: 30, rotate: 2 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className="absolute bottom-0 left-4 w-[55%] h-[230px] rounded-2xl overflow-hidden shadow-md border border-[rgba(190,30,46,0.12)] bg-[#FFFFFF] cursor-pointer"
+                  className="absolute bottom-0 left-4 w-[55%] h-[230px] rounded-2xl overflow-hidden shadow-md border border-[rgba(231, 107, 36,0.12)] bg-[#FFFFFF] cursor-pointer"
                 >
                   <img
                     src={highlightImages[1] || "https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=400"}
@@ -163,7 +163,7 @@ export default function CoursePageTemplate({
                 <motion.div
                   whileHover={{ scale: 1.04, zIndex: 30, rotate: -1 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className="absolute top-1/2 -translate-y-1/2 right-0 w-[45%] h-[280px] rounded-2xl overflow-hidden shadow-md border border-[rgba(190,30,46,0.12)] bg-[#FFFFFF] cursor-pointer"
+                  className="absolute top-1/2 -translate-y-1/2 right-0 w-[45%] h-[280px] rounded-2xl overflow-hidden shadow-md border border-[rgba(231, 107, 36,0.12)] bg-[#FFFFFF] cursor-pointer"
                 >
                   <img
                     src={highlightImages[2] || "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=400"}
@@ -177,11 +177,11 @@ export default function CoursePageTemplate({
             </div>
 
             {/* Bottom Header details */}
-            <div className="text-center mt-20 pt-8 border-t border-[rgba(190,30,46,0.12)]">
+            <div className="text-center mt-20 pt-8 border-t border-[rgba(231, 107, 36,0.12)]">
               <h3 className="font-display font-bold text-2xl sm:text-3xl text-[#111111] uppercase">
                 {courseFullName}
               </h3>
-              <p className="text-[#BE1E2E] font-bold text-xl sm:text-2xl mt-2 font-sans">
+              <p className="text-[#E76B24] font-bold text-xl sm:text-2xl mt-2 font-sans">
                 ({courseDuration})
               </p>
             </div>
@@ -189,14 +189,14 @@ export default function CoursePageTemplate({
         </section>
 
         {/* ═══════════════════════ LEARN FROM PROFESSIONALS (Light Gray bg) ═══════════════════════ */}
-        <section data-section-theme="light" className="py-24 border-b border-[rgba(190,30,46,0.12)] bg-[#F5F5F5] relative">
+        <section data-section-theme="light" className="py-24 border-b border-[rgba(231, 107, 36,0.12)] bg-[#F5F5F5] relative">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
               
               {/* Left Column: Professionals Info & Highlights */}
               <div className="col-span-1 lg:col-span-7 flex flex-col text-left text-[#111111]">
                 <h2 className="font-display font-bold text-3xl sm:text-4xl mb-6 tracking-tight leading-tight text-[#111111] uppercase">
-                  Learn From <span className="text-[#BE1E2E]">Professionals</span>
+                  Learn From <span className="text-[#E76B24]">Professionals</span>
                 </h2>
                 
                 <p className="text-[#444444] text-sm sm:text-base leading-relaxed font-light mb-12">
@@ -209,7 +209,7 @@ export default function CoursePageTemplate({
                     <div key={idx}>
                       <h3 className="font-display font-bold text-lg mb-3 text-[#111111] uppercase">
                         {pt.title.split(" ").slice(0, -1).join(" ")}{" "}
-                        <span className="text-[#BE1E2E]">{pt.title.split(" ").slice(-1)}</span>
+                        <span className="text-[#E76B24]">{pt.title.split(" ").slice(-1)}</span>
                       </h3>
                       <p className="text-[#444444] text-xs sm:text-sm leading-relaxed font-light">
                         {pt.description}
@@ -221,12 +221,12 @@ export default function CoursePageTemplate({
                 {/* Program Highlights bullet list */}
                 <div>
                   <h3 className="font-display font-bold text-xl sm:text-2xl mb-6 tracking-tight leading-tight text-[#111111] uppercase">
-                    Program <span className="text-[#BE1E2E]">Highlights:</span>
+                    Program <span className="text-[#E76B24]">Highlights:</span>
                   </h3>
                   <ul className="space-y-4 text-[#444444] text-sm sm:text-base font-light">
                     {programHighlights.map((ph, idx) => (
                       <li key={idx} className="flex items-start">
-                        <span className="text-[#BE1E2E] mr-3 font-extrabold">•</span>
+                        <span className="text-[#E76B24] mr-3 font-extrabold">•</span>
                         {ph}
                       </li>
                     ))}
@@ -249,10 +249,10 @@ export default function CoursePageTemplate({
         </section>
 
         {/* ═══════════════════════ MODULE ACCORDIONS (White bg) ═══════════════════════ */}
-        <section data-section-theme="light" className="py-24 border-b border-[rgba(190,30,46,0.12)] bg-[#FFFFFF] relative">
+        <section data-section-theme="light" className="py-24 border-b border-[rgba(231, 107, 36,0.12)] bg-[#FFFFFF] relative">
           <div className="max-w-4xl mx-auto px-6">
             <h2 className="font-display font-bold text-3xl sm:text-4xl text-center mb-16 tracking-tight leading-tight text-[#111111] uppercase">
-              Program <span className="text-[#BE1E2E]">Structure</span>
+              Program <span className="text-[#E76B24]">Structure</span>
             </h2>
 
             <div className="space-y-4">
@@ -261,14 +261,14 @@ export default function CoursePageTemplate({
                 return (
                   <div 
                     key={idx} 
-                    className="bg-[#F5F5F5] border border-[rgba(190,30,46,0.12)] rounded-2xl p-5 hover:shadow-sm hover:border-[#BE1E2E] transition-all duration-300"
+                    className="bg-[#F5F5F5] border border-[rgba(231, 107, 36,0.12)] rounded-2xl p-5 hover:shadow-sm hover:border-[#E76B24] transition-all duration-300"
                   >
                     <button
                       onClick={() => toggleModule(idx)}
                       className="w-full flex items-center justify-between text-left focus:outline-none group cursor-pointer"
                     >
                       <span className={`font-sans font-semibold text-sm sm:text-base transition-colors duration-300 ${
-                        isOpen ? "text-[#BE1E2E]" : "text-[#111111] group-hover:text-[#BE1E2E]"
+                        isOpen ? "text-[#E76B24]" : "text-[#111111] group-hover:text-[#E76B24]"
                       }`}>
                         {item.title}
                       </span>
@@ -276,7 +276,7 @@ export default function CoursePageTemplate({
                       {/* Plus / Minus Indicator */}
                       <div className="ml-4 flex-shrink-0 h-6 w-6 flex items-center justify-center text-[#111111]">
                         {isOpen ? (
-                          <Minus className="h-4 w-4 text-[#BE1E2E]" />
+                          <Minus className="h-4 w-4 text-[#E76B24]" />
                         ) : (
                           <Plus className="h-4 w-4" />
                         )}
@@ -291,13 +291,13 @@ export default function CoursePageTemplate({
                           exit={{ height: 0, opacity: 0 }}
                           transition={{ duration: 0.3, ease: "easeInOut" }}
                         >
-                          <div className="pt-4 mt-4 border-t border-[rgba(190,30,46,0.12)] pl-4 border-l-2 border-[#BE1E2E]/60 space-y-4">
+                          <div className="pt-4 mt-4 border-t border-[rgba(231, 107, 36,0.12)] pl-4 border-l-2 border-[#E76B24]/60 space-y-4">
                             
                             {/* General Topics list */}
                             <ul className="space-y-2.5 text-[#444444] text-xs sm:text-sm font-light grid grid-cols-1 sm:grid-cols-2 gap-2 text-left">
                               {item.topics.map((topic, tIdx) => (
                                 <li key={tIdx} className="flex items-center">
-                                  <span className="text-[#BE1E2E] mr-2 font-bold">-</span>
+                                  <span className="text-[#E76B24] mr-2 font-bold">-</span>
                                   {topic}
                                 </li>
                               ))}
@@ -305,14 +305,14 @@ export default function CoursePageTemplate({
 
                             {/* Filmmaking subcategory (if active) */}
                             {item.hasFilmmaking && item.filmmakingTopics && (
-                              <div className="mt-4 pt-4 border-t border-[rgba(190,30,46,0.12)] text-left">
+                              <div className="mt-4 pt-4 border-t border-[rgba(231, 107, 36,0.12)] text-left">
                                 <h4 className="text-[#111111] font-bold text-xs sm:text-sm tracking-wide mb-3 uppercase font-sans">
                                   Filmmaking
                                 </h4>
                                 <ul className="space-y-2 text-[#444444] text-xs sm:text-sm font-light grid grid-cols-1 sm:grid-cols-2 gap-2">
                                   {item.filmmakingTopics.map((fTopic, fIdx) => (
                                     <li key={fIdx} className="flex items-center">
-                                      <span className="text-[#BE1E2E] mr-2 font-bold">-</span>
+                                      <span className="text-[#E76B24] mr-2 font-bold">-</span>
                                       {fTopic}
                                     </li>
                                   ))}
@@ -333,10 +333,10 @@ export default function CoursePageTemplate({
 
         {/* ═══════════════════════ CAREER AVENUES SECTION (Light Gray bg, Natively Handled) ═══════════════════════ */}
         {((careersLeft && careersLeft.length > 0) || (careersRight && careersRight.length > 0)) && (
-          <section data-section-theme="light" className="py-24 border-b border-[rgba(190,30,46,0.12)] bg-[#F5F5F5] relative">
+          <section data-section-theme="light" className="py-24 border-b border-[rgba(231, 107, 36,0.12)] bg-[#F5F5F5] relative">
             <div className="max-w-5xl mx-auto px-6 text-left">
               <h2 className="font-display font-bold text-3xl sm:text-4xl text-center mb-4 tracking-tight leading-tight text-[#111111] uppercase">
-                Career <span className="text-[#BE1E2E]">Avenues</span>
+                Career <span className="text-[#E76B24]">Avenues</span>
               </h2>
               <p className="text-[#444444] text-center text-xs sm:text-sm font-light mb-16 max-w-xl mx-auto">
                 After successful completion of the said program, a student is eligible for the following job categories.
@@ -345,10 +345,10 @@ export default function CoursePageTemplate({
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
                 {/* Left List */}
                 {careersLeft && (
-                  <div className="bg-[#FFFFFF] border border-[rgba(190,30,46,0.12)] rounded-2xl p-6 shadow-sm space-y-4">
+                  <div className="bg-[#FFFFFF] border border-[rgba(231, 107, 36,0.12)] rounded-2xl p-6 shadow-sm space-y-4">
                     {careersLeft.map((career, idx) => (
                       <div key={idx} className="flex items-center text-[#111111] text-sm sm:text-base font-medium">
-                        <span className="text-[#BE1E2E] mr-3 font-bold font-sans">•</span>
+                        <span className="text-[#E76B24] mr-3 font-bold font-sans">•</span>
                         {career}
                       </div>
                     ))}
@@ -356,10 +356,10 @@ export default function CoursePageTemplate({
                 )}
                 {/* Right List */}
                 {careersRight && (
-                  <div className="bg-[#FFFFFF] border border-[rgba(190,30,46,0.12)] rounded-2xl p-6 shadow-sm space-y-4">
+                  <div className="bg-[#FFFFFF] border border-[rgba(231, 107, 36,0.12)] rounded-2xl p-6 shadow-sm space-y-4">
                     {careersRight.map((career, idx) => (
                       <div key={idx} className="flex items-center text-[#111111] text-sm sm:text-base font-medium">
-                        <span className="text-[#BE1E2E] mr-3 font-bold font-sans">•</span>
+                        <span className="text-[#E76B24] mr-3 font-bold font-sans">•</span>
                         {career}
                       </div>
                     ))}
@@ -373,14 +373,14 @@ export default function CoursePageTemplate({
         {/* ═══════════════════════ GET IN TOUCH (Premium Dark) ═══════════════════════ */}
         <section data-section-theme="dark" className="relative py-28 bg-[#0A0A0A] overflow-hidden">
           {/* Ambient glow orbs */}
-          <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[#BE1E2E]/8 blur-[140px] pointer-events-none" />
-          <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] rounded-full bg-[#BE1E2E]/5 blur-[100px] pointer-events-none" />
+          <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[#E76B24]/8 blur-[140px] pointer-events-none" />
+          <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] rounded-full bg-[#E76B24]/5 blur-[100px] pointer-events-none" />
           {/* Grid mesh overlay */}
           <div className="absolute inset-0 opacity-[0.04] pointer-events-none select-none">
             <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <pattern id="ctaGrid" width="40" height="40" patternUnits="userSpaceOnUse">
-                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#BE1E2E" strokeWidth="0.5" />
+                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#E76B24" strokeWidth="0.5" />
                 </pattern>
               </defs>
               <rect width="100%" height="100%" fill="url(#ctaGrid)" />
@@ -397,7 +397,7 @@ export default function CoursePageTemplate({
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
-                  className="text-xs font-bold tracking-[0.3em] text-[#BE1E2E] uppercase mb-5 block font-sans"
+                  className="text-xs font-bold tracking-[0.3em] text-[#E76B24] uppercase mb-5 block font-sans"
                 >
                   Start Your Journey
                 </motion.span>
@@ -411,7 +411,7 @@ export default function CoursePageTemplate({
                   className="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.05] uppercase mb-6"
                 >
                   Get in <br />
-                  <span className="text-[#BE1E2E]">Touch</span> With Us
+                  <span className="text-[#E76B24]">Touch</span> With Us
                 </motion.h2>
 
                 <motion.p
@@ -438,9 +438,9 @@ export default function CoursePageTemplate({
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: 0.15 + idx * 0.07 }}
-                      className="bg-white/[0.04] border border-white/[0.08] rounded-2xl p-4 hover:border-[#BE1E2E]/30 transition-all duration-300 group"
+                      className="bg-white/[0.04] border border-white/[0.08] rounded-2xl p-4 hover:border-[#E76B24]/30 transition-all duration-300 group"
                     >
-                      <div className="font-display font-black text-2xl text-[#BE1E2E] mb-0.5">{stat.value}</div>
+                      <div className="font-display font-black text-2xl text-[#E76B24] mb-0.5">{stat.value}</div>
                       <div className="text-white/50 text-[10px] uppercase tracking-widest font-semibold font-sans">{stat.label}</div>
                     </motion.div>
                   ))}

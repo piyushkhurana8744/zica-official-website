@@ -231,7 +231,7 @@ export default function Navbar() {
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           isNavbarDark
             ? scrolled
-              ? "bg-[#0A0A0A] border-b border-[rgba(190,30,46,0.2)] shadow-[0_2px_20px_rgba(0,0,0,0.5)] py-3"
+              ? "bg-[#0A0A0A] border-b border-[rgba(231, 107, 36,0.2)] shadow-[0_2px_20px_rgba(0,0,0,0.5)] py-3"
               : "bg-[#0A0A0A] py-5"
             : scrolled
               ? "bg-white border-b border-[rgba(0,0,0,0.06)] shadow-[0_2px_15px_rgba(0,0,0,0.06)] py-3"
@@ -317,11 +317,11 @@ export default function Navbar() {
                     })}
 
                     {/* Column 4: Admissions CTA Card */}
-                    <div className="bg-[#1A1A1A] border border-[rgba(190,30,46,0.2)] rounded-xl p-5 flex flex-col justify-between relative overflow-hidden text-left">
+                    <div className="bg-[#1A1A1A] border border-[rgba(231, 107, 36,0.2)] rounded-xl p-5 flex flex-col justify-between relative overflow-hidden text-left">
                       <div className="absolute top-0 right-0 p-3">
                         <Sparkles className="h-5 w-5 text-primary animate-pulse" />
                       </div>
-                      <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-[#BE1E2E]/5 to-transparent pointer-events-none" />
+                      <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-[#E76B24]/5 to-transparent pointer-events-none" />
                       <div>
                         <span className="text-[9px] uppercase tracking-wider bg-primary text-white px-2 py-0.5 rounded font-bold">
                           Admissions Open
@@ -336,7 +336,7 @@ export default function Navbar() {
                       <a
                         href="#contact"
                         onClick={() => setActiveDropdown(null)}
-                        className="inline-flex items-center justify-center text-center mt-6 py-2.5 px-4 rounded-lg bg-primary hover:bg-[#A31827] text-white text-xs font-bold tracking-wide transition-all group cursor-pointer shadow-[0_4px_15px_rgba(190,30,46,0.3)] hover:shadow-[0_6px_25px_rgba(190,30,46,0.45)]"
+                        className="inline-flex items-center justify-center text-center mt-6 py-2.5 px-4 rounded-lg bg-primary hover:bg-[#C65516] text-white text-xs font-bold tracking-wide transition-all group cursor-pointer shadow-[0_4px_15px_rgba(231, 107, 36,0.3)] hover:shadow-[0_6px_25px_rgba(231, 107, 36,0.45)]"
                       >
                         <span>Book Demo</span>
                         <ArrowRight className="h-3 w-3 ml-2 group-hover:translate-x-1 transition-transform" />

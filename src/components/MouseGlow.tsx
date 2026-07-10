@@ -35,7 +35,7 @@ export default function MouseGlow() {
         top: glowY,
       }}
     >
-      <div className="h-[300px] w-[300px] rounded-full bg-[radial-gradient(circle,rgba(190,30,46,0.15)_0%,rgba(190,30,46,0)_70%)] blur-2xl" />
+      <div className="h-[300px] w-[300px] rounded-full bg-[radial-gradient(circle,rgba(231, 107, 36,0.15)_0%,rgba(231, 107, 36,0)_70%)] blur-2xl" />
     </motion.div>
   );
 }

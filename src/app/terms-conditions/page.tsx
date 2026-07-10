@@ -19,7 +19,7 @@ export default function TermsAndConditionsPage() {
           {/* Header */}
           <div className="border-b border-white/10 pb-8">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-normal tracking-wide text-white mb-4">
-              TERMS & <span className="text-[#BE1E2E]">CONDITIONS</span>
+              TERMS & <span className="text-[#E76B24]">CONDITIONS</span>
             </h1>
             <p className="text-zinc-400 text-sm sm:text-base">
               Last updated: May 01, 2025
@@ -32,7 +32,7 @@ export default function TermsAndConditionsPage() {
           {/* Interpretation and Definitions */}
           <section className="space-y-6">
             <h2 className="text-2xl sm:text-3xl font-normal text-white border-b border-white/10 pb-3">
-              Interpretation and <span className="text-[#BE1E2E]">Definitions</span>
+              Interpretation and <span className="text-[#E76B24]">Definitions</span>
             </h2>
             
             <div className="space-y-4">
@@ -68,7 +68,7 @@ export default function TermsAndConditionsPage() {
                   <strong className="text-white font-normal">Service</strong> refers to the Website.
                 </li>
                 <li>
-                  <strong className="text-white font-normal">Terms and Conditions</strong> (also referred as &ldquo;Terms&rdquo;) mean these Terms and <span className="text-[#BE1E2E]">Conditions</span> that form the entire agreement between You and the Company regarding the use of the Service.
+                  <strong className="text-white font-normal">Terms and Conditions</strong> (also referred as &ldquo;Terms&rdquo;) mean these Terms and <span className="text-[#E76B24]">Conditions</span> that form the entire agreement between You and the Company regarding the use of the Service.
                 </li>
                 <li>
                   <strong className="text-white font-normal">Third-party Social Media Service</strong> means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.
@@ -85,7 +85,7 @@ export default function TermsAndConditionsPage() {
 
           {/* Acknowledgment */}
           <section className="space-y-6 pt-6 border-t border-white/10">
-            <h2 className="text-2xl sm:text-3xl font-normal text-[#BE1E2E]">
+            <h2 className="text-2xl sm:text-3xl font-normal text-[#E76B24]">
               Acknowledgment
             </h2>
             <div className="space-y-4 leading-relaxed">
@@ -110,7 +110,7 @@ export default function TermsAndConditionsPage() {
           {/* Links to Other Websites */}
           <section className="space-y-6 pt-6 border-t border-white/10">
             <h2 className="text-2xl sm:text-3xl font-normal text-white">
-              Links to Other <span className="text-[#BE1E2E]">Websites</span>
+              Links to Other <span className="text-[#E76B24]">Websites</span>
             </h2>
             <div className="space-y-4 leading-relaxed">
               <p>
@@ -143,7 +143,7 @@ export default function TermsAndConditionsPage() {
           {/* Limitation of Liability */}
           <section className="space-y-6 pt-6 border-t border-white/10">
             <h2 className="text-2xl sm:text-3xl font-normal text-white">
-              Limitation of <span className="text-[#BE1E2E]">Liability</span>
+              Limitation of <span className="text-[#E76B24]">Liability</span>
             </h2>
             <div className="space-y-4 leading-relaxed">
               <p>
@@ -161,7 +161,7 @@ export default function TermsAndConditionsPage() {
           {/* "AS IS" and "AS AVAILABLE" Disclaimer */}
           <section className="space-y-6 pt-6 border-t border-white/10">
             <h2 className="text-2xl sm:text-3xl font-normal text-white">
-              <span className="text-[#BE1E2E]">&ldquo;AS IS&rdquo;</span> and <span className="text-[#BE1E2E]">&ldquo;AS AVAILABLE&rdquo;</span> Disclaimer
+              <span className="text-[#E76B24]">&ldquo;AS IS&rdquo;</span> and <span className="text-[#E76B24]">&ldquo;AS AVAILABLE&rdquo;</span> Disclaimer
             </h2>
             <div className="space-y-4 leading-relaxed">
               <p>
@@ -179,7 +179,7 @@ export default function TermsAndConditionsPage() {
           {/* Governing Law */}
           <section className="space-y-6 pt-6 border-t border-white/10">
             <h2 className="text-2xl sm:text-3xl font-normal text-white">
-              Governing <span className="text-[#BE1E2E]">Law</span>
+              Governing <span className="text-[#E76B24]">Law</span>
             </h2>
             <div className="space-y-4 leading-relaxed">
               <p>
@@ -191,7 +191,7 @@ export default function TermsAndConditionsPage() {
           {/* Disputes Resolution */}
           <section className="space-y-6 pt-6 border-t border-white/10">
             <h2 className="text-2xl sm:text-3xl font-normal text-white">
-              Disputes <span className="text-[#BE1E2E]">Resolution</span>
+              Disputes <span className="text-[#E76B24]">Resolution</span>
             </h2>
             <div className="space-y-4 leading-relaxed">
               <p>
@@ -203,7 +203,7 @@ export default function TermsAndConditionsPage() {
           {/* Severability and Waiver */}
           <section className="space-y-6 pt-6 border-t border-white/10">
             <h2 className="text-2xl sm:text-3xl font-normal text-white">
-              Severability and <span className="text-[#BE1E2E]">Waiver</span>
+              Severability and <span className="text-[#E76B24]">Waiver</span>
             </h2>
             <div className="space-y-4 leading-relaxed">
               <h3 className="text-xl sm:text-2xl font-normal text-white">
@@ -226,7 +226,7 @@ export default function TermsAndConditionsPage() {
           {/* Changes to These Terms and Conditions */}
           <section className="space-y-6 pt-6 border-t border-white/10">
             <h2 className="text-2xl sm:text-3xl font-normal text-white">
-              Changes to These <span className="text-[#BE1E2E]">Terms and Conditions</span>
+              Changes to These <span className="text-[#E76B24]">Terms and Conditions</span>
             </h2>
             <div className="space-y-4 leading-relaxed">
               <p>
@@ -241,7 +241,7 @@ export default function TermsAndConditionsPage() {
           {/* Contact Us */}
           <section className="space-y-6 pt-6 border-t border-white/10">
             <h2 className="text-2xl sm:text-3xl font-normal text-white">
-              Contact <span className="text-[#BE1E2E]">Us</span>
+              Contact <span className="text-[#E76B24]">Us</span>
             </h2>
             <div className="space-y-4 leading-relaxed">
               <p>

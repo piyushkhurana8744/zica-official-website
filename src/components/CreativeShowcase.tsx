@@ -49,9 +49,9 @@ export default function CreativeShowcase() {
   }, []);
 
   return (
-    <section data-section-theme="light" className="relative py-24 bg-[#FFFFFF] overflow-hidden border-b border-[rgba(190,30,46,0.12)]">
+    <section data-section-theme="light" className="relative py-24 bg-[#FFFFFF] overflow-hidden border-b border-[rgba(231, 107, 36,0.12)]">
       {/* Background grids/glows */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(190,30,46,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(190,30,46,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(231, 107, 36,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(231, 107, 36,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
       <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -118,7 +118,7 @@ export default function CreativeShowcase() {
                       damping: 25,
                     }}
                     style={{ zIndex }}
-                    className="absolute w-full h-full rounded-2xl overflow-hidden shadow-2xl border border-[rgba(190,30,46,0.12)] cursor-pointer origin-center bg-white"
+                    className="absolute w-full h-full rounded-2xl overflow-hidden shadow-2xl border border-[rgba(231, 107, 36,0.12)] cursor-pointer origin-center bg-white"
                     onClick={() => setActiveIndex(idx)}
                   >
                     <div
@@ -129,7 +129,7 @@ export default function CreativeShowcase() {
                     
                     {/* Card details */}
                     <div className="absolute bottom-6 left-6 right-6 text-left">
-                      <span className="text-[10px] uppercase tracking-widest text-[#BE1E2E] font-bold font-sans">
+                      <span className="text-[10px] uppercase tracking-widest text-[#E76B24] font-bold font-sans">
                         {img.label}
                       </span>
                       <h4 className="font-display font-bold text-lg text-white mt-1 uppercase">
@@ -145,7 +145,7 @@ export default function CreativeShowcase() {
             <div className="flex items-center space-x-4 mt-8">
               <button
                 onClick={handlePrev}
-                className="p-2 rounded-full border border-[rgba(190,30,46,0.12)] bg-white hover:bg-[#F5F5F5] text-[#111111] shadow-sm hover:shadow transition-all cursor-pointer focus:outline-none"
+                className="p-2 rounded-full border border-[rgba(231, 107, 36,0.12)] bg-white hover:bg-[#F5F5F5] text-[#111111] shadow-sm hover:shadow transition-all cursor-pointer focus:outline-none"
               >
                 <ChevronLeft className="h-5 w-5" />
               </button>
@@ -154,7 +154,7 @@ export default function CreativeShowcase() {
               </span>
               <button
                 onClick={handleNext}
-                className="p-2 rounded-full border border-[rgba(190,30,46,0.12)] bg-white hover:bg-[#F5F5F5] text-[#111111] shadow-sm hover:shadow transition-all cursor-pointer focus:outline-none"
+                className="p-2 rounded-full border border-[rgba(231, 107, 36,0.12)] bg-white hover:bg-[#F5F5F5] text-[#111111] shadow-sm hover:shadow transition-all cursor-pointer focus:outline-none"
               >
                 <ChevronRight className="h-5 w-5" />
               </button>
@@ -171,7 +171,7 @@ export default function CreativeShowcase() {
             >
               {/* Main Heading from Screenshot */}
               <h2 className="font-display font-light text-2xl sm:text-3.5xl text-[#111111] tracking-tight mb-8 leading-tight uppercase">
-                Entertainment, the <span className="text-[#BE1E2E] font-extrabold">ZICA way—through</span> the eyes of our students.
+                Entertainment, the <span className="text-[#E76B24] font-extrabold">ZICA way—through</span> the eyes of our students.
               </h2>
               
               <p className="text-[#111111] text-xs sm:text-sm font-semibold leading-relaxed mb-4">
@@ -182,7 +182,7 @@ export default function CreativeShowcase() {
                 Be amazed and inspired by the exceptional talent, imagination, and passion of our students as they bring ideas to life across diverse creative fields. From jaw-dropping animations and cutting-edge VFX, to immersive Gaming, stylish Interior and Fashion Design, impactful Digital Marketing, and stunning Photography — every project is a testament to their dedication and skill. This is where the future of creative entertainment begins — only at ZICA.
               </p>
 
-              <a href="#services" className="inline-flex items-center justify-center px-8 py-3.5 rounded-full font-semibold text-white bg-[#BE1E2E] hover:bg-[#A31827] shadow-sm transition-all duration-300 w-fit transform hover:scale-[1.02] cursor-pointer">
+              <a href="#services" className="inline-flex items-center justify-center px-8 py-3.5 rounded-full font-semibold text-white bg-[#E76B24] hover:bg-[#C65516] shadow-sm transition-all duration-300 w-fit transform hover:scale-[1.02] cursor-pointer">
                 Explore Courses
               </a>
             </motion.div>

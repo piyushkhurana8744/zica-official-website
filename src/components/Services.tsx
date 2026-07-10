@@ -110,7 +110,7 @@ export default function Services() {
     <section
       id="services"
       data-section-theme="light"
-      className="relative py-28 bg-[#FFFFFF] overflow-hidden border-b border-[rgba(190,30,46,0.12)]"
+      className="relative py-28 bg-[#FFFFFF] overflow-hidden border-b border-[rgba(231, 107, 36,0.12)]"
     >
       {/* Background ambient effects */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[400px] bg-primary/2 rounded-full blur-[150px] pointer-events-none" />
@@ -124,11 +124,11 @@ export default function Services() {
           transition={{ duration: 0.7 }}
           className="text-center max-w-3xl mx-auto mb-20"
         >
-          <span className="inline-block text-[10px] sm:text-xs uppercase tracking-[0.3em] text-[#BE1E2E] font-semibold mb-4 border border-[rgba(190,30,46,0.2)] rounded-full px-4 py-1.5 bg-brand-tint font-sans">
+          <span className="inline-block text-[10px] sm:text-xs uppercase tracking-[0.3em] text-[#E76B24] font-semibold mb-4 border border-[rgba(231, 107, 36,0.2)] rounded-full px-4 py-1.5 bg-brand-tint font-sans">
             Our Programs
           </span>
           <h2 className="font-display font-bold text-4xl sm:text-5xl text-[#111111] tracking-tight mb-6 leading-[1.15] uppercase">
-            Discover Our <span className="text-[#BE1E2E]">Creative Programs</span>
+            Discover Our <span className="text-[#E76B24]">Creative Programs</span>
           </h2>
           <p className="text-[#444444] text-sm sm:text-base leading-relaxed font-light">
             Explore our diverse programs in Animation, VFX, Gaming, Interior
@@ -148,7 +148,7 @@ export default function Services() {
               transition={{ duration: 0.5, delay: idx * 0.07 }}
               onMouseEnter={() => setHoveredIdx(idx)}
               onMouseLeave={() => setHoveredIdx(null)}
-              className="group relative rounded-3xl overflow-hidden cursor-pointer bg-white border border-[rgba(190,30,46,0.12)] shadow-sm hover:border-[#BE1E2E] hover:shadow-xl hover:-translate-y-1.5 hover:scale-[1.02] transition-all duration-300 flex flex-col"
+              className="group relative rounded-3xl overflow-hidden cursor-pointer bg-white border border-[rgba(231, 107, 36,0.12)] shadow-sm hover:border-[#E76B24] hover:shadow-xl hover:-translate-y-1.5 hover:scale-[1.02] transition-all duration-300 flex flex-col"
             >
               {/* Card Image Cover */}
               <div className="h-44 w-full overflow-hidden relative">
@@ -166,7 +166,7 @@ export default function Services() {
                 </div>
 
                 {/* Icon Badge */}
-                <div className="absolute top-4 right-4 w-9 h-9 rounded-xl bg-white/95 shadow-sm border border-[rgba(190,30,46,0.12)] flex items-center justify-center text-base transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12">
+                <div className="absolute top-4 right-4 w-9 h-9 rounded-xl bg-white/95 shadow-sm border border-[rgba(231, 107, 36,0.12)] flex items-center justify-center text-base transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12">
                   {program.icon}
                 </div>
               </div>
@@ -175,14 +175,14 @@ export default function Services() {
               <div className="p-5 flex-1 flex flex-col justify-between text-left">
                 <div>
                   {/* Subtitle */}
-                  <p className="text-[#BE1E2E] text-[10px] font-bold tracking-widest uppercase mb-1 font-sans">
+                  <p className="text-[#E76B24] text-[10px] font-bold tracking-widest uppercase mb-1 font-sans">
                     {program.subtitle}
                   </p>
 
                   {/* Title */}
                   <h3 className="font-display font-bold text-lg text-[#111111] tracking-tight leading-tight mb-3 uppercase">
                     {program.titleFirst}{" "}
-                    <span className="text-[#BE1E2E]">{program.titleRed}</span>
+                    <span className="text-[#E76B24]">{program.titleRed}</span>
                   </h3>
 
                   {/* Description */}
@@ -194,7 +194,7 @@ export default function Services() {
                 {/* CTA Button */}
                 <Link href={program.href}>
                   <motion.div
-                    className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-xs font-semibold text-white bg-[#BE1E2E] hover:bg-[#A31827] hover:scale-[1.02] hover:shadow-[0_4px_15px_rgba(190,30,46,0.2)] transition-all duration-300 shadow-sm w-full group/btn"
+                    className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-xs font-semibold text-white bg-[#E76B24] hover:bg-[#C65516] hover:scale-[1.02] hover:shadow-[0_4px_15px_rgba(231, 107, 36,0.2)] transition-all duration-300 shadow-sm w-full group/btn"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
@@ -217,7 +217,7 @@ export default function Services() {
               </div>
 
               {/* Hover shimmer effect */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none bg-[linear-gradient(105deg,transparent_40%,rgba(190,30,46,0.02)_45%,rgba(190,30,46,0.04)_50%,rgba(190,30,46,0.02)_55%,transparent_60%)] bg-[length:200%_100%] group-hover:animate-[shimmer_1.5s_ease-in-out]" />
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none bg-[linear-gradient(105deg,transparent_40%,rgba(231, 107, 36,0.02)_45%,rgba(231, 107, 36,0.04)_50%,rgba(231, 107, 36,0.02)_55%,transparent_60%)] bg-[length:200%_100%] group-hover:animate-[shimmer_1.5s_ease-in-out]" />
             </motion.div>
           ))}
         </div>
@@ -235,7 +235,7 @@ export default function Services() {
           </p>
           <Link
             href="/bvoc"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[rgba(190,30,46,0.12)] text-neutral-600 hover:text-white hover:bg-[#BE1E2E] hover:border-[#BE1E2E] hover:scale-[1.02] hover:shadow-md transition-all duration-300 text-sm font-medium"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[rgba(231, 107, 36,0.12)] text-neutral-600 hover:text-white hover:bg-[#E76B24] hover:border-[#E76B24] hover:scale-[1.02] hover:shadow-md transition-all duration-300 text-sm font-medium"
           >
             <span>View All Programs</span>
             <svg

@@ -53,7 +53,7 @@ const STATS = [
 
 export default function Statistics() {
   return (
-    <section data-section-theme="dark" className="relative py-20 bg-[#0A0A0A] border-y border-[rgba(190,30,46,0.12)] overflow-hidden text-white">
+    <section data-section-theme="dark" className="relative py-20 bg-[#0A0A0A] border-y border-[rgba(231, 107, 36,0.12)] overflow-hidden text-white">
       {/* Background Lighting */}
       <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-primary/5 rounded-full blur-[80px] pointer-events-none" />
 

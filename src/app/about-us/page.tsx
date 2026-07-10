@@ -84,8 +84,8 @@ export default function AboutUsPage() {
             <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <pattern id="aboutGrid" width="40" height="40" patternUnits="userSpaceOnUse">
-                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#BE1E2E" strokeWidth="0.5" />
-                  <circle cx="40" cy="0" r="1.2" fill="#BE1E2E" />
+                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#E76B24" strokeWidth="0.5" />
+                  <circle cx="40" cy="0" r="1.2" fill="#E76B24" />
                 </pattern>
               </defs>
               <rect width="100%" height="100%" fill="url(#aboutGrid)" />
@@ -253,7 +253,7 @@ export default function AboutUsPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.04 }}
-                  className="relative break-inside-avoid rounded-2xl overflow-hidden border border-border hover:border-primary/50 shadow-sm hover:shadow-[0_8px_30px_rgba(190,30,46,0.12)] cursor-pointer group transition-all duration-300 bg-alt-section"
+                  className="relative break-inside-avoid rounded-2xl overflow-hidden border border-border hover:border-primary/50 shadow-sm hover:shadow-[0_8px_30px_rgba(231, 107, 36,0.12)] cursor-pointer group transition-all duration-300 bg-alt-section"
                 >
                   <img
                     src={imagePath}

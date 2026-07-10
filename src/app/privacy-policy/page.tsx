@@ -19,7 +19,7 @@ export default function PrivacyPolicyPage() {
           {/* Header */}
           <div className="border-b border-white/10 pb-8">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-normal tracking-wide text-white mb-4">
-              PRIVACY <span className="text-[#BE1E2E]">POLICY</span>
+              PRIVACY <span className="text-[#E76B24]">POLICY</span>
             </h1>
             <p className="text-zinc-400 text-sm sm:text-base">
               Last updated: May 01, 2025
@@ -37,7 +37,7 @@ export default function PrivacyPolicyPage() {
           {/* Interpretation and Definitions */}
           <section className="space-y-6">
             <h2 className="text-2xl sm:text-3xl font-normal text-white border-b border-white/10 pb-3">
-              Interpretation and <span className="text-[#BE1E2E]">Definitions</span>
+              Interpretation and <span className="text-[#E76B24]">Definitions</span>
             </h2>
             
             <div className="space-y-4">
@@ -100,7 +100,7 @@ export default function PrivacyPolicyPage() {
           {/* Collecting and Using Your Personal Data */}
           <section className="space-y-6 pt-6 border-t border-white/10">
             <h2 className="text-2xl sm:text-3xl font-normal text-white">
-              Collecting and Using Your <span className="text-[#BE1E2E]">Personal Data</span>
+              Collecting and Using Your <span className="text-[#E76B24]">Personal Data</span>
             </h2>
             
             <div className="space-y-6">
@@ -148,7 +148,7 @@ export default function PrivacyPolicyPage() {
           {/* Tracking Technologies and Cookies */}
           <section className="space-y-6 pt-6 border-t border-white/10">
             <h2 className="text-2xl sm:text-3xl font-normal text-white">
-              Tracking <span className="text-[#BE1E2E]">Technologies and Cookies</span>
+              Tracking <span className="text-[#E76B24]">Technologies and Cookies</span>
             </h2>
             
             <div className="space-y-4 leading-relaxed">
@@ -176,7 +176,7 @@ export default function PrivacyPolicyPage() {
               <div className="space-y-6 pt-4">
                 
                 {/* Necessary Cookies */}
-                <div className="bg-[#181818] border border-[rgba(190,30,46,0.12)] p-5 rounded-xl space-y-2 hover:border-[#BE1E2E] transition-colors duration-300">
+                <div className="bg-[#181818] border border-[rgba(231, 107, 36,0.12)] p-5 rounded-xl space-y-2 hover:border-[#E76B24] transition-colors duration-300">
                   <h4 className="text-lg font-normal text-white">
                     Necessary / Essential Cookies
                   </h4>
@@ -189,7 +189,7 @@ export default function PrivacyPolicyPage() {
                 </div>
 
                 {/* Cookies Policy Acceptance Cookies */}
-                <div className="bg-[#181818] border border-[rgba(190,30,46,0.12)] p-5 rounded-xl space-y-2 hover:border-[#BE1E2E] transition-colors duration-300">
+                <div className="bg-[#181818] border border-[rgba(231, 107, 36,0.12)] p-5 rounded-xl space-y-2 hover:border-[#E76B24] transition-colors duration-300">
                   <h4 className="text-lg font-normal text-white">
                     Cookies Policy / Notice Acceptance Cookies
                   </h4>
@@ -202,7 +202,7 @@ export default function PrivacyPolicyPage() {
                 </div>
 
                 {/* Functionality Cookies */}
-                <div className="bg-[#181818] border border-[rgba(190,30,46,0.12)] p-5 rounded-xl space-y-2 hover:border-[#BE1E2E] transition-colors duration-300">
+                <div className="bg-[#181818] border border-[rgba(231, 107, 36,0.12)] p-5 rounded-xl space-y-2 hover:border-[#E76B24] transition-colors duration-300">
                   <h4 className="text-lg font-normal text-white">
                     Functionality Cookies
                   </h4>
@@ -225,7 +225,7 @@ export default function PrivacyPolicyPage() {
           {/* Use of Your Personal Data */}
           <section className="space-y-6 pt-6 border-t border-white/10">
             <h2 className="text-2xl sm:text-3xl font-normal text-white">
-              Use of Your <span className="text-[#BE1E2E]">Personal Data</span>
+              Use of Your <span className="text-[#E76B24]">Personal Data</span>
             </h2>
             <div className="space-y-4 leading-relaxed">
               <p>
@@ -257,7 +257,7 @@ export default function PrivacyPolicyPage() {
           {/* Retention of Your Personal Data */}
           <section className="space-y-6 pt-6 border-t border-white/10">
             <h2 className="text-2xl sm:text-3xl font-normal text-white">
-              Retention of Your <span className="text-[#BE1E2E]">Personal Data</span>
+              Retention of Your <span className="text-[#E76B24]">Personal Data</span>
             </h2>
             <div className="space-y-4 leading-relaxed">
               <p>
@@ -272,7 +272,7 @@ export default function PrivacyPolicyPage() {
           {/* Transfer & Disclosure of Your Personal Data */}
           <section className="space-y-6 pt-6 border-t border-white/10">
             <h2 className="text-2xl sm:text-3xl font-normal text-white">
-              Transfer and Disclosure of <span className="text-[#BE1E2E]">Personal Data</span>
+              Transfer and Disclosure of <span className="text-[#E76B24]">Personal Data</span>
             </h2>
             <div className="space-y-4 leading-relaxed">
               <p>
@@ -287,7 +287,7 @@ export default function PrivacyPolicyPage() {
           {/* Security of Your Personal Data */}
           <section className="space-y-6 pt-6 border-t border-white/10">
             <h2 className="text-2xl sm:text-3xl font-normal text-white">
-              Security of Your <span className="text-[#BE1E2E]">Personal Data</span>
+              Security of Your <span className="text-[#E76B24]">Personal Data</span>
             </h2>
             <div className="space-y-4 leading-relaxed">
               <p>
@@ -299,7 +299,7 @@ export default function PrivacyPolicyPage() {
           {/* Children's Privacy */}
           <section className="space-y-6 pt-6 border-t border-white/10">
             <h2 className="text-2xl sm:text-3xl font-normal text-white">
-              Children&rsquo;s <span className="text-[#BE1E2E]">Privacy</span>
+              Children&rsquo;s <span className="text-[#E76B24]">Privacy</span>
             </h2>
             <div className="space-y-4 leading-relaxed">
               <p>
@@ -311,7 +311,7 @@ export default function PrivacyPolicyPage() {
           {/* Links to Other Websites */}
           <section className="space-y-6 pt-6 border-t border-white/10">
             <h2 className="text-2xl sm:text-3xl font-normal text-white">
-              Links to Other <span className="text-[#BE1E2E]">Websites</span>
+              Links to Other <span className="text-[#E76B24]">Websites</span>
             </h2>
             <div className="space-y-4 leading-relaxed">
               <p>
@@ -326,7 +326,7 @@ export default function PrivacyPolicyPage() {
           {/* Changes to this Privacy Policy */}
           <section className="space-y-6 pt-6 border-t border-white/10">
             <h2 className="text-2xl sm:text-3xl font-normal text-white">
-              Changes to this <span className="text-[#BE1E2E]">Privacy Policy</span>
+              Changes to this <span className="text-[#E76B24]">Privacy Policy</span>
             </h2>
             <div className="space-y-4 leading-relaxed">
               <p>
@@ -341,7 +341,7 @@ export default function PrivacyPolicyPage() {
           {/* Contact Us */}
           <section className="space-y-6 pt-6 border-t border-white/10">
             <h2 className="text-2xl sm:text-3xl font-normal text-white">
-              Contact <span className="text-[#BE1E2E]">Us</span>
+              Contact <span className="text-[#E76B24]">Us</span>
             </h2>
             <div className="space-y-4 leading-relaxed">
               <p>

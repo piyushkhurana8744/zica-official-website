@@ -32,7 +32,7 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" data-section-theme="light" className="relative py-24 bg-[#FFFFFF] overflow-hidden border-b border-[rgba(190,30,46,0.12)]">
+    <section id="faq" data-section-theme="light" className="relative py-24 bg-[#FFFFFF] overflow-hidden border-b border-[rgba(231, 107, 36,0.12)]">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-primary/2 rounded-full blur-[120px] pointer-events-none" />
 
@@ -44,7 +44,7 @@ export default function FAQ() {
             
             {/* Header Title */}
             <h2 className="font-display font-bold text-4xl sm:text-5xl tracking-tight leading-tight mb-4 text-[#111111] uppercase">
-              Frequently Asked <span className="text-[#BE1E2E]">Questions</span>
+              Frequently Asked <span className="text-[#E76B24]">Questions</span>
             </h2>
             
             {/* Header Subtitle */}
@@ -59,14 +59,14 @@ export default function FAQ() {
                 return (
                   <div
                     key={idx}
-                    className="bg-white border border-[rgba(190,30,46,0.12)] hover:border-[#BE1E2E] rounded-2xl p-5 shadow-sm hover:shadow-md transition-all duration-300"
+                    className="bg-white border border-[rgba(231, 107, 36,0.12)] hover:border-[#E76B24] rounded-2xl p-5 shadow-sm hover:shadow-md transition-all duration-300"
                   >
                     <button
                       onClick={() => toggleFAQ(idx)}
                       className="w-full flex items-center justify-between text-left focus:outline-none group cursor-pointer"
                     >
                       <span className={`font-sans text-sm sm:text-base transition-colors duration-300 ${
-                        isOpen ? "text-[#BE1E2E] font-semibold" : "text-[#111111] group-hover:text-[#BE1E2E] font-medium"
+                        isOpen ? "text-[#E76B24] font-semibold" : "text-[#111111] group-hover:text-[#E76B24] font-medium"
                       }`}>
                         {item.question}
                       </span>
@@ -74,8 +74,8 @@ export default function FAQ() {
                       {/* Arrow Icon */}
                       <div className={`ml-4 flex-shrink-0 h-6 w-6 rounded-full flex items-center justify-center transition-all duration-300 ${
                         isOpen 
-                          ? "bg-[#BE1E2E] text-white" 
-                          : "bg-transparent border border-[rgba(190,30,46,0.12)] text-[#111111] group-hover:bg-[#F5F5F5]"
+                          ? "bg-[#E76B24] text-white" 
+                          : "bg-transparent border border-[rgba(231, 107, 36,0.12)] text-[#111111] group-hover:bg-[#F5F5F5]"
                       }`}>
                         {isOpen ? (
                           <ChevronUp className="h-3.5 w-3.5" />
@@ -93,7 +93,7 @@ export default function FAQ() {
                           exit={{ height: 0, opacity: 0 }}
                           transition={{ duration: 0.3, ease: "easeInOut" }}
                         >
-                          <div className="pt-3 mt-3 border-t border-[rgba(190,30,46,0.12)] text-[#444444] text-xs sm:text-sm leading-relaxed font-light whitespace-pre-line">
+                          <div className="pt-3 mt-3 border-t border-[rgba(231, 107, 36,0.12)] text-[#444444] text-xs sm:text-sm leading-relaxed font-light whitespace-pre-line">
                             {item.answer}
                           </div>
                         </motion.div>

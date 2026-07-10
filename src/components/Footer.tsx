@@ -5,7 +5,7 @@ import { Youtube, Instagram, Facebook, Phone, Mail, Navigation } from "lucide-re
 
 export default function Footer() {
   return (
-    <footer data-section-theme="dark" className="relative bg-[#000000] pt-20 pb-12 border-t border-[rgba(190,30,46,0.12)] overflow-hidden">
+    <footer data-section-theme="dark" className="relative bg-[#000000] pt-20 pb-12 border-t border-[rgba(231, 107, 36,0.12)] overflow-hidden">
       
       {/* Background equalizer/grid decoration overlay */}
       <div 
@@ -157,13 +157,13 @@ export default function Footer() {
 
         {/* Social Icons - Centered under columns as in layout screenshot */}
         <div className="flex justify-center items-center space-x-6 py-6 border-t border-white/5">
-          <a href="#" className="h-10 w-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:text-[#BE1E2E] hover:border-[#BE1E2E] hover:scale-110 transition-all duration-300">
+          <a href="#" className="h-10 w-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:text-[#E76B24] hover:border-[#E76B24] hover:scale-110 transition-all duration-300">
             <Facebook className="h-5 w-5" />
           </a>
-          <a href="#" className="h-10 w-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:text-[#BE1E2E] hover:border-[#BE1E2E] hover:scale-110 transition-all duration-300">
+          <a href="#" className="h-10 w-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:text-[#E76B24] hover:border-[#E76B24] hover:scale-110 transition-all duration-300">
             <Youtube className="h-5 w-5" />
           </a>
-          <a href="#" className="h-10 w-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:text-[#BE1E2E] hover:border-[#BE1E2E] hover:scale-110 transition-all duration-300">
+          <a href="#" className="h-10 w-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:text-[#E76B24] hover:border-[#E76B24] hover:scale-110 transition-all duration-300">
             <Instagram className="h-5 w-5" />
           </a>
         </div>

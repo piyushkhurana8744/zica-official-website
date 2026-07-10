@@ -84,8 +84,8 @@ export default function Hero() {
       </div>
 
       {/* Floating Ambient Gradient Lights */}
-      <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] rounded-full bg-[#BE1E2E]/10 blur-[130px] pointer-events-none z-10 animate-pulse" />
-      <div className="absolute bottom-10 right-10 w-24 h-24 rounded-full bg-[#BE1E2E]/10 blur-xl z-10 animate-float-slow" />
+      <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] rounded-full bg-[#E76B24]/10 blur-[130px] pointer-events-none z-10 animate-pulse" />
+      <div className="absolute bottom-10 right-10 w-24 h-24 rounded-full bg-[#E76B24]/10 blur-xl z-10 animate-float-slow" />
       <div className="absolute top-20 right-1/4 w-32 h-32 rounded-full bg-white/5 blur-xl z-10 animate-float-slow" />
 
       {/* Hero Content Wrapper */}
@@ -101,7 +101,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 px-4 py-1.5 rounded-full mb-6 backdrop-blur-md"
             >
-              <span className="h-2 w-2 rounded-full bg-[#BE1E2E] animate-ping" />
+              <span className="h-2 w-2 rounded-full bg-[#E76B24] animate-ping" />
               <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-white/90 font-sans">
                 Admissions Open 2026 - 2027
               </span>
@@ -121,7 +121,7 @@ export default function Hero() {
                   <h1 className="font-display font-light text-2xl sm:text-4xl md:text-5xl lg:text-6.5xl text-white tracking-tight leading-tight uppercase">
                     {HERO_SLIDES[currentSlide].title}
                   </h1>
-                  <h2 className="font-display font-black text-3xl sm:text-5xl md:text-6xl lg:text-7.5xl text-[#BE1E2E] leading-none mt-1 select-none uppercase">
+                  <h2 className="font-display font-black text-3xl sm:text-5xl md:text-6xl lg:text-7.5xl text-[#E76B24] leading-none mt-1 select-none uppercase">
                     {HERO_SLIDES[currentSlide].highlight}
                   </h2>
                 </motion.div>
@@ -147,7 +147,7 @@ export default function Hero() {
             >
               <a
                 href="#services"
-                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full font-bold text-xs uppercase tracking-wider text-white bg-[#BE1E2E] hover:bg-[#A31827] hover:scale-[1.02] hover:shadow-[0_4px_25px_rgba(190,30,46,0.3)] transition-all duration-300 group cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full font-bold text-xs uppercase tracking-wider text-white bg-[#E76B24] hover:bg-[#C65516] hover:scale-[1.02] hover:shadow-[0_4px_25px_rgba(231, 107, 36,0.3)] transition-all duration-300 group cursor-pointer"
               >
                 <span>Explore Programs</span>
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />

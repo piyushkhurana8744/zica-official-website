@@ -30,7 +30,7 @@ function WhatsAppIcon({ className }: { className?: string }) {
 const AWARDS = [
   { year: "2024", title: "Best Animation Institute", org: "National Education Excellence Awards", icon: Trophy, color: "from-amber-400 to-yellow-600" },
   { year: "2023", title: "Outstanding Creative Education", org: "India Education Summit", icon: Crown, color: "from-violet-400 to-purple-600" },
-  { year: "2022", title: "Excellence in VFX Training", org: "CG Society India Awards", icon: Sparkles, color: "from-[#BE1E2E] to-rose-600" },
+  { year: "2022", title: "Excellence in VFX Training", org: "CG Society India Awards", icon: Sparkles, color: "from-[#E76B24] to-rose-600" },
   { year: "2021", title: "Top Animation Academy", org: "Digital India Design Awards", icon: Star, color: "from-emerald-400 to-green-600" },
   { year: "2020", title: "Best Placement Record", org: "EdTech Excellence Awards", icon: Medal, color: "from-cyan-400 to-blue-600" },
   { year: "2019", title: "Innovation in Curriculum", org: "Creative Industry Awards", icon: Zap, color: "from-orange-400 to-red-500" },
@@ -58,8 +58,8 @@ export default function AwardsAndRecognitionPage() {
             <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <pattern id="awardGrid" width="40" height="40" patternUnits="userSpaceOnUse">
-                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#BE1E2E" strokeWidth="0.5" opacity="0.3" />
-                  <circle cx="40" cy="0" r="1.5" fill="#BE1E2E" opacity="0.6" />
+                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#E76B24" strokeWidth="0.5" opacity="0.3" />
+                  <circle cx="40" cy="0" r="1.5" fill="#E76B24" opacity="0.6" />
                 </pattern>
               </defs>
               <rect width="100%" height="100%" fill="url(#awardGrid)" />
@@ -67,8 +67,8 @@ export default function AwardsAndRecognitionPage() {
           </div>
 
           {/* Ambient Glowing Blobs */}
-          <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full bg-[#BE1E2E]/5 blur-[120px] pointer-events-none" />
-          <div className="absolute bottom-1/4 right-1/3 translate-x-1/2 translate-y-1/2 w-[500px] h-[250px] rounded-full bg-[#BE1E2E]/5 blur-[100px] pointer-events-none" />
+          <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full bg-[#E76B24]/5 blur-[120px] pointer-events-none" />
+          <div className="absolute bottom-1/4 right-1/3 translate-x-1/2 translate-y-1/2 w-[500px] h-[250px] rounded-full bg-[#E76B24]/5 blur-[100px] pointer-events-none" />
 
           <div className="relative z-10 text-center flex flex-col items-center">
             <motion.h1
@@ -77,7 +77,7 @@ export default function AwardsAndRecognitionPage() {
               transition={{ duration: 0.8 }}
               className="font-display font-black text-4xl sm:text-6xl text-white tracking-tight uppercase mb-4"
             >
-              Awards & <span className="text-[#BE1E2E]">Recognition</span>
+              Awards & <span className="text-[#E76B24]">Recognition</span>
             </motion.h1>
             <motion.div
               initial={{ opacity: 0 }}
@@ -85,7 +85,7 @@ export default function AwardsAndRecognitionPage() {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="flex items-center space-x-2 text-xs sm:text-sm font-semibold tracking-wide uppercase"
             >
-              <Link href="/" className="text-[#BE1E2E] hover:text-red-500 transition-colors duration-300">Homepage</Link>
+              <Link href="/" className="text-[#E76B24] hover:text-red-500 transition-colors duration-300">Homepage</Link>
               <span className="text-zinc-400">/</span>
               <span className="text-zinc-200">Awards & Recognition</span>
             </motion.div>
@@ -106,11 +106,11 @@ export default function AwardsAndRecognitionPage() {
               {/* Left: Sidebar */}
               <div className="lg:col-span-3 flex flex-col items-start gap-6 relative">
                 <div className="flex flex-row md:flex-col items-center gap-4 self-stretch md:self-start z-20">
-                  <Link href="/" className="h-10 w-10 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 hover:border-[#BE1E2E]/50 hover:bg-[#BE1E2E]/10 text-white transition-all duration-300 group shadow-md">
+                  <Link href="/" className="h-10 w-10 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 hover:border-[#E76B24]/50 hover:bg-[#E76B24]/10 text-white transition-all duration-300 group shadow-md">
                     <ArrowLeft className="h-5 w-5 group-hover:-translate-x-1 transition-transform" />
                   </Link>
-                  <div className="flex md:flex-col items-stretch rounded-2xl overflow-hidden border border-[rgba(190,30,46,0.12)] shadow-xl bg-[#0A0A0A]">
-                    <div className="flex items-center justify-center bg-[#BE1E2E] hover:bg-[#A31827] text-white px-3.5 py-5 transition-colors cursor-pointer select-none">
+                  <div className="flex md:flex-col items-stretch rounded-2xl overflow-hidden border border-[rgba(231, 107, 36,0.12)] shadow-xl bg-[#0A0A0A]">
+                    <div className="flex items-center justify-center bg-[#E76B24] hover:bg-[#C65516] text-white px-3.5 py-5 transition-colors cursor-pointer select-none">
                       <div className="flex items-center gap-2 whitespace-nowrap text-xs font-bold [writing-mode:vertical-lr] rotate-180 uppercase tracking-widest">
                         <Mail className="h-3.5 w-3.5 rotate-90" />
                         <span>Contact Us</span>
@@ -119,7 +119,7 @@ export default function AwardsAndRecognitionPage() {
                     <a href="https://wa.me/917900400300" target="_blank" rel="noopener noreferrer" className="h-12 w-12 flex items-center justify-center bg-[#22C55E] hover:bg-[#1eab50] text-white transition-colors cursor-pointer" title="Chat on WhatsApp">
                       <WhatsAppIcon className="h-6 w-6" />
                     </a>
-                    <a href="tel:+917900400300" className="h-12 w-12 flex items-center justify-center bg-[#BE1E2E] hover:bg-[#A31827] text-white transition-colors cursor-pointer" title="Call Us">
+                    <a href="tel:+917900400300" className="h-12 w-12 flex items-center justify-center bg-[#E76B24] hover:bg-[#C65516] text-white transition-colors cursor-pointer" title="Call Us">
                       <Phone className="h-5 w-5" />
                     </a>
                   </div>
@@ -132,7 +132,7 @@ export default function AwardsAndRecognitionPage() {
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
-                  className="text-xs font-bold tracking-[0.25em] text-[#BE1E2E] uppercase mb-4"
+                  className="text-xs font-bold tracking-[0.25em] text-[#E76B24] uppercase mb-4"
                 >
                   A Legacy of Excellence
                 </motion.span>
@@ -143,7 +143,7 @@ export default function AwardsAndRecognitionPage() {
                   transition={{ duration: 0.6 }}
                   className="font-display font-black text-3xl sm:text-5xl text-white uppercase tracking-tight mb-6 leading-tight"
                 >
-                  ZICA Awards & <span className="text-[#BE1E2E]">Recognition</span>
+                  ZICA Awards & <span className="text-[#E76B24]">Recognition</span>
                 </motion.h2>
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
@@ -173,9 +173,9 @@ export default function AwardsAndRecognitionPage() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: idx * 0.08 }}
-                      className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-4 text-center hover:border-[#BE1E2E]/30 transition-all duration-300"
+                      className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-4 text-center hover:border-[#E76B24]/30 transition-all duration-300"
                     >
-                      <div className="font-display font-black text-2xl text-[#BE1E2E] mb-1">{h.value}</div>
+                      <div className="font-display font-black text-2xl text-[#E76B24] mb-1">{h.value}</div>
                       <div className="text-zinc-500 text-[10px] uppercase tracking-widest font-semibold">{h.label}</div>
                     </motion.div>
                   ))}
@@ -191,16 +191,16 @@ export default function AwardsAndRecognitionPage() {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-primary/5 rounded-full blur-[140px] pointer-events-none" />
           <div className="max-w-5xl mx-auto px-6 relative z-10">
             <div className="text-center mb-16">
-              <span className="text-xs font-bold tracking-[0.25em] text-[#BE1E2E] uppercase mb-3 block">Our Achievements</span>
+              <span className="text-xs font-bold tracking-[0.25em] text-[#E76B24] uppercase mb-3 block">Our Achievements</span>
               <h2 className="font-display font-black text-3xl sm:text-5xl text-white tracking-tight uppercase">
-                Award <span className="text-[#BE1E2E]">Timeline</span>
+                Award <span className="text-[#E76B24]">Timeline</span>
               </h2>
             </div>
 
             {/* Timeline Grid */}
             <div className="relative">
               {/* Vertical Line */}
-              <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[#BE1E2E]/30 to-transparent md:-translate-x-px" />
+              <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[#E76B24]/30 to-transparent md:-translate-x-px" />
 
               <div className="space-y-12">
                 {AWARDS.map((award, idx) => {
@@ -215,16 +215,16 @@ export default function AwardsAndRecognitionPage() {
                       className={`relative flex items-center gap-6 ${isLeft ? "md:flex-row" : "md:flex-row-reverse"} flex-row`}
                     >
                       {/* Dot on Timeline */}
-                      <div className="absolute left-6 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[#BE1E2E] border-4 border-[#0A0A0A] z-10 shadow-[0_0_15px_rgba(190,30,46,0.4)]" />
+                      <div className="absolute left-6 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[#E76B24] border-4 border-[#0A0A0A] z-10 shadow-[0_0_15px_rgba(231, 107, 36,0.4)]" />
 
                       {/* Content Card */}
                       <div className={`ml-14 md:ml-0 md:w-[calc(50%-2rem)] ${isLeft ? "md:pr-8 md:text-right" : "md:pl-8 md:text-left"}`}>
-                        <div className={`bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6 hover:border-[#BE1E2E]/30 transition-all duration-300 group`}>
+                        <div className={`bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6 hover:border-[#E76B24]/30 transition-all duration-300 group`}>
                           <div className={`flex items-center gap-3 mb-3 ${isLeft ? "md:justify-end" : "md:justify-start"}`}>
                             <div className={`h-10 w-10 rounded-xl bg-gradient-to-br ${award.color} flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform`}>
                               <award.icon className="h-5 w-5" />
                             </div>
-                            <span className="text-[#BE1E2E] text-sm font-black tracking-wide">{award.year}</span>
+                            <span className="text-[#E76B24] text-sm font-black tracking-wide">{award.year}</span>
                           </div>
                           <h3 className="text-white font-bold text-lg mb-1">{award.title}</h3>
                           <p className="text-zinc-500 text-xs uppercase tracking-wider font-semibold">{award.org}</p>
@@ -242,7 +242,7 @@ export default function AwardsAndRecognitionPage() {
         </section>
 
         {/* ═══════════════ ENQUIRY + CTA ═══════════════ */}
-        <section data-section-theme="dark" className="relative py-28 bg-[#141414] border-t border-[rgba(190,30,46,0.12)]">
+        <section data-section-theme="dark" className="relative py-28 bg-[#141414] border-t border-[rgba(231, 107, 36,0.12)]">
           <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[400px] h-[400px] bg-primary/2 rounded-full blur-[100px] pointer-events-none" />
           <div className="max-w-7xl mx-auto px-6 relative z-10">
 
@@ -250,15 +250,15 @@ export default function AwardsAndRecognitionPage() {
             <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
               <div className="text-center lg:text-left">
                 <h3 className="font-display font-black text-3xl sm:text-5xl text-white tracking-tight mb-2 leading-none">
-                  Still <span className="text-[#BE1E2E]">Confused!!!</span>
+                  Still <span className="text-[#E76B24]">Confused!!!</span>
                 </h3>
                 <p className="text-zinc-300 text-sm sm:text-base font-light tracking-wide">Get Instant Clarity</p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                <a href="tel:+917900400300" className="px-8 py-3.5 bg-[#BE1E2E] hover:bg-[#A31827] text-white font-bold text-sm tracking-wide rounded-full text-center transition-all duration-300 shadow-lg cursor-pointer">
+                <a href="tel:+917900400300" className="px-8 py-3.5 bg-[#E76B24] hover:bg-[#C65516] text-white font-bold text-sm tracking-wide rounded-full text-center transition-all duration-300 shadow-lg cursor-pointer">
                   Talk to Counsellor
                 </a>
-                <a href="/ZICA-BROCHURE.pdf" download className="px-8 py-3.5 bg-[#BE1E2E] hover:bg-[#A31827] text-white font-bold text-sm tracking-wide rounded-full text-center transition-all duration-300 shadow-lg cursor-pointer">
+                <a href="/ZICA-BROCHURE.pdf" download className="px-8 py-3.5 bg-[#E76B24] hover:bg-[#C65516] text-white font-bold text-sm tracking-wide rounded-full text-center transition-all duration-300 shadow-lg cursor-pointer">
                   Download Brochure
                 </a>
               </div>
