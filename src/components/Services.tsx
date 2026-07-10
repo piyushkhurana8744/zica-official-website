@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
 
 const PROGRAMS = [
@@ -16,7 +16,6 @@ const PROGRAMS = [
     href: "/vfx",
     duration: "24 Months",
     icon: "🎬",
-    color: "from-rose-500/80 to-red-900/90",
   },
   {
     titleFirst: "Game Arts",
@@ -29,7 +28,6 @@ const PROGRAMS = [
     href: "/game-design",
     duration: "12 Months",
     icon: "🎮",
-    color: "from-violet-500/80 to-purple-900/90",
   },
   {
     titleFirst: "Digital",
@@ -42,7 +40,6 @@ const PROGRAMS = [
     href: "/digital-photography",
     duration: "6 Months",
     icon: "📸",
-    color: "from-amber-500/80 to-orange-900/90",
   },
   {
     titleFirst: "Interior",
@@ -55,7 +52,6 @@ const PROGRAMS = [
     href: "/interior-design",
     duration: "12 Months",
     icon: "🏠",
-    color: "from-emerald-500/80 to-teal-900/90",
   },
   {
     titleFirst: "Digital",
@@ -68,7 +64,6 @@ const PROGRAMS = [
     href: "/digital-marketing",
     duration: "6 Months",
     icon: "📈",
-    color: "from-sky-500/80 to-blue-900/90",
   },
   {
     titleFirst: "Web",
@@ -81,7 +76,6 @@ const PROGRAMS = [
     href: "/web-design",
     duration: "6 Months",
     icon: "💻",
-    color: "from-cyan-500/80 to-indigo-900/90",
   },
   {
     titleFirst: "Fashion",
@@ -94,7 +88,6 @@ const PROGRAMS = [
     href: "/fashion-design",
     duration: "12 Months",
     icon: "👗",
-    color: "from-pink-500/80 to-rose-900/90",
   },
   {
     titleFirst: "Animation &",
@@ -107,7 +100,6 @@ const PROGRAMS = [
     href: "/3d-animation",
     duration: "12 Months",
     icon: "✨",
-    color: "from-fuchsia-500/80 to-purple-900/90",
   },
 ];
 
@@ -117,11 +109,11 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="relative py-28 bg-[#050505] overflow-hidden"
+      data-section-theme="light"
+      className="relative py-28 bg-[#FFFFFF] overflow-hidden border-b border-[rgba(190,30,46,0.12)]"
     >
       {/* Background ambient effects */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[400px] bg-red-950/8 rounded-full blur-[150px] pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-purple-950/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[400px] bg-primary/2 rounded-full blur-[150px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Section Header */}
@@ -132,16 +124,13 @@ export default function Services() {
           transition={{ duration: 0.7 }}
           className="text-center max-w-3xl mx-auto mb-20"
         >
-          <span className="inline-block text-[10px] sm:text-xs uppercase tracking-[0.3em] text-[#BE1E2E] font-semibold mb-4 border border-[#BE1E2E]/20 rounded-full px-4 py-1.5 bg-[#BE1E2E]/5">
+          <span className="inline-block text-[10px] sm:text-xs uppercase tracking-[0.3em] text-[#BE1E2E] font-semibold mb-4 border border-[rgba(190,30,46,0.2)] rounded-full px-4 py-1.5 bg-brand-tint font-sans">
             Our Programs
           </span>
-          <h2 className="font-display font-bold text-4xl sm:text-5xl text-white tracking-tight mb-6 leading-[1.15]">
-            Discover Our{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#BE1E2E] to-rose-400">
-              Creative Programs
-            </span>
+          <h2 className="font-display font-bold text-4xl sm:text-5xl text-[#111111] tracking-tight mb-6 leading-[1.15] uppercase">
+            Discover Our <span className="text-[#BE1E2E]">Creative Programs</span>
           </h2>
-          <p className="text-zinc-400 text-sm sm:text-base leading-relaxed font-light">
+          <p className="text-[#444444] text-sm sm:text-base leading-relaxed font-light">
             Explore our diverse programs in Animation, VFX, Gaming, Interior
             Design, Graphic Design, Fashion Design, Digital Marketing, and
             Photography. Your canvas is waiting.
@@ -159,73 +148,55 @@ export default function Services() {
               transition={{ duration: 0.5, delay: idx * 0.07 }}
               onMouseEnter={() => setHoveredIdx(idx)}
               onMouseLeave={() => setHoveredIdx(null)}
-              className="group relative rounded-2xl overflow-hidden cursor-pointer"
-              style={{ aspectRatio: "3/4" }}
+              className="group relative rounded-3xl overflow-hidden cursor-pointer bg-white border border-[rgba(190,30,46,0.12)] shadow-sm hover:border-[#BE1E2E] hover:shadow-xl hover:-translate-y-1.5 hover:scale-[1.02] transition-all duration-300 flex flex-col"
             >
-              {/* Background Image */}
-              <div className="absolute inset-0">
+              {/* Card Image Cover */}
+              <div className="h-44 w-full overflow-hidden relative">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={program.image}
                   alt={`${program.titleFirst} ${program.titleRed}`}
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                  loading="lazy"
                 />
-              </div>
+                
+                {/* Duration Badge */}
+                <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-sm border border-white/10 text-[9px] font-bold text-white uppercase tracking-wider font-sans">
+                  {program.duration}
+                </div>
 
-              {/* Default Gradient Overlay */}
-              <div
-                className={`absolute inset-0 bg-gradient-to-t ${program.color} opacity-60 group-hover:opacity-90 transition-opacity duration-500`}
-              />
-
-              {/* Dark bottom gradient for text readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
-
-              {/* Icon Badge */}
-              <div className="absolute top-4 right-4 w-10 h-10 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12">
-                {program.icon}
-              </div>
-
-              {/* Duration Badge */}
-              <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/40 backdrop-blur-sm border border-white/10 text-[10px] font-semibold text-white/80 uppercase tracking-wider">
-                {program.duration}
+                {/* Icon Badge */}
+                <div className="absolute top-4 right-4 w-9 h-9 rounded-xl bg-white/95 shadow-sm border border-[rgba(190,30,46,0.12)] flex items-center justify-center text-base transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12">
+                  {program.icon}
+                </div>
               </div>
 
               {/* Content Container */}
-              <div className="absolute inset-x-0 bottom-0 p-5 flex flex-col justify-end">
-                {/* Title */}
-                <h3 className="font-display font-bold text-xl sm:text-2xl text-white tracking-tight leading-tight mb-1 drop-shadow-lg">
-                  {program.titleFirst}{" "}
-                  <span className="text-white/90">{program.titleRed}</span>
-                </h3>
+              <div className="p-5 flex-1 flex flex-col justify-between text-left">
+                <div>
+                  {/* Subtitle */}
+                  <p className="text-[#BE1E2E] text-[10px] font-bold tracking-widest uppercase mb-1 font-sans">
+                    {program.subtitle}
+                  </p>
 
-                {/* Subtitle */}
-                <p className="text-white/60 text-xs font-medium tracking-wide uppercase mb-3">
-                  {program.subtitle}
-                </p>
+                  {/* Title */}
+                  <h3 className="font-display font-bold text-lg text-[#111111] tracking-tight leading-tight mb-3 uppercase">
+                    {program.titleFirst}{" "}
+                    <span className="text-[#BE1E2E]">{program.titleRed}</span>
+                  </h3>
 
-                {/* Expandable Description */}
-                <AnimatePresence>
-                  {hoveredIdx === idx && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
-                      className="overflow-hidden"
-                    >
-                      <p className="text-white/70 text-xs leading-relaxed mb-4">
-                        {program.description}
-                      </p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                  {/* Description */}
+                  <p className="text-[#444444] text-xs leading-relaxed font-light mb-4 line-clamp-3">
+                    {program.description}
+                  </p>
+                </div>
 
                 {/* CTA Button */}
                 <Link href={program.href}>
                   <motion.div
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold text-white bg-[#BE1E2E] hover:bg-red-600 transition-all duration-300 shadow-[0_4px_15px_rgba(190,30,46,0.3)] hover:shadow-[0_6px_25px_rgba(190,30,46,0.5)] w-fit group/btn"
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.97 }}
+                    className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-xs font-semibold text-white bg-[#BE1E2E] hover:bg-[#A31827] hover:scale-[1.02] hover:shadow-[0_4px_15px_rgba(190,30,46,0.2)] transition-all duration-300 shadow-sm w-full group/btn"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                   >
                     Explore Course
                     <svg
@@ -246,7 +217,7 @@ export default function Services() {
               </div>
 
               {/* Hover shimmer effect */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none bg-[linear-gradient(105deg,transparent_40%,rgba(255,255,255,0.03)_45%,rgba(255,255,255,0.05)_50%,rgba(255,255,255,0.03)_55%,transparent_60%)] bg-[length:200%_100%] group-hover:animate-[shimmer_1.5s_ease-in-out]" />
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none bg-[linear-gradient(105deg,transparent_40%,rgba(190,30,46,0.02)_45%,rgba(190,30,46,0.04)_50%,rgba(190,30,46,0.02)_55%,transparent_60%)] bg-[length:200%_100%] group-hover:animate-[shimmer_1.5s_ease-in-out]" />
             </motion.div>
           ))}
         </div>
@@ -259,16 +230,16 @@ export default function Services() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-center mt-16"
         >
-          <p className="text-zinc-500 text-xs sm:text-sm mb-4">
+          <p className="text-text-secondary text-xs sm:text-sm mb-4 font-light">
             Can&apos;t find what you&apos;re looking for?
           </p>
           <Link
             href="/bvoc"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/10 text-white/80 text-sm font-medium hover:bg-white/5 hover:border-white/20 transition-all duration-300"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[rgba(190,30,46,0.12)] text-neutral-600 hover:text-white hover:bg-[#BE1E2E] hover:border-[#BE1E2E] hover:scale-[1.02] hover:shadow-md transition-all duration-300 text-sm font-medium"
           >
-            View All Programs
+            <span>View All Programs</span>
             <svg
-              className="w-4 h-4"
+              className="w-4 h-4 text-text-secondary"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -277,7 +248,7 @@ export default function Services() {
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
               />
             </svg>
           </Link>

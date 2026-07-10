@@ -2,8 +2,9 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown, Search, ArrowRight, Sparkles, Film, Gamepad, Paintbrush, Video, Award } from "lucide-react";
+import { Menu, X, ChevronDown, Search, ArrowRight, Sparkles, Film, Gamepad, Paintbrush } from "lucide-react";
 import { useRouter } from "next/navigation";
+
 
 // Categorized courses for the Mega Menu
 const MEGA_MENU_CATEGORIES = [
@@ -68,6 +69,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isNavbarDark, setIsNavbarDark] = useState(true);
   
   // Navigation states
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -79,7 +81,7 @@ export default function Navbar() {
   const [searchQuery, setSearchQuery] = useState("");
   const searchInputRef = useRef<HTMLInputElement>(null);
 
-  // Handle Scroll Direction & Shrinking (Headroom)
+  // Handle Scroll Direction & Shrinking (Headroom) & Section Theme Intersection
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -87,18 +89,37 @@ export default function Navbar() {
       // Scrolled state for backdrop styling
       setScrolled(currentScrollY > 20);
 
-      // Hide navbar when scrolling down, show when scrolling up
-      if (currentScrollY > 80 && currentScrollY > lastScrollY) {
-        setHidden(true);
-        setActiveDropdown(null);
-      } else if (currentScrollY < lastScrollY) {
-        setHidden(false);
-      }
+      // Permanently visible sticky navbar (auto-hiding headroom disabled)
+      setHidden(false);
       
       setLastScrollY(currentScrollY);
+
+      // Section Theme Detector: detect if navbar is over a dark or light section
+      const navbarHeight = 80;
+      const sections = document.querySelectorAll("section, footer, main > div > section, main > section, main");
+      let currentTheme = "dark"; // Default to dark (Hero is dark)
+      let found = false;
+
+      sections.forEach((section) => {
+        if (found) return;
+        const rect = section.getBoundingClientRect();
+        // Check if this section is intersecting with the navbar position (top of viewport)
+        // We use a buffer of 50px to handle layout padding (e.g., pt-24 pushing sections down)
+        if (rect.top <= navbarHeight + 50 && rect.bottom >= 10) {
+          const theme = section.getAttribute("data-section-theme") || section.getAttribute("data-theme");
+          if (theme === "dark" || theme === "light") {
+            currentTheme = theme;
+            found = true;
+          }
+        }
+      });
+
+      setIsNavbarDark(currentTheme === "dark");
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
+    // Run once initially
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
@@ -146,27 +167,27 @@ export default function Navbar() {
       <AnimatePresence>
         {searchOpen && (
           <div className="fixed inset-0 z-50 flex items-start justify-center pt-24 px-4 bg-black/80 backdrop-blur-md">
-            {/* Modal Box */}
+            {/* Modal Box — theme-aware via CSS vars */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: -20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: -20 }}
-              className="bg-zinc-950 border border-white/10 rounded-2xl w-full max-w-xl shadow-2xl overflow-hidden"
+              className="bg-card border border-border rounded-3xl w-full max-w-xl shadow-2xl overflow-hidden"
             >
               {/* Input Header */}
-              <div className="flex items-center px-4 border-b border-white/5">
-                <Search className="h-5 w-5 text-zinc-400 mr-3" />
+              <div className="flex items-center px-4 border-b border-border">
+                <Search className="h-5 w-5 text-muted-text mr-3" />
                 <input
                   ref={searchInputRef}
                   type="text"
                   placeholder="Search courses (e.g. VFX, Blender...)"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full bg-transparent text-white placeholder-zinc-500 py-4 outline-none text-sm"
+                  className="w-full bg-transparent text-heading placeholder:text-muted-text/60 py-4 outline-none text-sm font-sans"
                 />
                 <button
                   onClick={() => setSearchOpen(false)}
-                  className="text-xs uppercase tracking-wider text-zinc-500 hover:text-white border border-white/10 px-2.5 py-1 rounded"
+                  className="text-xs uppercase tracking-wider text-paragraph hover:text-heading border border-border px-2.5 py-1 rounded"
                 >
                   ESC
                 </button>
@@ -179,21 +200,21 @@ export default function Navbar() {
                     <button
                       key={idx}
                       onClick={() => navigateToCourse(course.href)}
-                      className="w-full flex items-center justify-between p-3 rounded-lg text-left hover:bg-white/5 transition-colors group cursor-pointer"
+                      className="w-full flex items-center justify-between p-3 rounded-lg text-left hover:bg-light-bg transition-colors group cursor-pointer"
                     >
                       <div>
-                        <div className="text-white text-sm font-medium group-hover:text-[#BE1E2E] transition-colors">
+                        <div className="text-heading text-sm font-medium group-hover:text-primary transition-colors">
                           {course.name}
                         </div>
-                        <div className="text-[10px] uppercase tracking-wider text-zinc-500 mt-0.5">
+                        <div className="text-[10px] uppercase tracking-wider text-muted-text mt-0.5">
                           {course.category}
                         </div>
                       </div>
-                      <ArrowRight className="h-4 w-4 text-zinc-600 group-hover:text-white transition-colors" />
+                      <ArrowRight className="h-4 w-4 text-muted-text group-hover:text-primary transition-colors" />
                     </button>
                   ))
                 ) : (
-                  <div className="text-zinc-500 text-sm text-center py-6">
+                  <div className="text-muted-text text-sm text-center py-6">
                     No courses found matching &ldquo;{searchQuery}&rdquo;
                   </div>
                 )}
@@ -207,10 +228,14 @@ export default function Navbar() {
       <motion.nav
         animate={{ y: hidden ? -100 : 0 }}
         transition={{ duration: 0.3 }}
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
-          scrolled
-            ? "bg-black/90 backdrop-blur-xl py-3 border-b border-white/5 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.8)]"
-            : "bg-transparent py-5"
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+          isNavbarDark
+            ? scrolled
+              ? "bg-[#0A0A0A] border-b border-[rgba(190,30,46,0.2)] shadow-[0_2px_20px_rgba(0,0,0,0.5)] py-3"
+              : "bg-[#0A0A0A] py-5"
+            : scrolled
+              ? "bg-white border-b border-[rgba(0,0,0,0.06)] shadow-[0_2px_15px_rgba(0,0,0,0.06)] py-3"
+              : "bg-white py-5"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
@@ -219,18 +244,23 @@ export default function Navbar() {
           <a href="/" className="flex items-center select-none group cursor-pointer">
             <div className="flex items-center justify-center transition-transform duration-300 group-hover:scale-95">
               <img
-                src="/ZICA-LOGO.png"
+                src={isNavbarDark ? "/ZICA-LOGO.png" : "/ZICA_LIGHT_LOGO.png"}
                 alt="ZICA Logo"
-                className="h-14 sm:h-16 md:h-20 w-auto object-contain transition-all duration-300"
+                className={`h-14 sm:h-16 md:h-20 w-auto object-contain transition-all duration-300 ${
+                  isNavbarDark ? "" : "mix-blend-multiply"
+                }`}
               />
             </div>
           </a>
 
           {/* Desktop Nav Links */}
           <div className="hidden lg:flex items-center space-x-8">
-            <a href="/" className="text-sm font-sans font-medium text-white/80 hover:text-white transition-colors py-2 relative group">
+            <a
+              href="/"
+              className={`text-sm font-sans font-medium transition-colors py-2 relative group ${isNavbarDark ? "text-white hover:text-primary" : "text-[#111111] hover:text-primary"}`}
+            >
               Home
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#BE1E2E] transition-all group-hover:w-full" />
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
             </a>
 
             {/* Courses (Stripe Mega Menu Trigger) */}
@@ -239,9 +269,11 @@ export default function Navbar() {
               onMouseEnter={() => setActiveDropdown("courses")}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button className="flex items-center space-x-1.5 text-sm font-sans font-medium text-white/80 hover:text-white focus:outline-none transition-colors cursor-pointer">
+              <button
+                className={`flex items-center space-x-1.5 text-sm font-sans font-medium focus:outline-none transition-colors cursor-pointer ${isNavbarDark ? "text-white hover:text-primary" : "text-[#111111] hover:text-primary"}`}
+              >
                 <span>Courses</span>
-                <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${activeDropdown === "courses" ? "rotate-180 text-[#BE1E2E]" : ""}`} />
+                <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${activeDropdown === "courses" ? "rotate-180 text-primary" : ""}`} />
               </button>
 
               {/* Mega Dropdown Panel */}
@@ -252,28 +284,28 @@ export default function Navbar() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 15 }}
                     transition={{ duration: 0.25 }}
-                    className="absolute left-1/2 -translate-x-1/2 top-full mt-2 bg-zinc-950/95 border border-white/10 p-8 rounded-2xl shadow-2xl backdrop-blur-xl w-[900px] z-50 grid grid-cols-4 gap-8"
+                    className="absolute left-1/2 -translate-x-1/2 top-full mt-3 bg-[#111111] border border-white/[0.08] p-8 rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.8)] w-[900px] z-50 grid grid-cols-4 gap-8"
                   >
                     {/* Columns 1, 2, 3: Course Categories */}
                     {MEGA_MENU_CATEGORIES.map((cat, idx) => {
                       const Icon = cat.icon;
                       return (
                         <div key={idx} className="flex flex-col space-y-4">
-                          <div className="flex items-center space-x-2 border-b border-white/5 pb-2 text-zinc-400">
-                            <Icon className="h-4 w-4 text-[#BE1E2E]" />
-                            <span className="text-[10px] uppercase font-bold tracking-wider">{cat.title}</span>
+                          <div className="flex items-center space-x-2 border-b border-white/[0.08] pb-2">
+                            <Icon className="h-4 w-4 text-primary" />
+                            <span className="text-[10px] uppercase font-bold tracking-wider font-sans text-white/50">{cat.title}</span>
                           </div>
-                          <ul className="space-y-3">
+                          <ul className="space-y-1">
                             {cat.items.map((item, iIdx) => (
                               <li key={iIdx}>
                                 <a
                                   href={item.href}
-                                  className="block rounded-lg p-2 hover:bg-white/5 transition-colors group"
+                                  className="block rounded-lg px-3 py-2 hover:bg-white/[0.06] transition-colors group"
                                 >
-                                  <div className="text-[13px] font-semibold text-zinc-100 group-hover:text-[#BE1E2E] transition-colors">
+                                  <div className="text-[13px] font-semibold text-white/80 group-hover:text-primary transition-colors">
                                     {item.name}
                                   </div>
-                                  <div className="text-[10px] text-zinc-500 font-light mt-0.5">
+                                  <div className="text-[10px] text-white/35 font-light mt-0.5">
                                     {item.desc}
                                   </div>
                                 </a>
@@ -284,26 +316,27 @@ export default function Navbar() {
                       );
                     })}
 
-                    {/* Column 4: Admissions / Counselling CTA Card */}
-                    <div className="bg-white/5 border border-white/5 rounded-xl p-5 flex flex-col justify-between relative overflow-hidden">
+                    {/* Column 4: Admissions CTA Card */}
+                    <div className="bg-[#1A1A1A] border border-[rgba(190,30,46,0.2)] rounded-xl p-5 flex flex-col justify-between relative overflow-hidden text-left">
                       <div className="absolute top-0 right-0 p-3">
-                        <Sparkles className="h-5 w-5 text-[#BE1E2E] animate-pulse" />
+                        <Sparkles className="h-5 w-5 text-primary animate-pulse" />
                       </div>
+                      <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-[#BE1E2E]/5 to-transparent pointer-events-none" />
                       <div>
-                        <span className="text-[9px] uppercase tracking-wider bg-[#BE1E2E] text-white px-2 py-0.5 rounded font-bold">
+                        <span className="text-[9px] uppercase tracking-wider bg-primary text-white px-2 py-0.5 rounded font-bold">
                           Admissions Open
                         </span>
                         <h4 className="font-display font-bold text-white text-base mt-3">
                           Book a Free Demo
                         </h4>
-                        <p className="text-zinc-400 text-xs mt-2 font-light leading-relaxed">
+                        <p className="text-white/50 text-xs mt-2 font-light leading-relaxed">
                           Kickstart your creative career with industry-oriented courses. Book a free counselling session with our expert mentors today.
                         </p>
                       </div>
                       <a
                         href="#contact"
                         onClick={() => setActiveDropdown(null)}
-                        className="inline-flex items-center justify-center text-center mt-6 py-2 px-4 rounded bg-[#BE1E2E] hover:bg-red-700 text-white text-xs font-semibold tracking-wide transition-colors group cursor-pointer"
+                        className="inline-flex items-center justify-center text-center mt-6 py-2.5 px-4 rounded-lg bg-primary hover:bg-[#A31827] text-white text-xs font-bold tracking-wide transition-all group cursor-pointer shadow-[0_4px_15px_rgba(190,30,46,0.3)] hover:shadow-[0_6px_25px_rgba(190,30,46,0.45)]"
                       >
                         <span>Book Demo</span>
                         <ArrowRight className="h-3 w-3 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -314,49 +347,66 @@ export default function Navbar() {
               </AnimatePresence>
             </div>
 
-            <a href="/about-us" className="text-sm font-sans font-medium text-white/80 hover:text-white transition-colors py-2 relative group">
+            <a
+              href="/about-us"
+              className={`text-sm font-sans font-medium transition-colors py-2 relative group ${isNavbarDark ? "text-white hover:text-primary" : "text-[#111111] hover:text-primary"}`}
+            >
               About Us
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#BE1E2E] transition-all group-hover:w-full" />
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
             </a>
-            <a href="/student-work" className="text-sm font-sans font-medium text-white/80 hover:text-white transition-colors py-2 relative group">
+            <a
+              href="/student-work"
+              className={`text-sm font-sans font-medium transition-colors py-2 relative group ${isNavbarDark ? "text-white hover:text-primary" : "text-[#111111] hover:text-primary"}`}
+            >
               Student Works
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#BE1E2E] transition-all group-hover:w-full" />
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
             </a>
-            <a href="/awards-and-recognition" className="text-sm font-sans font-medium text-white/80 hover:text-white transition-colors py-2 relative group">
+            <a
+              href="/awards-and-recognition"
+              className={`text-sm font-sans font-medium transition-colors py-2 relative group ${isNavbarDark ? "text-white hover:text-primary" : "text-[#111111] hover:text-primary"}`}
+            >
               Awards
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#BE1E2E] transition-all group-hover:w-full" />
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
             </a>
-            <a href="/placements" className="text-sm font-sans font-medium text-white/80 hover:text-white transition-colors py-2 relative group">
+            <a
+              href="/placements"
+              className={`text-sm font-sans font-medium transition-colors py-2 relative group ${isNavbarDark ? "text-white hover:text-primary" : "text-[#111111] hover:text-primary"}`}
+            >
               Placements
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#BE1E2E] transition-all group-hover:w-full" />
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
             </a>
           </div>
 
           {/* Right Area Controls */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-3">
             
             {/* Search Button */}
             <button
               onClick={() => setSearchOpen(true)}
-              className="p-2 text-white/70 hover:text-white bg-white/5 border border-white/10 rounded-full transition-colors flex items-center space-x-1.5 focus:outline-none cursor-pointer"
+              className={`p-2 transition-colors flex items-center space-x-1.5 focus:outline-none cursor-pointer rounded-full border ${isNavbarDark ? "text-white/80 hover:text-white bg-white/[0.08] border-white/[0.12]" : "text-[#555] hover:text-primary bg-black/[0.04] border-black/[0.08]"}`}
             >
               <Search className="h-4 w-4" />
-              <span className="text-[10px] font-medium text-zinc-400 hidden sm:inline-block px-1">
+              <span className={`text-[10px] font-medium hidden sm:inline-block px-1 ${isNavbarDark ? "text-white/50" : "text-[#888]"}`}>
                 ⌘K
               </span>
             </button>
+
+
 
             {/* Enroll Now CTA & Phone Number */}
             <div className="flex flex-col items-end">
               <a
                 href="#contact"
-                className="bg-gradient-to-r from-[#FF1F3D] to-red-600 hover:from-red-600 hover:to-red-700 text-white font-extrabold px-5 py-2 rounded-full text-xs uppercase tracking-wider shadow-[0_4px_15px_rgba(255,31,61,0.4)] hover:shadow-[0_6px_20px_rgba(255,31,61,0.6)] transition-all duration-300 transform hover:scale-105 flex items-center space-x-2 cursor-pointer select-none"
+                className="bg-primary hover:bg-primary-hover text-white font-extrabold px-5 py-2 rounded-full text-xs uppercase tracking-wider shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-[1.02] flex items-center space-x-2 cursor-pointer select-none"
               >
                 <span className="h-2 w-2 rounded-full bg-white animate-pulse" />
                 <span>ENROLL NOW</span>
               </a>
-              <a href="tel:+917900400300" className="text-[11px] font-bold text-zinc-300 hover:text-white mt-1 hidden sm:flex items-center gap-1 tracking-wider cursor-pointer">
-                <span className="text-[#FF1F3D]">📞</span>
+              <a
+                href="tel:+917900400300"
+                className={`text-[11px] font-bold mt-1 hidden sm:flex items-center gap-1 tracking-wider cursor-pointer ${isNavbarDark ? "text-white/90 hover:text-white" : "text-[#333] hover:text-primary"}`}
+              >
+                <span className="text-primary">📞</span>
                 <span>+91 79004 00300</span>
               </a>
             </div>
@@ -364,7 +414,7 @@ export default function Navbar() {
             {/* Mobile Menu trigger */}
             <button
               onClick={() => setMobileMenuOpen(true)}
-              className="lg:hidden p-2 text-white/80 hover:text-white transition-colors focus:outline-none cursor-pointer"
+              className={`lg:hidden p-2 transition-colors focus:outline-none cursor-pointer ${isNavbarDark ? "text-white hover:text-primary" : "text-[#111] hover:text-primary"}`}
             >
               <Menu className="h-6 w-6" />
             </button>
@@ -380,12 +430,11 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/95 backdrop-blur-lg lg:hidden flex flex-col justify-between p-6 overflow-y-auto"
+            className="fixed inset-0 z-50 bg-card/98 backdrop-blur-lg lg:hidden flex flex-col justify-between p-6 overflow-y-auto"
           >
             <div>
               {/* Header */}
               <div className="flex items-center justify-between mb-8">
-                {/* Mini Logo - Enlarged & Text Removed */}
                 <a href="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center">
                   <div className="flex items-center justify-center">
                     <img
@@ -399,7 +448,7 @@ export default function Navbar() {
                 {/* Close Button */}
                 <button
                   onClick={() => setMobileMenuOpen(false)}
-                  className="p-2 text-white/80 hover:text-white transition-colors focus:outline-none cursor-pointer"
+                  className="p-2 text-heading hover:text-primary transition-colors focus:outline-none cursor-pointer"
                 >
                   <X className="h-6 w-6" />
                 </button>
@@ -410,7 +459,7 @@ export default function Navbar() {
                 <a
                   href="/"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-lg font-medium text-white/85 hover:text-white py-1 block font-sans"
+                  className="text-lg font-semibold text-heading hover:text-primary py-1 block font-sans"
                 >
                   Home
                 </a>
@@ -419,16 +468,16 @@ export default function Navbar() {
                 <div>
                   <button
                     onClick={() => setMobileCategoryOpen(mobileCategoryOpen === "courses" ? null : "courses")}
-                    className="w-full flex items-center justify-between text-lg font-medium text-white/85 hover:text-white py-1 focus:outline-none font-sans"
+                    className="w-full flex items-center justify-between text-lg font-semibold text-heading hover:text-primary py-1 focus:outline-none font-sans"
                   >
                     <span>Courses</span>
-                    <ChevronDown className={`h-4 w-4 transform transition-transform ${mobileCategoryOpen === "courses" ? "rotate-180 text-[#BE1E2E]" : ""}`} />
+                    <ChevronDown className={`h-4 w-4 transform transition-transform ${mobileCategoryOpen === "courses" ? "rotate-180 text-primary" : "text-heading"}`} />
                   </button>
                   {mobileCategoryOpen === "courses" && (
-                    <div className="pl-4 mt-2 space-y-4 border-l border-zinc-800">
+                    <div className="pl-4 mt-2 space-y-4 border-l border-border">
                       {MEGA_MENU_CATEGORIES.map((cat, idx) => (
                         <div key={idx} className="space-y-1">
-                          <div className="text-[10px] uppercase font-bold text-zinc-500 tracking-wider">
+                          <div className="text-[10px] uppercase font-bold text-muted-text tracking-wider font-sans">
                             {cat.title}
                           </div>
                           {cat.items.map((item, iIdx) => (
@@ -436,7 +485,7 @@ export default function Navbar() {
                               key={iIdx}
                               href={item.href}
                               onClick={() => setMobileMenuOpen(false)}
-                              className="text-sm text-zinc-300 hover:text-white py-1.5 block font-sans"
+                              className="text-sm text-heading hover:text-primary py-1.5 block font-sans"
                             >
                               {item.name}
                             </a>
@@ -450,7 +499,7 @@ export default function Navbar() {
                 <a
                   href="/about-us"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-lg font-medium text-white/85 hover:text-white py-1 block font-sans"
+                  className="text-lg font-semibold text-heading hover:text-primary py-1 block font-sans"
                 >
                   About Us
                 </a>
@@ -458,7 +507,7 @@ export default function Navbar() {
                 <a
                   href="/student-work"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-lg font-medium text-white/85 hover:text-white py-1 block font-sans"
+                  className="text-lg font-semibold text-heading hover:text-primary py-1 block font-sans"
                 >
                   Student Works
                 </a>
@@ -466,7 +515,7 @@ export default function Navbar() {
                 <a
                   href="/awards-and-recognition"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-lg font-medium text-white/85 hover:text-white py-1 block font-sans"
+                  className="text-lg font-semibold text-heading hover:text-primary py-1 block font-sans"
                 >
                   Awards
                 </a>
@@ -474,10 +523,12 @@ export default function Navbar() {
                 <a
                   href="/placements"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-lg font-medium text-white/85 hover:text-white py-1 block font-sans"
+                  className="text-lg font-semibold text-heading hover:text-primary py-1 block font-sans"
                 >
                   Placements
                 </a>
+
+
               </div>
             </div>
 
@@ -486,7 +537,7 @@ export default function Navbar() {
               <a
                 href="#contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full inline-flex items-center justify-center py-3.5 rounded-full text-base font-semibold text-white bg-gradient-to-r from-[#BE1E2E] to-red-500 shadow-[0_4px_15px_rgba(190,30,46,0.3)]"
+                className="w-full inline-flex items-center justify-center py-3.5 rounded-full text-base font-semibold text-white bg-primary hover:bg-brand-hover shadow-sm transition-all"
               >
                 Enroll Now
               </a>

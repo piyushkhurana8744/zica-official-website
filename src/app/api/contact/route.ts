@@ -76,13 +76,13 @@ export async function POST(request: Request) {
         text: `Dear ${name},\n\nThank you for choosing ZICA Pitampura. We have received your enquiry for the ${course} course.\n\nOur academic counsellor will connect with you shortly.\n\nFor immediate assistance, please call us at 8800505151.\n\nBest regards,\nTeam ZICA Pitampura`,
         html: `
           <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #eee; border-radius: 8px;">
-            <h2 style="color: #FF1F3D;">Thank You for Reaching Out!</h2>
+            <h2 style="color: #BE1E2E;">Thank You for Reaching Out!</h2>
             <p>Dear <strong>${name}</strong>,</p>
             <p>We are thrilled to receive your interest in the <strong>${course}</strong> course at ZICA Pitampura.</p>
             <p>Our senior academic counsellor will get in touch with you shortly on your number <strong>${mobile}</strong> to discuss the batch schedules, curriculum details, and fee structure.</p>
-            <div style="background-color: #f9f9f9; padding: 15px; border-left: 4px solid #FF1F3D; margin: 20px 0;">
+            <div style="background-color: #f9f9f9; padding: 15px; border-left: 4px solid #BE1E2E; margin: 20px 0;">
               <strong>Need Immediate Assistance?</strong><br/>
-              Feel free to call our counsellor directly at <a href="tel:8800505151" style="color: #FF1F3D; font-weight: bold; text-decoration: none;">8800505151</a>.
+              Feel free to call our counsellor directly at <a href="tel:8800505151" style="color: #BE1E2E; font-weight: bold; text-decoration: none;">8800505151</a>.
             </div>
             <p>Best regards,<br/><strong>Team ZICA Pitampura</strong></p>
           </div>

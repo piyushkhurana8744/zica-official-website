@@ -38,7 +38,7 @@ function Counter({ value, suffix = "", duration = 2 }: CounterProps) {
   }, [isInView, value, duration]);
 
   return (
-    <span ref={ref} className="font-display font-extrabold text-5xl sm:text-7xl text-white">
+    <span ref={ref} className="font-display font-extrabold text-5xl sm:text-7xl text-primary">
       {count.toLocaleString()}{suffix}
     </span>
   );
@@ -53,9 +53,9 @@ const STATS = [
 
 export default function Statistics() {
   return (
-    <section className="relative py-20 bg-gradient-to-b from-[#050505] to-black border-y border-white/5 overflow-hidden">
+    <section data-section-theme="dark" className="relative py-20 bg-[#0A0A0A] border-y border-[rgba(190,30,46,0.12)] overflow-hidden text-white">
       {/* Background Lighting */}
-      <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-[#BE1E2E]/5 rounded-full blur-[80px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-primary/5 rounded-full blur-[80px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
@@ -69,7 +69,7 @@ export default function Statistics() {
               className="text-center"
             >
               <Counter value={stat.value} suffix={stat.suffix} />
-              <p className="text-white/40 text-xs sm:text-sm uppercase tracking-widest font-semibold mt-3 max-w-[200px] mx-auto leading-relaxed">
+              <p className="text-zinc-400 text-xs sm:text-sm uppercase tracking-widest font-semibold mt-3 max-w-[200px] mx-auto leading-relaxed font-sans">
                 {stat.label}
               </p>
             </motion.div>

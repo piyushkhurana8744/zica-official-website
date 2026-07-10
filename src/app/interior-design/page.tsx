@@ -1,17 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
-import Navbar from "@/components/Navbar";
-import ScrollProgressBar from "@/components/ScrollProgressBar";
-import MouseGlow from "@/components/MouseGlow";
-import Footer from "@/components/Footer";
-import BannerForm from "@/components/BannerForm";
-import { ChevronDown, Plus, Minus } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import React from "react";
+import CoursePageTemplate from "@/components/CoursePageTemplate";
 
 const MODULES = [
   {
-    title: "Module 01:",
+    title: "Module 01: INTERIOR DESIGN COURSE SYLLABUS",
     topics: [
       "History of Interior furniture Design (Indian & Western)",
       "Concept of Interior Design",
@@ -24,294 +18,68 @@ const MODULES = [
   },
 ];
 
+const CAREERS_LEFT = [
+  "Interior Designer",
+  "Furniture Designer",
+  "Space Planner",
+];
+
+const CAREERS_RIGHT = [
+  "Commercial Designer",
+  "Residential Designer",
+  "3D Visualization Artist",
+];
+
 export default function InteriorDesignPage() {
-  const [openModule, setOpenModule] = useState<number | null>(0);
-  const [formData, setFormData] = useState({
-    name: "",
-    mobile: "",
-    email: "",
-    course: "Interior Design",
-  });
-
-  const toggleModule = (idx: number) => {
-    setOpenModule(openModule === idx ? null : idx);
-  };
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleFormSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert(`Enquiry submitted successfully!\n\nName: ${formData.name}\nMobile: ${formData.mobile}\nEmail: ${formData.email}\nCourse: ${formData.course}`);
-  };
-
   return (
-    <>
-      <ScrollProgressBar />
-      <MouseGlow />
-      <Navbar />
-
-      <main className="flex flex-col min-h-screen pt-20 bg-[#050505] text-white font-sans">
-        
-        {/* Cinematic Hero Section */}
-        <section className="relative min-h-[60vh] flex items-center justify-center py-24 bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1200&auto=format&fit=crop')" }}>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/70" />
-          
-          <div className="max-w-7xl mx-auto px-6 relative z-10 w-full py-8">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-              <div className="lg:col-span-7 text-left drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]">
-                <span className="text-xs uppercase tracking-[0.25em] text-white/50 font-semibold mb-4 block">
-                  COURSE DETAILS
-                </span>
-                <h1 className="font-display font-bold text-4xl sm:text-6xl tracking-tight leading-tight mb-8">
-                  Interior <span className="text-[#BE1E2E]">Design Courses at ZICA Pitampura</span>
-                </h1>
-                <p className="text-zinc-300 text-sm sm:text-lg leading-relaxed font-light italic">
-                  &ldquo;Develop the Skills to Design Inspiring Interiors that Enhance Lives, from Residential to Commercial Spaces, with Our Expert-Led Interior Design Programs.&rdquo;
-                </p>
-              </div>
-              <div className="lg:col-span-5 flex justify-center lg:justify-end w-full">
-                <BannerForm title="COURSE ENQUIRY" buttonText="SUBMIT ENQUIRY" defaultCourse="Interior Design" />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Course Highlights Section */}
-        <section className="py-24 border-b border-white/5 relative">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              
-              {/* Left Column: Bullet points */}
-              <div>
-                <h2 className="font-display font-bold text-3xl sm:text-4xl mb-8 tracking-tight leading-tight">
-                  Course <span className="text-[#BE1E2E]">Highlights:</span>
-                </h2>
-                <ul className="space-y-4 text-zinc-300 text-sm sm:text-base font-light">
-                  <li className="flex items-start">
-                    <span className="text-[#BE1E2E] mr-2 font-bold">•</span>
-                    To introduce students to the fundamental principles, concepts, and theories of interior design as a discipline.
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#BE1E2E] mr-2 font-bold">•</span>
-                    To specialise in designing residential interiors, considering homeowners&apos; unique requirements and preferences.
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#BE1E2E] mr-2 font-bold">•</span>
-                    To learn advanced computer rendering techniques for creating realistic 3d walkthroughs of interior spaces.
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#BE1E2E] mr-2 font-bold">•</span>
-                    To gain expertise in designing restaurant and hospitality spaces, considering customer experience and functional requirements.
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#BE1E2E] mr-2 font-bold">•</span>
-                    To develop research and communication skills essential for academic and professional advancement.
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#BE1E2E] mr-2 font-bold">•</span>
-                    To expand and update the professional portfolio with advanced and specialised projects.
-                  </li>
-                </ul>
-              </div>
-
-              {/* Right Column: 3 overlapping rounded rectangular images */}
-              <div className="relative w-full h-[400px]">
-                {/* Image 1 (Top Left) */}
-                <motion.div
-                  whileHover={{ scale: 1.05, zIndex: 30, rotate: -2 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className="absolute top-0 left-0 w-[55%] aspect-square rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-zinc-900 cursor-pointer"
-                >
-                  <img
-                    src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=400&auto=format&fit=crop"
-                    alt="Course Highlight Item 1"
-                    className="w-full h-full object-cover"
-                  />
-                </motion.div>
-                {/* Image 2 (Bottom Left) */}
-                <motion.div
-                  whileHover={{ scale: 1.05, zIndex: 30, rotate: 2 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className="absolute bottom-0 left-4 w-[55%] aspect-square rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-zinc-900 cursor-pointer"
-                >
-                  <img
-                    src="https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?q=80&w=400&auto=format&fit=crop"
-                    alt="Course Highlight Item 2"
-                    className="w-full h-full object-cover"
-                  />
-                </motion.div>
-                {/* Image 3 (Right) */}
-                <motion.div
-                  whileHover={{ scale: 1.05, zIndex: 30, rotate: -1 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className="absolute top-1/2 -translate-y-1/2 right-0 w-[45%] aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-zinc-900 cursor-pointer"
-                >
-                  <img
-                    src="https://images.unsplash.com/photo-1618221381711-42ca8ab6e908?q=80&w=400&auto=format&fit=crop"
-                    alt="Course Highlight Item 3"
-                    className="w-full h-full object-cover"
-                  />
-                </motion.div>
-              </div>
-
-            </div>
-
-            {/* Bottom Header details */}
-            <div className="text-center mt-20">
-              <h3 className="font-display font-bold text-2xl sm:text-3xl text-white">
-                PDP In Interior Design
-              </h3>
-              <p className="text-[#BE1E2E] font-bold text-xl sm:text-2xl mt-2">
-                (24 Months)
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Learn From Professionals & Enquiry Form */}
-        <section className="py-24 border-b border-white/5 relative">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-              
-              {/* Left Column: Professionals Info & Highlights */}
-              <div className="col-span-1 lg:col-span-7 flex flex-col">
-                <h2 className="font-display font-bold text-3xl sm:text-4xl mb-6 tracking-tight leading-tight">
-                  Learn From <span className="text-[#BE1E2E]">Professionals</span>
-                </h2>
-                
-                <p className="text-zinc-300 text-sm sm:text-base leading-relaxed font-light mb-8">
-                  The Interior Design program explores both the artistic and technical aspects of enhancing interior spaces. It equips students with the skills to design environments that are not only visually appealing but also functional, comfortable, and conducive to the well-being of the people who use them. Through a balanced approach to creativity and practicality, the program prepares students to transform residential, commercial, and institutional spaces with purpose and style.
-                </p>
-
-                {/* Subsections columns */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
-                  <div>
-                    <h3 className="font-display font-bold text-lg mb-3">
-                      Become a <span className="text-[#BE1E2E]">Professional Artist</span>
-                    </h3>
-                    <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed font-light">
-                      This program provides comprehensive training in design principles, art fundamentals, drawing techniques, furniture design, material sourcing, interior graphics, and construction services. Students also gain hands-on experience with CAD, building materials, and real-world case studies to build a strong foundation in interior design. To prepare students for the future, the program incorporates exposure to emerging technologies such as Augmented Reality (AR) and Virtual Reality (VR), equipping them with the skills needed to become professional interior designers in a rapidly evolving industry.
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="font-display font-bold text-lg mb-3">
-                      Be Industry <span className="text-[#BE1E2E]">Ready</span>
-                    </h3>
-                    <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed font-light">
-                      By the end of the program, students graduate with a well-rounded portfolio showcasing a variety of 3D interior design layouts, including living rooms, bedrooms, offices, restaurants, and commercial spaces. This professional portfolio serves as a powerful gateway to securing opportunities with leading interior design firms.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Program Highlights bullet list */}
-                <div>
-                  <h3 className="font-display font-bold text-xl sm:text-2xl mb-6 tracking-tight leading-tight">
-                    Program <span className="text-[#BE1E2E]">Highlights:</span>
-                  </h3>
-                  <ul className="space-y-4 text-zinc-300 text-sm sm:text-base font-light">
-                    <li className="flex items-start">
-                      <span className="text-[#BE1E2E] mr-2 font-bold">•</span>
-                      Enhance your design and visualisation abilities through structured, hands-on learning.
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-[#BE1E2E] mr-2 font-bold">•</span>
-                      Gain in-depth knowledge of the complete interior design production pipeline from concept to execution.
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-[#BE1E2E] mr-2 font-bold">•</span>
-                      Stay engaged and motivated with continuous assessments, design competitions, and creative activities.
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-[#BE1E2E] mr-2 font-bold">•</span>
-                      Participate in regular site visits and interact with industry professionals to gain real-world exposure and practical insights.
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-[#BE1E2E] mr-2 font-bold">•</span>
-                      Build strong technical skills by working with industry-standard tools like AutoCAD, SketchUp, and 3ds Max.
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-[#BE1E2E] mr-2 font-bold">•</span>
-                      Develop a professional portfolio that reflects creativity, functionality, and industry-readiness.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              {/* Right Column: Sticky Enquiry Form */}
-              <div className="col-span-1 lg:col-span-5 flex justify-center lg:sticky lg:top-28">
-                <BannerForm title="ENQUIRY FORM" buttonText="SUBMIT" defaultCourse="Interior Design" />
-              </div>
-
-            </div>
-          </div>
-        </section>
-
-        {/* Module Accordions Section */}
-        <section className="py-24 border-b border-white/5 relative bg-[#090909]">
-          <div className="max-w-4xl mx-auto px-6">
-            <h2 className="font-display font-bold text-3xl sm:text-4xl text-center mb-16 tracking-tight leading-tight">
-              Interior Design Program <span className="text-[#BE1E2E]">Structure</span>
-            </h2>
-
-            <div className="space-y-4">
-              {MODULES.map((item, idx) => {
-                const isOpen = openModule === idx;
-                return (
-                  <div key={idx} className="border-b border-zinc-800 pb-5">
-                    <button
-                      onClick={() => toggleModule(idx)}
-                      className="w-full py-4 flex items-center justify-between text-left focus:outline-none group cursor-pointer"
-                    >
-                      <span className={`font-sans font-semibold text-sm sm:text-base transition-colors duration-300 ${
-                        isOpen ? "text-[#BE1E2E]" : "text-white group-hover:text-zinc-300"
-                      }`}>
-                        {item.title}
-                      </span>
-                      
-                      {/* Plus / Minus Indicator */}
-                      <div className="ml-4 flex-shrink-0 h-6 w-6 flex items-center justify-center text-white">
-                        {isOpen ? (
-                          <Minus className="h-4 w-4 text-[#BE1E2E]" />
-                        ) : (
-                          <Plus className="h-4 w-4" />
-                        )}
-                      </div>
-                    </button>
-
-                    <AnimatePresence initial={false}>
-                      {isOpen && (
-                        <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.3, ease: "easeInOut" }}
-                        >
-                          <div className="pt-2 pb-4 pl-4 border-l-2 border-[#BE1E2E]/40 mt-1">
-                            <ul className="space-y-2 text-zinc-400 text-xs sm:text-sm font-light grid grid-cols-1 sm:grid-cols-2 gap-2">
-                              {item.topics.map((topic, tIdx) => (
-                                <li key={tIdx} className="flex items-center">
-                                  <span className="text-[#BE1E2E] mr-2 font-bold">-</span>
-                                  {topic}
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-      </main>
-
-      <Footer />
-    </>
+    <CoursePageTemplate
+      courseId="interior-design"
+      courseName="Interior Design"
+      heroTitle={
+        <>
+          Interior <br />
+          <span className="text-primary font-black">Design Courses at ZICA Pitampura</span>
+        </>
+      }
+      heroSubtitle="Develop the Skills to Design Inspiring Interiors that Enhance Lives, from Residential to Commercial Spaces, with Our Expert-Led Interior Design Programs."
+      heroBgImage="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1200&auto=format&fit=crop"
+      highlights={[
+        "To introduce students to the fundamental principles, concepts, and theories of interior design as a discipline.",
+        "To specialise in designing residential interiors, considering homeowners' unique requirements and preferences.",
+        "To learn advanced computer rendering techniques for creating realistic 3d walkthroughs of interior spaces.",
+        "To gain expertise in designing restaurant and hospitality spaces, considering customer experience and functional requirements.",
+        "To develop research and communication skills essential for academic and professional advancement.",
+        "To expand and update the professional portfolio with advanced and specialised projects.",
+      ]}
+      highlightImages={[
+        "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=400&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?q=80&w=400&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1618221381711-42ca8ab6e908?q=80&w=400&auto=format&fit=crop",
+      ]}
+      courseFullName="PDP In Interior Design"
+      courseDuration="24 Months"
+      professionalsIntro="The Interior Design program explores both the artistic and technical aspects of enhancing interior spaces. It equips students with the skills to design environments that are not only visually appealing but also functional, comfortable, and conducive to the well-being of the people who use them. Through a balanced approach to creativity and practicality, the program prepares students to transform residential, commercial, and institutional spaces with purpose and style."
+      professionalsPoints={[
+        {
+          title: "Become a Professional Artist",
+          description: "This program provides comprehensive training in design principles, art fundamentals, drawing techniques, furniture design, material sourcing, interior graphics, and construction services. Students also gain hands-on experience with CAD, building materials, and real-world case studies to build a strong foundation in interior design. To prepare students for the future, the program incorporates exposure to emerging technologies such as Augmented Reality (AR) and Virtual Reality (VR).",
+        },
+        {
+          title: "Be Industry Ready",
+          description: "By the end of the program, students graduate with a well-rounded portfolio showcasing a variety of 3D interior design layouts, including living rooms, bedrooms, offices, restaurants, and commercial spaces. This professional portfolio serves as a powerful gateway to securing opportunities with leading interior design firms.",
+        },
+      ]}
+      programHighlights={[
+        "Enhance your design and visualisation abilities through structured, hands-on learning.",
+        "Gain in-depth knowledge of the complete interior design production pipeline from concept to execution.",
+        "Stay engaged and motivated with continuous assessments, design competitions, and creative activities.",
+        "Participate in regular site visits and interact with industry professionals to gain real-world exposure and practical insights.",
+        "Build strong technical skills by working with industry-standard tools like AutoCAD, SketchUp, and 3ds Max.",
+        "Develop a professional portfolio that reflects creativity, functionality, and industry-readiness.",
+      ]}
+      modules={MODULES}
+      careersLeft={CAREERS_LEFT}
+      careersRight={CAREERS_RIGHT}
+    />
   );
 }

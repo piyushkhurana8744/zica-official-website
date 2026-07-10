@@ -1,30 +1,123 @@
 @import "tailwindcss";
 
+/* ═══════════════════════════════════════════════════
+   LIGHT MODE (default) — CSS Variables
+═══════════════════════════════════════════════════ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+
+  /* Base surfaces */
+  --background: #FFFFFF;
+  --foreground: #111111;
+  --color-card: #FFFFFF;
+  --color-alt-section: #F5F5F5;
+  --color-light-bg: #F5F5F5;
+  --color-brand-tint: rgba(190, 30, 46, 0.05);
+  --color-brand-soft: rgba(190, 30, 46, 0.1);
+
+  /* Text */
+  --color-heading: #111111;
+  --color-paragraph: #111111;
+  --color-muted-text: #B5B5B5;
+
+  /* Border */
+  --color-border: rgba(190, 30, 46, 0.12);
+
+  /* Always-dark sections */
+  --color-dark-section: #0A0A0A;
+  --color-footer: #000000;
+
+  /* Brand */
+  --color-primary: #BE1E2E;
+  --color-brand: #BE1E2E;
+  --color-brand-hover: #A31827;
+
+  /* Feedback */
+  --color-success: #22C55E;
+  --color-warning: #F59E0B;
 }
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  
+  /* Fonts */
+  --font-sans: var(--font-inter), sans-serif;
+  --font-display: var(--font-poppins), sans-serif;
   --font-mono: var(--font-geist-mono);
+
+  /* Primary Brand Accent */
+  --color-primary: var(--color-primary);
+  --color-primary-hover: #A31827;
+  --color-brand: var(--color-brand);
+  --color-brand-hover: var(--color-brand-hover);
+  --color-brand-tint: var(--color-brand-tint);
+  --color-brand-soft: var(--color-brand-soft);
+
+  /* Custom Palette for alternating sections */
+  --color-bg-black: #0A0A0A;
+  --color-bg-dark: #141414;
+  --color-bg-white: #FFFFFF;
+  --color-bg-light: #F5F5F5;
+
+  --color-card-white: #FFFFFF;
+  --color-card-black: #1A1A1A;
+  
+  --color-border-accent: rgba(190, 30, 46, 0.12);
+
+  --color-text-white: #FFFFFF;
+  --color-text-black: #111111;
+  --color-text-secondary: #B5B5B5;
+
+  /* Layout Colors */
+  --color-card: var(--color-card);
+  --color-alt-section: var(--color-alt-section);
+  --color-heading: var(--color-heading);
+  --color-paragraph: var(--color-paragraph);
+  --color-muted-text: var(--color-muted-text);
+  --color-border: var(--color-border);
+  --color-light-bg: var(--color-light-bg);
+
+  /* Always-dark */
+  --color-dark-section: var(--color-dark-section);
+  --color-footer: var(--color-footer);
+
+  /* Feedback Colors */
+  --color-success: var(--color-success);
+  --color-warning: var(--color-warning);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* ═══════════════════════════════════════════════════
+   Base Body Styles
+═══════════════════════════════════════════════════ */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  /* Smooth theme transition */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Smooth transitions on common theme-sensitive elements */
+*,
+*::before,
+*::after {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.15s ease;
+}
+
+/* But don't transition transforms/opacity (breaks animations) */
+.motion-safe\:transform,
+[class*="transition-"],
+[class*="animate-"],
+[style*="animation"],
+[style*="transition"] {
+  transition-property: revert;
+}
+
+/* ═══════════════════════════════════════════════════
+   Keyframe Animations
+═══════════════════════════════════════════════════ */
 @keyframes shimmer {
   0% {
     background-position: 200% 0;
@@ -61,6 +154,26 @@ body {
   }
 }
 
+@keyframes theme-spin {
+  0% { transform: rotate(0deg) scale(0.6); opacity: 0; }
+  100% { transform: rotate(360deg) scale(1); opacity: 1; }
+}
+
 .animate-float-slow {
   animation: float-slow 6s ease-in-out infinite;
+}
+
+.animate-theme-spin {
+  animation: theme-spin 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* ═══════════════════════════════════════════════════
+   Scrollbar theming
+═══════════════════════════════════════════════════ */
+:root {
+  scrollbar-color: #BE1E2E #E4E4E7;
+  scrollbar-width: thin;
+}
+[data-theme="dark"] {
+  scrollbar-color: #BE1E2E #27272A;
 }

@@ -30,6 +30,7 @@ interface BannerFormProps {
   buttonText?: string;
   defaultCourse?: string;
   className?: string;
+  theme?: "light" | "dark";
 }
 
 export default function BannerForm({
@@ -37,6 +38,7 @@ export default function BannerForm({
   buttonText = "DOWNLOAD",
   defaultCourse = "",
   className = "",
+  theme = "dark",
 }: BannerFormProps) {
   const [formData, setFormData] = useState({
     name: "",
@@ -99,17 +101,23 @@ export default function BannerForm({
     }
   };
 
+  const isLight = theme === "light";
+
   return (
     <motion.div
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       animate={{ rotateX: tilt.y, rotateY: tilt.x }}
       style={{ transformStyle: "preserve-3d", perspective: 1000 }}
-      className={`w-full max-w-[430px] relative overflow-hidden rounded-[28px] border border-white/10 bg-[#111318]/95 p-6 sm:p-8 shadow-[0_25px_60px_rgba(0,0,0,0.8)] backdrop-blur-2xl ${className}`}
+      className={`w-full max-w-[365px] relative overflow-hidden rounded-[24px] border p-5 sm:p-6 backdrop-blur-2xl transition-all duration-300 ${
+        isLight
+          ? "bg-white border-[rgba(190,30,46,0.12)] shadow-[0_15px_40px_rgba(0,0,0,0.05)] text-[#111111]"
+          : "bg-[#181818] border-[rgba(190,30,46,0.12)] shadow-[0_20px_50px_rgba(0,0,0,0.8)] text-white"
+      } ${className}`}
     >
       {/* Subtle Ambient Glow */}
-      <div className="absolute top-0 right-0 w-40 h-40 bg-[#FF1F3D]/10 rounded-full blur-[50px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-40 h-40 bg-blue-500/10 rounded-full blur-[50px] pointer-events-none" />
+      <div className={`absolute top-0 right-0 w-32 h-32 rounded-full blur-[45px] pointer-events-none ${isLight ? "bg-[#BE1E2E]/5" : "bg-[#BE1E2E]/10"}`} />
+      <div className={`absolute bottom-0 left-0 w-32 h-32 rounded-full blur-[45px] pointer-events-none ${isLight ? "bg-[#BE1E2E]/5" : "bg-[#BE1E2E]/10"}`} />
 
       <AnimatePresence mode="wait">
         {submitted ? (
@@ -118,18 +126,22 @@ export default function BannerForm({
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
-            className="flex flex-col items-center justify-center py-12 text-center relative z-10"
+            className="flex flex-col items-center justify-center py-8 text-center relative z-10"
           >
-            <div className="h-16 w-16 bg-[#22C55E]/20 border border-[#22C55E] rounded-full flex items-center justify-center mb-6 shadow-[0_0_30px_rgba(34,197,94,0.3)]">
-              <Check className="h-8 w-8 text-[#22C55E] stroke-[3]" />
+            <div className="h-12 w-12 bg-[#22C55E]/20 border border-[#22C55E] rounded-full flex items-center justify-center mb-4 shadow-[0_0_25px_rgba(34,197,94,0.3)]">
+              <Check className="h-6 w-6 text-[#22C55E] stroke-[3]" />
             </div>
-            <h3 className="font-display font-black text-2xl text-white tracking-wide uppercase">Enquiry Submitted!</h3>
-            <p className="text-zinc-400 text-sm mt-3 leading-relaxed font-light max-w-xs">
+            <h3 className={`font-display font-black text-xl tracking-wide uppercase ${isLight ? "text-[#111111]" : "text-white"}`}>Enquiry Submitted!</h3>
+            <p className={`text-xs mt-2.5 leading-relaxed font-light max-w-[240px] ${isLight ? "text-[#444444]" : "text-zinc-400"}`}>
               Thank you! Our academic counselor will contact you shortly with full brochure details.
             </p>
             <button
               onClick={() => setSubmitted(false)}
-              className="mt-8 px-6 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-xs font-bold uppercase tracking-wider text-white transition-all cursor-pointer border border-white/10"
+              className={`mt-6 px-5 py-2 rounded-full text-[10px] font-bold uppercase tracking-wider transition-all cursor-pointer border ${
+                isLight
+                  ? "bg-[#F5F5F5] hover:bg-[#EDEDED] border-[rgba(190,30,46,0.12)] text-[#111111]"
+                  : "bg-white/10 hover:bg-white/20 border-white/10 text-white"
+              }`}
             >
               Submit Another
             </button>
@@ -141,93 +153,117 @@ export default function BannerForm({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="space-y-4 relative z-10 text-left font-sans"
+            className="space-y-3 relative z-10 text-left font-sans"
           >
             {/* Card Title */}
-            <h3 className="font-display italic font-black text-2xl sm:text-3xl text-white text-center tracking-wider uppercase mb-6 drop-shadow">
+            <h3 className={`font-display italic font-black text-xl sm:text-2xl text-center tracking-wider uppercase mb-4 drop-shadow ${isLight ? "text-[#111111]" : "text-white"}`}>
               {title}
             </h3>
 
             {/* FULL NAME */}
-            <div className="space-y-1.5">
-              <label className="text-[11px] font-extrabold text-zinc-400 uppercase tracking-widest block font-sans">
+            <div className="space-y-1">
+              <label className={`text-[10px] font-extrabold uppercase tracking-widest block font-sans ${isLight ? "text-[#666666]" : "text-zinc-400"}`}>
                 FULL NAME
               </label>
-              <div className="bg-[#1c1f26] hover:bg-[#22262f] focus-within:bg-[#22262f] border border-white/10 focus-within:border-zinc-500 rounded-xl px-4 py-3.5 flex items-center gap-3.5 transition-all duration-200 shadow-inner">
-                <User className="h-4 w-4 text-zinc-500 flex-shrink-0" />
+              <div className={`rounded-xl px-3.5 py-2.5 flex items-center gap-3 transition-all duration-200 border ${
+                isLight
+                  ? "bg-[#F5F5F5] hover:bg-[#EDEDED] focus-within:bg-[#EDEDED] border-[rgba(190,30,46,0.12)] focus-within:border-[#BE1E2E]"
+                  : "bg-[#0A0A0A] hover:bg-[#121212] focus-within:bg-[#121212] border-[rgba(190,30,46,0.12)] focus-within:border-[#BE1E2E]"
+              }`}>
+                <User className="h-3.5 w-3.5 text-zinc-500 flex-shrink-0" />
                 <input
                   type="text"
                   placeholder="Enter name"
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="text-sm font-medium text-white placeholder:text-zinc-600 bg-transparent w-full focus:outline-none"
+                  className={`text-xs font-medium bg-transparent w-full focus:outline-none ${
+                    isLight ? "text-[#111111] placeholder:text-zinc-500" : "text-white placeholder:text-zinc-600"
+                  }`}
                 />
               </div>
             </div>
 
             {/* PHONE NUMBER */}
-            <div className="space-y-1.5">
-              <label className="text-[11px] font-extrabold text-zinc-400 uppercase tracking-widest block font-sans">
+            <div className="space-y-1">
+              <label className={`text-[10px] font-extrabold uppercase tracking-widest block font-sans ${isLight ? "text-[#666666]" : "text-zinc-400"}`}>
                 PHONE NUMBER
               </label>
-              <div className="bg-[#1c1f26] hover:bg-[#22262f] focus-within:bg-[#22262f] border border-white/10 focus-within:border-zinc-500 rounded-xl px-4 py-3.5 flex items-center gap-3.5 transition-all duration-200 shadow-inner">
-                <Phone className="h-4 w-4 text-zinc-500 flex-shrink-0" />
+              <div className={`rounded-xl px-3.5 py-2.5 flex items-center gap-3 transition-all duration-200 border ${
+                isLight
+                  ? "bg-[#F5F5F5] hover:bg-[#EDEDED] focus-within:bg-[#EDEDED] border-[rgba(190,30,46,0.12)] focus-within:border-[#BE1E2E]"
+                  : "bg-[#0A0A0A] hover:bg-[#121212] focus-within:bg-[#121212] border-[rgba(190,30,46,0.12)] focus-within:border-[#BE1E2E]"
+              }`}>
+                <Phone className="h-3.5 w-3.5 text-zinc-500 flex-shrink-0" />
                 <input
                   type="tel"
                   placeholder="Enter mobile number"
                   required
                   value={formData.mobile}
                   onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
-                  className="text-sm font-medium text-white placeholder:text-zinc-600 bg-transparent w-full focus:outline-none"
+                  className={`text-xs font-medium bg-transparent w-full focus:outline-none ${
+                    isLight ? "text-[#111111] placeholder:text-zinc-500" : "text-white placeholder:text-zinc-600"
+                  }`}
                 />
               </div>
             </div>
 
             {/* YOUR EMAIL */}
-            <div className="space-y-1.5">
-              <label className="text-[11px] font-extrabold text-zinc-400 uppercase tracking-widest block font-sans">
+            <div className="space-y-1">
+              <label className={`text-[10px] font-extrabold uppercase tracking-widest block font-sans ${isLight ? "text-[#666666]" : "text-zinc-400"}`}>
                 YOUR EMAIL
               </label>
-              <div className="bg-[#1c1f26] hover:bg-[#22262f] focus-within:bg-[#22262f] border border-white/10 focus-within:border-zinc-500 rounded-xl px-4 py-3.5 flex items-center gap-3.5 transition-all duration-200 shadow-inner">
-                <Mail className="h-4 w-4 text-zinc-500 flex-shrink-0" />
+              <div className={`rounded-xl px-3.5 py-2.5 flex items-center gap-3 transition-all duration-200 border ${
+                isLight
+                  ? "bg-[#F5F5F5] hover:bg-[#EDEDED] focus-within:bg-[#EDEDED] border-[rgba(190,30,46,0.12)] focus-within:border-[#BE1E2E]"
+                  : "bg-[#0A0A0A] hover:bg-[#121212] focus-within:bg-[#121212] border-[rgba(190,30,46,0.12)] focus-within:border-[#BE1E2E]"
+              }`}>
+                <Mail className="h-3.5 w-3.5 text-zinc-500 flex-shrink-0" />
                 <input
                   type="email"
                   placeholder="Enter email address"
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="text-sm font-medium text-white placeholder:text-zinc-600 bg-transparent w-full focus:outline-none"
+                  className={`text-xs font-medium bg-transparent w-full focus:outline-none ${
+                    isLight ? "text-[#111111] placeholder:text-zinc-500" : "text-white placeholder:text-zinc-600"
+                  }`}
                 />
               </div>
             </div>
 
             {/* INTERESTED ON... */}
-            <div className="space-y-1.5">
-              <label className="text-[11px] font-extrabold text-zinc-400 uppercase tracking-widest block font-sans">
+            <div className="space-y-1">
+              <label className={`text-[10px] font-extrabold uppercase tracking-widest block font-sans ${isLight ? "text-[#666666]" : "text-zinc-400"}`}>
                 INTERESTED ON...
               </label>
-              <div className="relative bg-[#1c1f26] hover:bg-[#22262f] focus-within:bg-[#22262f] border border-white/10 focus-within:border-zinc-500 rounded-xl px-4 py-3.5 flex items-center gap-3.5 transition-all duration-200 shadow-inner">
-                <BookOpen className="h-4 w-4 text-zinc-500 flex-shrink-0" />
+              <div className={`relative rounded-xl px-3.5 py-2.5 flex items-center gap-3 transition-all duration-200 border ${
+                isLight
+                  ? "bg-[#F5F5F5] hover:bg-[#EDEDED] focus-within:bg-[#EDEDED] border-[rgba(190,30,46,0.12)] focus-within:border-[#BE1E2E]"
+                  : "bg-[#0A0A0A] hover:bg-[#121212] focus-within:bg-[#121212] border-[rgba(190,30,46,0.12)] focus-within:border-[#BE1E2E]"
+              }`}>
+                <BookOpen className="h-3.5 w-3.5 text-zinc-500 flex-shrink-0" />
                 <select
                   required
                   value={formData.course}
                   onChange={(e) => setFormData({ ...formData, course: e.target.value })}
-                  className="text-sm font-medium text-white bg-transparent w-full focus:outline-none appearance-none cursor-pointer pr-6"
+                  className={`text-xs font-medium bg-transparent w-full focus:outline-none appearance-none cursor-pointer pr-6 ${
+                    isLight ? "text-[#111111]" : "text-white"
+                  }`}
                 >
-                  <option value="" disabled className="bg-[#111318] text-zinc-500">Select Course</option>
+                  <option value="" disabled className={isLight ? "bg-white text-zinc-400" : "bg-[#181818] text-zinc-500"}>Select Course</option>
                   {COURSES.map((courseOption, idx) => (
-                    <option key={idx} value={courseOption} className="bg-[#111318] text-white">
+                    <option key={idx} value={courseOption} className={isLight ? "bg-white text-[#111111]" : "bg-[#181818] text-white"}>
                       {courseOption}
                     </option>
                   ))}
                 </select>
-                <ChevronDown className="absolute right-4 h-4 w-4 text-zinc-500 pointer-events-none" />
+                <ChevronDown className="absolute right-3.5 h-3.5 w-3.5 text-zinc-500 pointer-events-none" />
               </div>
             </div>
 
             {/* CLOUDFLARE TURNSTILE INTEGRATION BOX */}
-            <div className="my-5">
+            <div className="my-4">
               <Turnstile
                 ref={turnstileRef}
                 onVerify={(token) => {
@@ -242,20 +278,20 @@ export default function BannerForm({
                   setTurnstileToken("");
                   setTurnstileVerified(false);
                 }}
-                theme="dark"
+                theme={isLight ? "light" : "dark"}
               />
             </div>
 
             {/* Checkbox agreement */}
-            <label className="flex items-start space-x-3 cursor-pointer select-none pt-1">
+            <label className="flex items-start space-x-2.5 cursor-pointer select-none pt-0.5">
               <input
                 type="checkbox"
                 checked={agreeTerms}
                 onChange={(e) => setAgreeTerms(e.target.checked)}
-                className="mt-0.5 rounded border-zinc-700 bg-zinc-800 text-[#FF1F3D] focus:ring-[#FF1F3D] focus:ring-offset-0 focus:ring-1 h-4 w-4 cursor-pointer flex-shrink-0"
+                className="mt-0.5 rounded border-zinc-350 bg-white text-[#BE1E2E] focus:ring-[#BE1E2E] focus:ring-offset-0 focus:ring-1 h-3.5 w-3.5 cursor-pointer flex-shrink-0"
               />
-              <span className="text-xs text-zinc-400 font-medium leading-tight font-sans">
-                I agree to the Zica <a href="/terms-conditions" className="text-[#FF1F3D] hover:underline font-bold">Terms & Conditions</a> and <a href="/privacy-policy" className="text-[#FF1F3D] hover:underline font-bold">Privacy Policy</a>
+              <span className={`text-[10px] font-medium leading-tight font-sans ${isLight ? "text-[#666666]" : "text-zinc-400"}`}>
+                I agree to the Zica <a href="/terms-conditions" className="text-[#BE1E2E] hover:underline font-bold">Terms & Conditions</a> and <a href="/privacy-policy" className="text-[#BE1E2E] hover:underline font-bold">Privacy Policy</a>
               </span>
             </label>
 
@@ -263,7 +299,7 @@ export default function BannerForm({
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full py-4 bg-[#FF1F3D] hover:bg-red-600 text-white font-black text-base uppercase tracking-widest rounded-xl transition-all duration-300 shadow-[0_4px_25px_rgba(255,31,61,0.5)] hover:shadow-[0_6px_30px_rgba(255,31,61,0.7)] transform hover:scale-[1.02] cursor-pointer mt-5"
+              className="w-full py-3 bg-[#BE1E2E] hover:bg-[#A31827] text-white font-black text-sm uppercase tracking-widest rounded-xl transition-all duration-300 shadow-[0_4px_12px_rgba(190,30,46,0.25)] hover:shadow-[0_6px_15px_rgba(190,30,46,0.45)] transform hover:scale-[1.02] cursor-pointer mt-4"
             >
               {isSubmitting ? (
                 <div className="h-5 w-5 border-2 border-white/30 border-t-white rounded-full animate-spin mx-auto" />

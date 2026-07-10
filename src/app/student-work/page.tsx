@@ -98,18 +98,18 @@ export default function StudentWorkPage() {
       <MouseGlow />
       <Navbar />
 
-      <main className="flex flex-col min-h-screen bg-[#020617] text-white font-sans overflow-hidden">
+      <main className="flex flex-col min-h-screen bg-[#0A0A0A] text-white font-sans overflow-hidden">
         
         {/* Header Hero Section */}
-        <section className="relative pt-32 pb-24 bg-gradient-to-b from-[#1E1B4B] via-[#0B0F19] to-[#020617] overflow-hidden flex flex-col items-center justify-center">
+        <section data-section-theme="dark" className="relative pt-32 pb-24 bg-gradient-to-b from-[#0A0A0A] via-[#141414] to-[#0A0A0A] overflow-hidden flex flex-col items-center justify-center">
           
           {/* Neon Grid Mesh Overlay */}
           <div className="absolute inset-0 opacity-20 pointer-events-none mix-blend-screen select-none">
             <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#FF1F3D" strokeWidth="0.5" opacity="0.3" />
-                  <circle cx="40" cy="0" r="1.5" fill="#C084FC" opacity="0.6" />
+                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#BE1E2E" strokeWidth="0.5" opacity="0.3" />
+                  <circle cx="40" cy="0" r="1.5" fill="#BE1E2E" opacity="0.6" />
                 </pattern>
               </defs>
               <rect width="100%" height="100%" fill="url(#grid)" />
@@ -117,8 +117,8 @@ export default function StudentWorkPage() {
           </div>
 
           {/* Ambient Glowing Blobs */}
-          <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full bg-purple-600/10 blur-[120px] pointer-events-none" />
-          <div className="absolute bottom-1/4 right-1/3 translate-x-1/2 translate-y-1/2 w-[500px] h-[250px] rounded-full bg-[#FF1F3D]/10 blur-[100px] pointer-events-none" />
+          <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full bg-[#BE1E2E]/5 blur-[120px] pointer-events-none" />
+          <div className="absolute bottom-1/4 right-1/3 translate-x-1/2 translate-y-1/2 w-[500px] h-[250px] rounded-full bg-[#BE1E2E]/5 blur-[100px] pointer-events-none" />
 
           {/* Title & Breadcrumbs */}
           <div className="relative z-10 text-center flex flex-col items-center">
@@ -129,7 +129,7 @@ export default function StudentWorkPage() {
               transition={{ duration: 0.8 }}
               className="font-display font-black text-4xl sm:text-6xl text-white tracking-tight uppercase mb-4"
             >
-              Student <span className="text-[#FF1F3D]">Works</span>
+              Student <span className="text-[#BE1E2E]">Works</span>
             </motion.h1>
 
             <motion.div 
@@ -138,7 +138,7 @@ export default function StudentWorkPage() {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="flex items-center space-x-2 text-xs sm:text-sm font-semibold tracking-wide uppercase"
             >
-              <Link href="/" className="text-[#FF1F3D] hover:text-red-500 transition-colors duration-300">
+              <Link href="/" className="text-[#BE1E2E] hover:text-red-500 transition-colors duration-300">
                 Homepage
               </Link>
               <span className="text-zinc-400">/</span>
@@ -151,17 +151,17 @@ export default function StudentWorkPage() {
             <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[80px] sm:h-[120px]">
               <path 
                 d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C26.9,8.75,55.05,18,83.13,26.11,146.12,44.3,219.09,68.21,321.39,56.44Z" 
-                fill="#020617"
+                fill="#141414"
               />
             </svg>
           </div>
         </section>
 
         {/* Hero Description Section */}
-        <section className="relative pt-4 pb-16 bg-[#020617]">
+        <section data-section-theme="dark" className="relative pt-4 pb-16 bg-[#141414]">
           <div className="max-w-7xl mx-auto px-6 relative">
             <div className="max-w-5xl mx-auto text-center">
-              <span className="text-xs font-bold tracking-[0.25em] text-[#FF1F3D] uppercase mb-4 block">
+              <span className="text-xs font-bold tracking-[0.25em] text-[#BE1E2E] uppercase mb-4 block">
                 CREATIVE PORTFOLIO
               </span>
 
@@ -171,7 +171,7 @@ export default function StudentWorkPage() {
                 transition={{ duration: 0.6 }}
                 className="font-display font-black text-4xl sm:text-6xl text-white tracking-tight uppercase mb-6"
               >
-                Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF1F3D] via-purple-500 to-indigo-500">Student Work</span>
+                Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#BE1E2E] via-red-500 to-[#A31827]">Student Work</span>
               </motion.h1>
 
               <motion.h2 
@@ -187,7 +187,7 @@ export default function StudentWorkPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className="text-zinc-350 text-base sm:text-lg leading-relaxed font-light mb-6 max-w-3xl mx-auto"
+                className="text-zinc-400 text-base sm:text-lg leading-relaxed font-light mb-6 max-w-3xl mx-auto"
               >
                 Every render, frame, and canvas showcase the practical skillsets honed at ZICA Pitampura. Explore high-quality CGI models, immersive gameplay layouts, luxurious blueprints, and stunning media assets created by our talented students.
               </motion.p>
@@ -196,8 +196,8 @@ export default function StudentWorkPage() {
         </section>
 
         {/* Dynamic Portfolio Gallery Grid Section */}
-        <section id="portfolio-grid" className="relative py-24 bg-[#0B0F19] border-t border-b border-white/5">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#FF1F3D]/2 rounded-full blur-[140px] pointer-events-none" />
+        <section id="portfolio-grid" data-section-theme="dark" className="relative py-24 bg-[#0A0A0A] border-t border-b border-white/5">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#BE1E2E]/2 rounded-full blur-[140px] pointer-events-none" />
 
           <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
             
@@ -209,7 +209,7 @@ export default function StudentWorkPage() {
                   onClick={() => setActiveCategory(category)}
                   className={`px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all duration-300 border cursor-pointer ${
                     activeCategory === category
-                      ? "bg-[#FF1F3D] border-[#FF1F3D] text-white shadow-[0_4px_15px_rgba(255,31,61,0.3)]"
+                      ? "bg-[#BE1E2E] border-[#BE1E2E] text-white shadow-[0_4px_15px_rgba(190,30,46,0.3)]"
                       : "bg-white/5 border-white/10 text-zinc-400 hover:text-white hover:border-white/30"
                   }`}
                 >
@@ -237,7 +237,7 @@ export default function StudentWorkPage() {
                       className="group cursor-pointer flex flex-col"
                     >
                       {/* Image Card Container */}
-                      <div className="relative aspect-square rounded-2xl overflow-hidden border border-white/10 hover:border-[#FF1F3D]/40 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-[1.02] bg-[#020617]">
+                      <div className="relative aspect-square rounded-2xl overflow-hidden border border-white/10 hover:border-[#BE1E2E]/40 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-[1.02] bg-[#141414]">
                         <img 
                           src={work.image} 
                           alt={work.title} 
@@ -245,14 +245,14 @@ export default function StudentWorkPage() {
                         />
                         {/* Hover Overlay */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-left">
-                          <span className="text-[10px] text-[#FF1F3D] font-bold uppercase tracking-widest mb-1">
+                          <span className="text-[10px] text-[#BE1E2E] font-bold uppercase tracking-widest mb-1">
                             {work.category}
                           </span>
                           <h4 className="text-white font-bold text-lg leading-tight mb-2">
                             {work.title}
                           </h4>
                           <div className="flex items-center space-x-2 text-zinc-400 text-xs font-light">
-                            <User className="h-3 w-3 text-[#FF1F3D]" />
+                            <User className="h-3 w-3 text-[#BE1E2E]" />
                             <span>By {work.student}</span>
                           </div>
                         </div>
@@ -274,14 +274,12 @@ export default function StudentWorkPage() {
           </div>
         </section>
 
-
-
         {/* Banner Section: Still Confused!!! */}
-        <section className="relative py-16 bg-[#020617] border-t border-white/5">
+        <section data-section-theme="dark" className="relative py-16 bg-[#141414] border-t border-white/5">
           <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
             <div>
               <h2 className="font-display font-black text-4xl sm:text-5xl text-white tracking-tight uppercase">
-                Still <span className="text-[#FF1F3D]">Confused!!!</span>
+                Still <span className="text-[#BE1E2E]">Confused!!!</span>
               </h2>
               <p className="text-zinc-400 text-sm sm:text-base font-light mt-2 uppercase tracking-widest">
                 Get Instant Clarity
@@ -296,13 +294,13 @@ export default function StudentWorkPage() {
                   const el = document.getElementById("work-enquiry");
                   if (el) el.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="px-6 py-3.5 bg-[#FF1F3D] text-white text-xs font-extrabold uppercase tracking-widest rounded-full text-center hover:bg-red-600 transition-colors shadow-lg hover:shadow-[0_4px_15px_rgba(255,31,61,0.3)] cursor-pointer"
+                className="px-6 py-3.5 bg-[#BE1E2E] text-white text-xs font-extrabold uppercase tracking-widest rounded-full text-center hover:bg-[#A31827] transition-colors shadow-lg hover:shadow-[0_4px_15px_rgba(190,30,46,0.3)] cursor-pointer"
               >
                 Talk to Counsellor
               </a>
               <a 
                 href="tel:+917900400300"
-                className="px-6 py-3.5 bg-[#FF1F3D] text-white text-xs font-extrabold uppercase tracking-widest rounded-full text-center hover:bg-red-600 transition-colors shadow-lg hover:shadow-[0_4px_15px_rgba(255,31,61,0.3)] cursor-pointer"
+                className="px-6 py-3.5 bg-[#BE1E2E] text-white text-xs font-extrabold uppercase tracking-widest rounded-full text-center hover:bg-[#A31827] transition-colors shadow-lg hover:shadow-[0_4px_15px_rgba(190,30,46,0.3)] cursor-pointer"
               >
                 Download Brochure
               </a>
@@ -373,14 +371,14 @@ export default function StudentWorkPage() {
                 animate={{ y: 0, opacity: 1 }}
                 className="mt-6 text-center max-w-md"
               >
-                <span className="text-xs text-[#FF1F3D] font-bold uppercase tracking-widest">
+                <span className="text-xs text-[#BE1E2E] font-bold uppercase tracking-widest">
                   {STUDENT_WORKS[selectedWorkIndex].category}
                 </span>
                 <h3 className="text-white font-bold text-xl sm:text-2xl mt-1">
                   {STUDENT_WORKS[selectedWorkIndex].title}
                 </h3>
-                <p className="text-zinc-450 text-xs sm:text-sm mt-1 font-light flex items-center justify-center gap-1.5">
-                  <User className="h-3 w-3 text-[#FF1F3D]" />
+                <p className="text-zinc-400 text-xs sm:text-sm mt-1 font-light flex items-center justify-center gap-1.5">
+                  <User className="h-3 w-3 text-[#BE1E2E]" />
                   <span>Created by {STUDENT_WORKS[selectedWorkIndex].student}</span>
                 </p>
               </motion.div>

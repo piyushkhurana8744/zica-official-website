@@ -13,7 +13,7 @@ export default function PrivacyPolicyPage() {
       <MouseGlow />
       <Navbar />
 
-      <main className="min-h-screen bg-[#000000] text-zinc-300 pt-32 pb-24 px-6 sm:px-12 lg:px-24 font-serif">
+      <main data-section-theme="dark" className="min-h-screen bg-[#0A0A0A] text-zinc-350 pt-32 pb-24 px-6 sm:px-12 lg:px-24 font-sans">
         <div className="max-w-4xl mx-auto space-y-12">
           
           {/* Header */}
@@ -176,7 +176,7 @@ export default function PrivacyPolicyPage() {
               <div className="space-y-6 pt-4">
                 
                 {/* Necessary Cookies */}
-                <div className="bg-[#111318]/60 border border-white/10 p-5 rounded-xl space-y-2">
+                <div className="bg-[#181818] border border-[rgba(190,30,46,0.12)] p-5 rounded-xl space-y-2 hover:border-[#BE1E2E] transition-colors duration-300">
                   <h4 className="text-lg font-normal text-white">
                     Necessary / Essential Cookies
                   </h4>
@@ -189,7 +189,7 @@ export default function PrivacyPolicyPage() {
                 </div>
 
                 {/* Cookies Policy Acceptance Cookies */}
-                <div className="bg-[#111318]/60 border border-white/10 p-5 rounded-xl space-y-2">
+                <div className="bg-[#181818] border border-[rgba(190,30,46,0.12)] p-5 rounded-xl space-y-2 hover:border-[#BE1E2E] transition-colors duration-300">
                   <h4 className="text-lg font-normal text-white">
                     Cookies Policy / Notice Acceptance Cookies
                   </h4>
@@ -202,7 +202,7 @@ export default function PrivacyPolicyPage() {
                 </div>
 
                 {/* Functionality Cookies */}
-                <div className="bg-[#111318]/60 border border-white/10 p-5 rounded-xl space-y-2">
+                <div className="bg-[#181818] border border-[rgba(190,30,46,0.12)] p-5 rounded-xl space-y-2 hover:border-[#BE1E2E] transition-colors duration-300">
                   <h4 className="text-lg font-normal text-white">
                     Functionality Cookies
                   </h4>

@@ -13,7 +13,7 @@ export default function TermsAndConditionsPage() {
       <MouseGlow />
       <Navbar />
 
-      <main className="min-h-screen bg-[#000000] text-zinc-300 pt-32 pb-24 px-6 sm:px-12 lg:px-24 font-serif">
+      <main data-section-theme="dark" className="min-h-screen bg-[#0A0A0A] text-zinc-350 pt-32 pb-24 px-6 sm:px-12 lg:px-24 font-sans">
         <div className="max-w-4xl mx-auto space-y-12">
           
           {/* Header */}

@@ -44,33 +44,33 @@ const TESTIMONIALS = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="relative py-24 bg-[#050505] overflow-hidden border-b border-white/5">
+    <section id="testimonials" data-section-theme="dark" className="relative py-24 bg-[#0A0A0A] overflow-hidden border-b border-[rgba(190,30,46,0.12)]">
       {/* Background Gradients */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-red-950/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 text-left">
         
         {/* Section Header */}
         <div className="flex justify-between items-end mb-8 max-w-5xl">
-          <div className="flex flex-col">
-            <h2 className="font-display font-bold text-4xl sm:text-5xl text-white tracking-tight leading-tight mb-2">
+          <div className="flex flex-col text-left">
+            <h2 className="font-display font-bold text-4xl sm:text-5xl text-white tracking-tight leading-tight mb-2 uppercase">
               Let&apos;s Hear It From <br />
               <span className="text-[#BE1E2E]">Our Students</span>
             </h2>
           </div>
-          {/* Big Orange Gradient Quote Mark */}
-          <div className="text-8xl sm:text-[10rem] font-serif font-extrabold select-none leading-none h-16 sm:h-24 text-transparent bg-clip-text bg-gradient-to-br from-orange-400 to-[#BE1E2E]">
+          {/* Big Quote Mark */}
+          <div className="text-8xl sm:text-[10rem] font-serif font-extrabold select-none leading-none h-16 sm:h-24 text-[#BE1E2E]">
             &rdquo;
           </div>
         </div>
 
         {/* Subtitle */}
-        <p className="text-zinc-300 text-sm sm:text-base font-light mb-16 max-w-3xl leading-relaxed">
+        <p className="text-[#D1D5DB] text-sm sm:text-base font-light mb-16 max-w-3xl leading-relaxed text-left">
           Hear How ZICA&apos;s Industry-Focused Training and Supportive Environment Helped Students Achieve Their Dreams.
         </p>
 
         {/* Testimonials 3-Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {TESTIMONIALS.map((t, idx) => (
             <motion.div
               key={idx}
@@ -78,15 +78,16 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: idx * 0.08 }}
-              className="flex flex-col items-center text-center group"
+              className="flex flex-col items-center text-center p-8 rounded-[2rem] bg-[#181818] border border-[rgba(190,30,46,0.12)] shadow-sm hover:border-[#BE1E2E] hover:shadow-lg hover:-translate-y-1.5 hover:scale-[1.02] transition-all duration-300 group"
             >
-              {/* Avatar Container with Red Border */}
-              <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-[#BE1E2E] mb-5 shadow-lg group-hover:scale-105 transition-transform duration-300">
+              {/* Avatar Container with Primary Border */}
+              <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-[#BE1E2E] mb-5 shadow-sm group-hover:scale-105 transition-transform duration-300">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={t.image}
                   alt={t.name}
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
 
@@ -104,8 +105,8 @@ export default function Testimonials() {
               {!t.role && <div className="h-4 mb-4" />}
 
               {/* Quote Text */}
-              <p className="text-zinc-300 text-xs sm:text-sm leading-relaxed font-light px-3 sm:px-4">
-                {t.quote}
+              <p className="text-[#A1A1AA] text-xs sm:text-sm leading-relaxed font-light px-2 italic text-left">
+                &ldquo;{t.quote}&rdquo;
               </p>
             </motion.div>
           ))}
