@@ -1,4 +1,27 @@
-"use client";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Digital Marketing Course in Delhi | ZICA Pitampura",
+  description: "Learn SEO, SEM, Social Media, Google Ads & Analytics with live projects & certifications. Join Delhi’s top digital marketing course.",
+  alternates: {
+    canonical: "https://zicapitampura.com/digital-marketing/",
+  },
+  openGraph: {
+    title: "Digital Marketing Course in Delhi | ZICA Pitampura",
+    description: "Learn SEO, SEM, Social Media, Google Ads & Analytics with live projects & certifications. Join Delhi’s top digital marketing course.",
+    url: "https://zicapitampura.com/digital-marketing/",
+    siteName: "ZICA - Zee Institute of Creative Arts",
+    type: "website",
+  },
+  twitter: {
+    title: "Digital Marketing Course in Delhi | ZICA Pitampura",
+    description: "Learn SEO, SEM, Social Media, Google Ads & Analytics with live projects & certifications. Join Delhi’s top digital marketing course.",
+  },
+  other: {
+    "itemprop:title": "Digital Marketing Course in Delhi | ZICA Pitampura",
+    "itemprop:description": "Learn SEO, SEM, Social Media, Google Ads & Analytics with live projects & certifications. Join Delhi’s top digital marketing course.",
+  },
+};
 
 import React from "react";
 import CoursePageTemplate from "@/components/CoursePageTemplate";

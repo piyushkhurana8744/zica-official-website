@@ -1,4 +1,27 @@
-"use client";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Web Design Course in Delhi | ZICA Pitampura",
+  description: "Build stunning, responsive websites with expert-led training in HTML, CSS, JavaScript & web design tools. Join ZICA Pitampura today.",
+  alternates: {
+    canonical: "https://zicapitampura.com/web-design-2/",
+  },
+  openGraph: {
+    title: "Web Design Course in Delhi | ZICA Pitampura",
+    description: "Build stunning, responsive websites with expert-led training in HTML, CSS, JavaScript & web design tools. Join ZICA Pitampura today.",
+    url: "https://zicapitampura.com/web-design-2/",
+    siteName: "ZICA - Zee Institute of Creative Arts",
+    type: "website",
+  },
+  twitter: {
+    title: "Web Design Course in Delhi | ZICA Pitampura",
+    description: "Build stunning, responsive websites with expert-led training in HTML, CSS, JavaScript & web design tools. Join ZICA Pitampura today.",
+  },
+  other: {
+    "itemprop:title": "Web Design Course in Delhi | ZICA Pitampura",
+    "itemprop:description": "Build stunning, responsive websites with expert-led training in HTML, CSS, JavaScript & web design tools. Join ZICA Pitampura today.",
+  },
+};
 
 import React from "react";
 import CoursePageTemplate from "@/components/CoursePageTemplate";

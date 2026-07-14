@@ -1,4 +1,27 @@
-"use client";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Digital Photography Course | ZICA Pitampura",
+  description: "Learn to capture professional photos with DSLR training, lighting techniques & photo editing using Lightroom & Photoshop at ZICA Pitampura.",
+  alternates: {
+    canonical: "https://zicapitampura.com/digital-photography/",
+  },
+  openGraph: {
+    title: "Digital Photography Course | ZICA Pitampura",
+    description: "Learn to capture professional photos with DSLR training, lighting techniques & photo editing using Lightroom & Photoshop at ZICA Pitampura.",
+    url: "https://zicapitampura.com/digital-photography/",
+    siteName: "ZICA - Zee Institute of Creative Arts",
+    type: "website",
+  },
+  twitter: {
+    title: "Digital Photography Course | ZICA Pitampura",
+    description: "Learn to capture professional photos with DSLR training, lighting techniques & photo editing using Lightroom & Photoshop at ZICA Pitampura.",
+  },
+  other: {
+    "itemprop:title": "Digital Photography Course | ZICA Pitampura",
+    "itemprop:description": "Learn to capture professional photos with DSLR training, lighting techniques & photo editing using Lightroom & Photoshop at ZICA Pitampura.",
+  },
+};
 
 import React from "react";
 import CoursePageTemplate from "@/components/CoursePageTemplate";

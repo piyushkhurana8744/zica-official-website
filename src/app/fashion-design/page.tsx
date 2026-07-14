@@ -1,4 +1,27 @@
-"use client";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Fashion Design Course in Delhi | ZICA Pitampura",
+  description: "Learn fashion illustration, pattern making, garment construction & styling with ZICA Pitampura’s expert-led design program.",
+  alternates: {
+    canonical: "https://zicapitampura.com/fashion-design/",
+  },
+  openGraph: {
+    title: "Fashion Design Course in Delhi | ZICA Pitampura",
+    description: "Learn fashion illustration, pattern making, garment construction & styling with ZICA Pitampura’s expert-led design program.",
+    url: "https://zicapitampura.com/fashion-design/",
+    siteName: "ZICA - Zee Institute of Creative Arts",
+    type: "website",
+  },
+  twitter: {
+    title: "Fashion Design Course in Delhi | ZICA Pitampura",
+    description: "Learn fashion illustration, pattern making, garment construction & styling with ZICA Pitampura’s expert-led design program.",
+  },
+  other: {
+    "itemprop:title": "Fashion Design Course in Delhi | ZICA Pitampura",
+    "itemprop:description": "Learn fashion illustration, pattern making, garment construction & styling with ZICA Pitampura’s expert-led design program.",
+  },
+};
 
 import React from "react";
 import CoursePageTemplate from "@/components/CoursePageTemplate";

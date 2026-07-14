@@ -1,4 +1,27 @@
-"use client";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Digital Audio & Video Editing Course in Pitampura | ZICA",
+  description: "Join ZICA Pitampura's Digital Audio & Video Editing course. Learn video editing, sound design, motion graphics, VFX etc.",
+  alternates: {
+    canonical: "https://zicapitampura.com/digital-audio-and-video-editing/",
+  },
+  openGraph: {
+    title: "Digital Audio & Video Editing Course in Pitampura | ZICA",
+    description: "Join ZICA Pitampura's Digital Audio & Video Editing course. Learn video editing, sound design, motion graphics, VFX etc.",
+    url: "https://zicapitampura.com/digital-audio-and-video-editing/",
+    siteName: "ZICA - Zee Institute of Creative Arts",
+    type: "website",
+  },
+  twitter: {
+    title: "Digital Audio & Video Editing Course in Pitampura | ZICA",
+    description: "Join ZICA Pitampura's Digital Audio & Video Editing course. Learn video editing, sound design, motion graphics, VFX etc.",
+  },
+  other: {
+    "itemprop:title": "Digital Audio & Video Editing Course in Pitampura | ZICA",
+    "itemprop:description": "Join ZICA Pitampura's Digital Audio & Video Editing course. Learn video editing, sound design, motion graphics, VFX etc.",
+  },
+};
 
 import React from "react";
 import CoursePageTemplate from "@/components/CoursePageTemplate";

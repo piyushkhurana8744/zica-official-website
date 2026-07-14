@@ -1,4 +1,27 @@
-"use client";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Graphic Design Course in Delhi | ZICA Pitampura",
+  description: "Learn Graphic design including typography, branding & digital illustration with expert-led classes & real-world projects. 100% Job Assistance",
+  alternates: {
+    canonical: "https://zicapitampura.com/graphic-design/",
+  },
+  openGraph: {
+    title: "Graphic Design Course in Delhi | ZICA Pitampura",
+    description: "Learn Graphic design including typography, branding & digital illustration with expert-led classes & real-world projects. 100% Job Assistance",
+    url: "https://zicapitampura.com/graphic-design/",
+    siteName: "ZICA - Zee Institute of Creative Arts",
+    type: "website",
+  },
+  twitter: {
+    title: "Graphic Design Course in Delhi | ZICA Pitampura",
+    description: "Learn Graphic design including typography, branding & digital illustration with expert-led classes & real-world projects. 100% Job Assistance",
+  },
+  other: {
+    "itemprop:title": "Graphic Design Course in Delhi | ZICA Pitampura",
+    "itemprop:description": "Learn Graphic design including typography, branding & digital illustration with expert-led classes & real-world projects. 100% Job Assistance",
+  },
+};
 
 import React from "react";
 import CoursePageTemplate from "@/components/CoursePageTemplate";

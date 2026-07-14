@@ -1,4 +1,27 @@
-"use client";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Best 2D Animation Course in Delhi | ZICA Pitampura",
+  description: "Learn 2D Animation at ZICA Pitampura with hands-on training in traditional animation, character design & storytelling from industry experts.",
+  alternates: {
+    canonical: "https://zicapitampura.com/2d-animations/",
+  },
+  openGraph: {
+    title: "Best 2D Animation Course in Delhi | ZICA Pitampura",
+    description: "Learn 2D Animation at ZICA Pitampura with hands-on training in traditional animation, character design & storytelling from industry experts.",
+    url: "https://zicapitampura.com/2d-animations/",
+    siteName: "ZICA - Zee Institute of Creative Arts",
+    type: "website",
+  },
+  twitter: {
+    title: "Best 2D Animation Course in Delhi | ZICA Pitampura",
+    description: "Learn 2D Animation at ZICA Pitampura with hands-on training in traditional animation, character design & storytelling from industry experts.",
+  },
+  other: {
+    "itemprop:title": "Best 2D Animation Course in Delhi | ZICA Pitampura",
+    "itemprop:description": "Learn 2D Animation at ZICA Pitampura with hands-on training in traditional animation, character design & storytelling from industry experts.",
+  },
+};
 
 import React from "react";
 import CoursePageTemplate from "@/components/CoursePageTemplate";

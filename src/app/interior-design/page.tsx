@@ -1,4 +1,27 @@
-"use client";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Interior Design Diploma in Delhi | ZICA Pitampura",
+  description: "Get certified in interior design. Learn space planning, 3D visualization & material selection with practical studio-based training.",
+  alternates: {
+    canonical: "https://zicapitampura.com/interior-design/",
+  },
+  openGraph: {
+    title: "Interior Design Diploma in Delhi | ZICA Pitampura",
+    description: "Get certified in interior design. Learn space planning, 3D visualization & material selection with practical studio-based training.",
+    url: "https://zicapitampura.com/interior-design/",
+    siteName: "ZICA - Zee Institute of Creative Arts",
+    type: "website",
+  },
+  twitter: {
+    title: "Interior Design Diploma in Delhi | ZICA Pitampura",
+    description: "Get certified in interior design. Learn space planning, 3D visualization & material selection with practical studio-based training.",
+  },
+  other: {
+    "itemprop:title": "Interior Design Diploma in Delhi | ZICA Pitampura",
+    "itemprop:description": "Get certified in interior design. Learn space planning, 3D visualization & material selection with practical studio-based training.",
+  },
+};
 
 import React from "react";
 import CoursePageTemplate from "@/components/CoursePageTemplate";

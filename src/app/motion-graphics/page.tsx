@@ -1,4 +1,27 @@
-"use client";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Motion Graphics Course in Delhi | ZICA Pitampura",
+  description: "Create dynamic visuals & animation using Adobe After Effects. Learn Motion graphics for ads films & digital content creation at ZICA Pitampura.",
+  alternates: {
+    canonical: "https://zicapitampura.com/motion-graphics-2/",
+  },
+  openGraph: {
+    title: "Motion Graphics Course in Delhi | ZICA Pitampura",
+    description: "Create dynamic visuals & animation using Adobe After Effects. Learn Motion graphics for ads films & digital content creation at ZICA Pitampura.",
+    url: "https://zicapitampura.com/motion-graphics-2/",
+    siteName: "ZICA - Zee Institute of Creative Arts",
+    type: "website",
+  },
+  twitter: {
+    title: "Motion Graphics Course in Delhi | ZICA Pitampura",
+    description: "Create dynamic visuals & animation using Adobe After Effects. Learn Motion graphics for ads films & digital content creation at ZICA Pitampura.",
+  },
+  other: {
+    "itemprop:title": "Motion Graphics Course in Delhi | ZICA Pitampura",
+    "itemprop:description": "Create dynamic visuals & animation using Adobe After Effects. Learn Motion graphics for ads films & digital content creation at ZICA Pitampura.",
+  },
+};
 
 import React from "react";
 import CoursePageTemplate from "@/components/CoursePageTemplate";

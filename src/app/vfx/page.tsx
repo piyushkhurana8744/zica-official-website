@@ -1,4 +1,27 @@
-"use client";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "VFX Course in Delhi | ZICA Pitampura",
+  description: "Explore the world of VFX with advanced training in compositing, motion graphics & CGI. Launch your VFX career with ZICA Pitampura.",
+  alternates: {
+    canonical: "https://zicapitampura.com/visual-effects-vfx-2/",
+  },
+  openGraph: {
+    title: "VFX Course in Delhi | ZICA Pitampura",
+    description: "Explore the world of VFX with advanced training in compositing, motion graphics & CGI. Launch your VFX career with ZICA Pitampura.",
+    url: "https://zicapitampura.com/visual-effects-vfx-2/",
+    siteName: "ZICA - Zee Institute of Creative Arts",
+    type: "website",
+  },
+  twitter: {
+    title: "VFX Course in Delhi | ZICA Pitampura",
+    description: "Explore the world of VFX with advanced training in compositing, motion graphics & CGI. Launch your VFX career with ZICA Pitampura.",
+  },
+  other: {
+    "itemprop:title": "VFX Course in Delhi | ZICA Pitampura",
+    "itemprop:description": "Explore the world of VFX with advanced training in compositing, motion graphics & CGI. Launch your VFX career with ZICA Pitampura.",
+  },
+};
 
 import React from "react";
 import CoursePageTemplate from "@/components/CoursePageTemplate";

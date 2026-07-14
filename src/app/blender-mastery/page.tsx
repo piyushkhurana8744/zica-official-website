@@ -1,4 +1,27 @@
-"use client";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blender 3D Animation Course | ZICA Pitampura",
+  description: "Master Blender for modeling, sculpting & animation. Learn by doing in ZICA’s studio-based Blender course in Delhi. 100% Job Support.",
+  alternates: {
+    canonical: "https://zicapitampura.com/blender-mastery/",
+  },
+  openGraph: {
+    title: "Blender 3D Animation Course | ZICA Pitampura",
+    description: "Master Blender for modeling, sculpting & animation. Learn by doing in ZICA’s studio-based Blender course in Delhi. 100% Job Support.",
+    url: "https://zicapitampura.com/blender-mastery/",
+    siteName: "ZICA - Zee Institute of Creative Arts",
+    type: "website",
+  },
+  twitter: {
+    title: "Blender 3D Animation Course | ZICA Pitampura",
+    description: "Master Blender for modeling, sculpting & animation. Learn by doing in ZICA’s studio-based Blender course in Delhi. 100% Job Support.",
+  },
+  other: {
+    "itemprop:title": "Blender 3D Animation Course | ZICA Pitampura",
+    "itemprop:description": "Master Blender for modeling, sculpting & animation. Learn by doing in ZICA’s studio-based Blender course in Delhi. 100% Job Support.",
+  },
+};
 
 import React from "react";
 import CoursePageTemplate from "@/components/CoursePageTemplate";

@@ -1,4 +1,27 @@
-"use client";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Game Art Design Course in Delhi | ZICA Pitampura",
+  description: "Design game characters & immersive environments. Learn game art using Unity, Unreal, and Blender at ZICA Pitampura. 100% Job Assistance.",
+  alternates: {
+    canonical: "https://zicapitampura.com/game-art-design-2/",
+  },
+  openGraph: {
+    title: "Game Art Design Course in Delhi | ZICA Pitampura",
+    description: "Design game characters & immersive environments. Learn game art using Unity, Unreal, and Blender at ZICA Pitampura. 100% Job Assistance.",
+    url: "https://zicapitampura.com/game-art-design-2/",
+    siteName: "ZICA - Zee Institute of Creative Arts",
+    type: "website",
+  },
+  twitter: {
+    title: "Game Art Design Course in Delhi | ZICA Pitampura",
+    description: "Design game characters & immersive environments. Learn game art using Unity, Unreal, and Blender at ZICA Pitampura. 100% Job Assistance.",
+  },
+  other: {
+    "itemprop:title": "Game Art Design Course in Delhi | ZICA Pitampura",
+    "itemprop:description": "Design game characters & immersive environments. Learn game art using Unity, Unreal, and Blender at ZICA Pitampura. 100% Job Assistance.",
+  },
+};
 
 import React from "react";
 import CoursePageTemplate from "@/components/CoursePageTemplate";

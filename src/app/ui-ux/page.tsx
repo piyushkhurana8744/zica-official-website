@@ -1,4 +1,27 @@
-"use client";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "UI/UX Design Course in Delhi | ZICA Pitampura",
+  description: "Learn UI/UX design with wireframing, prototyping & design systems. ZICA’s curriculum covers Figma, Adobe XD & usability best practices.",
+  alternates: {
+    canonical: "https://zicapitampura.com/ui-ux-2/",
+  },
+  openGraph: {
+    title: "UI/UX Design Course in Delhi | ZICA Pitampura",
+    description: "Learn UI/UX design with wireframing, prototyping & design systems. ZICA’s curriculum covers Figma, Adobe XD & usability best practices.",
+    url: "https://zicapitampura.com/ui-ux-2/",
+    siteName: "ZICA - Zee Institute of Creative Arts",
+    type: "website",
+  },
+  twitter: {
+    title: "UI/UX Design Course in Delhi | ZICA Pitampura",
+    description: "Learn UI/UX design with wireframing, prototyping & design systems. ZICA’s curriculum covers Figma, Adobe XD & usability best practices.",
+  },
+  other: {
+    "itemprop:title": "UI/UX Design Course in Delhi | ZICA Pitampura",
+    "itemprop:description": "Learn UI/UX design with wireframing, prototyping & design systems. ZICA’s curriculum covers Figma, Adobe XD & usability best practices.",
+  },
+};
 
 import React from "react";
 import CoursePageTemplate from "@/components/CoursePageTemplate";

@@ -1,4 +1,27 @@
-"use client";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "3D Animation Training Institute | ZICA Pitampura",
+  description: "Master 3D animation tools like Maya &Blender. ZICA Pitampura offers job-ready training in modeling, rigging, texturing & rendering.",
+  alternates: {
+    canonical: "https://zicapitampura.com/3d-animations",
+  },
+  openGraph: {
+    title: "3D Animation Training Institute | ZICA Pitampura",
+    description: "Master 3D animation tools like Maya &Blender. ZICA Pitampura offers job-ready training in modeling, rigging, texturing & rendering.",
+    url: "https://zicapitampura.com/3d-animations",
+    siteName: "ZICA - Zee Institute of Creative Arts",
+    type: "website",
+  },
+  twitter: {
+    title: "3D Animation Training Institute | ZICA Pitampura",
+    description: "Master 3D animation tools like Maya &Blender. ZICA Pitampura offers job-ready training in modeling, rigging, texturing & rendering.",
+  },
+  other: {
+    "itemprop:title": "3D Animation Training Institute | ZICA Pitampura",
+    "itemprop:description": "Master 3D animation tools like Maya &Blender. ZICA Pitampura offers job-ready training in modeling, rigging, texturing & rendering.",
+  },
+};
 
 import React from "react";
 import CoursePageTemplate from "@/components/CoursePageTemplate";

@@ -1,4 +1,27 @@
-"use client";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Best Animation, VFX, Gaming, Graphic Design Institute in Delhi",
+  description: "Zee Institute of Creative Arts (ZICA) Pitampura is the best institute for VFX, Animation, Graphic Design in Delhi with 100% Job Assistance.",
+  alternates: {
+    canonical: "https://zicapitampura.com/unreal-engine/",
+  },
+  openGraph: {
+    title: "Best Animation, VFX, Gaming, Graphic Design Institute in Delhi",
+    description: "Zee Institute of Creative Arts (ZICA) Pitampura is the best institute for VFX, Animation, Graphic Design in Delhi with 100% Job Assistance.",
+    url: "https://zicapitampura.com/unreal-engine/",
+    siteName: "ZICA - Zee Institute of Creative Arts",
+    type: "website",
+  },
+  twitter: {
+    title: "Best Animation, VFX, Gaming, Graphic Design Institute in Delhi",
+    description: "Zee Institute of Creative Arts (ZICA) Pitampura is the best institute for VFX, Animation, Graphic Design in Delhi with 100% Job Assistance.",
+  },
+  other: {
+    "itemprop:title": "Best Animation, VFX, Gaming, Graphic Design Institute in Delhi",
+    "itemprop:description": "Zee Institute of Creative Arts (ZICA) Pitampura is the best institute for VFX, Animation, Graphic Design in Delhi with 100% Job Assistance.",
+  },
+};
 
 import React from "react";
 import CoursePageTemplate from "@/components/CoursePageTemplate";

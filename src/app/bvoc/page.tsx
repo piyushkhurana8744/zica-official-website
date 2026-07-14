@@ -1,4 +1,27 @@
-"use client";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "B.Voc in Animation & VFX – UGC Approved | ZICA Pitampura",
+  description: "Enroll in a UGC-recognized B.Voc program in Animation & VFX at ZICA Pitampura. Industry-focused curriculum with expert mentorship.",
+  alternates: {
+    canonical: "https://zicapitampura.com/b-voc-degree/",
+  },
+  openGraph: {
+    title: "B.Voc in Animation & VFX – UGC Approved | ZICA Pitampura",
+    description: "Enroll in a UGC-recognized B.Voc program in Animation & VFX at ZICA Pitampura. Industry-focused curriculum with expert mentorship.",
+    url: "https://zicapitampura.com/b-voc-degree/",
+    siteName: "ZICA - Zee Institute of Creative Arts",
+    type: "website",
+  },
+  twitter: {
+    title: "B.Voc in Animation & VFX – UGC Approved | ZICA Pitampura",
+    description: "Enroll in a UGC-recognized B.Voc program in Animation & VFX at ZICA Pitampura. Industry-focused curriculum with expert mentorship.",
+  },
+  other: {
+    "itemprop:title": "B.Voc in Animation & VFX – UGC Approved | ZICA Pitampura",
+    "itemprop:description": "Enroll in a UGC-recognized B.Voc program in Animation & VFX at ZICA Pitampura. Industry-focused curriculum with expert mentorship.",
+  },
+};
 
 import React from "react";
 import CoursePageTemplate from "@/components/CoursePageTemplate";
