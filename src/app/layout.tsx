@@ -23,6 +23,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "ZICA | Zee Institute of Creative Art - Animation, VFX & Design",
   description: "India's premier creative institute offering specialized courses in 2D/3D Animation, VFX, Game Design, Interior Design, Graphic Design, and more.",
+  icons: {
+    icon: "/zica-favicon.ico",
+    shortcut: "/zica-favicon.ico",
+    apple: "/zica-favicon.ico",
+  },
 };
 
 export default function RootLayout({
