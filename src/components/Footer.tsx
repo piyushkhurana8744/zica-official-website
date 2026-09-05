@@ -157,13 +157,31 @@ export default function Footer() {
 
         {/* Social Icons - Centered under columns as in layout screenshot */}
         <div className="flex justify-center items-center space-x-6 py-6 border-t border-white/5">
-          <a href="#" className="h-10 w-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:text-[#E76B24] hover:border-[#E76B24] hover:scale-110 transition-all duration-300">
+          <a
+            href="https://www.facebook.com/zicapitampura"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit ZICA Pitampura Facebook page"
+            className="h-10 w-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:text-[#E76B24] hover:border-[#E76B24] hover:scale-110 transition-all duration-300"
+          >
             <Facebook className="h-5 w-5" />
           </a>
-          <a href="#" className="h-10 w-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:text-[#E76B24] hover:border-[#E76B24] hover:scale-110 transition-all duration-300">
+          <a
+            href="https://www.youtube.com/@ZICAPitampura"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit ZICA Pitampura YouTube channel"
+            className="h-10 w-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:text-[#E76B24] hover:border-[#E76B24] hover:scale-110 transition-all duration-300"
+          >
             <Youtube className="h-5 w-5" />
           </a>
-          <a href="#" className="h-10 w-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:text-[#E76B24] hover:border-[#E76B24] hover:scale-110 transition-all duration-300">
+          <a
+            href="https://www.instagram.com/zicapitampura/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit ZICA Pitampura Instagram profile"
+            className="h-10 w-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:text-[#E76B24] hover:border-[#E76B24] hover:scale-110 transition-all duration-300"
+          >
             <Instagram className="h-5 w-5" />
           </a>
         </div>

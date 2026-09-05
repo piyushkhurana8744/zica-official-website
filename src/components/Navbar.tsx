@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown, Search, ArrowRight, Sparkles, Film, Gamepad, Paintbrush } from "lucide-react";
+import { Menu, X, ChevronDown, Search, ArrowRight, Sparkles, Film, Gamepad, Paintbrush, Facebook, Instagram, Youtube } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 
@@ -533,7 +533,7 @@ export default function Navbar() {
             </div>
 
             {/* Mobile bottom CTA */}
-            <div className="pt-8">
+            <div className="pt-8 space-y-5">
               <a
                 href="#contact"
                 onClick={() => setMobileMenuOpen(false)}
@@ -541,6 +541,37 @@ export default function Navbar() {
               >
                 Enroll Now
               </a>
+
+              {/* Mobile Social Links */}
+              <div className="flex items-center justify-center gap-4 pt-2">
+                <a
+                  href="https://www.facebook.com/zicapitampura"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/70 hover:text-primary hover:border-primary transition-colors"
+                >
+                  <Facebook className="h-4 w-4" />
+                </a>
+                <a
+                  href="https://www.youtube.com/@ZICAPitampura"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                  className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/70 hover:text-primary hover:border-primary transition-colors"
+                >
+                  <Youtube className="h-4 w-4" />
+                </a>
+                <a
+                  href="https://www.instagram.com/zicapitampura/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/70 hover:text-primary hover:border-primary transition-colors"
+                >
+                  <Instagram className="h-4 w-4" />
+                </a>
+              </div>
             </div>
           </motion.div>
         )}
